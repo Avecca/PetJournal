@@ -10,13 +10,27 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController is CreatePetViewController {
+            
+            if let newVC = tabBarController.storyboard?.instantiateViewController(identifier: "PopUpCreateViewController"){
+                newVC.modalPresentationStyle = .pageSheet
+                tabBarController.present(newVC, animated: true, completion: nil)
+                return false
+            }
+            
+        }
+        return true
+        
     }
 
     // MARK: UISceneSession Lifecycle

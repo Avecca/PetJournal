@@ -17,6 +17,9 @@
 		9363950A237CD00900C59912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93639508237CD00900C59912 /* LaunchScreen.storyboard */; };
 		93639515237CD00900C59912 /* PetJournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93639514237CD00900C59912 /* PetJournalTests.swift */; };
 		93639520237CD00900C59912 /* PetJournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363951F237CD00900C59912 /* PetJournalUITests.swift */; };
+		9363952E237CD59E00C59912 /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363952D237CD59E00C59912 /* PetViewController.swift */; };
+		93639531237CED9300C59912 /* CreatePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93639530237CED9300C59912 /* CreatePetViewController.swift */; };
+		93639535237CF33F00C59912 /* TabOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93639534237CF33F00C59912 /* TabOverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		9363951B237CD00900C59912 /* PetJournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetJournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9363951F237CD00900C59912 /* PetJournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetJournalUITests.swift; sourceTree = "<group>"; };
 		93639521237CD00900C59912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9363952D237CD59E00C59912 /* PetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
+		9363952F237CDE9000C59912 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		93639530237CED9300C59912 /* CreatePetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetViewController.swift; sourceTree = "<group>"; };
+		93639534237CF33F00C59912 /* TabOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +90,7 @@
 		936394EC237CD00800C59912 = {
 			isa = PBXGroup;
 			children = (
+				9363952F237CDE9000C59912 /* README.md */,
 				936394F7237CD00800C59912 /* PetJournal */,
 				93639513237CD00900C59912 /* PetJournalTests */,
 				9363951E237CD00900C59912 /* PetJournalUITests */,
@@ -105,6 +113,8 @@
 			children = (
 				936394F8237CD00800C59912 /* AppDelegate.swift */,
 				936394FD237CD00800C59912 /* SceneDelegate.swift */,
+				9363952D237CD59E00C59912 /* PetViewController.swift */,
+				93639530237CED9300C59912 /* CreatePetViewController.swift */,
 				936394FF237CD00800C59912 /* MasterViewController.swift */,
 				93639501237CD00800C59912 /* DetailViewController.swift */,
 				93639503237CD00800C59912 /* Main.storyboard */,
@@ -112,6 +122,7 @@
 				93639508237CD00900C59912 /* LaunchScreen.storyboard */,
 				9363950B237CD00900C59912 /* Info.plist */,
 				936394FA237CD00800C59912 /* PetJournal.xcdatamodeld */,
+				93639534237CF33F00C59912 /* TabOverView.swift */,
 			);
 			path = PetJournal;
 			sourceTree = "<group>";
@@ -267,9 +278,12 @@
 			files = (
 				93639500237CD00800C59912 /* MasterViewController.swift in Sources */,
 				936394F9237CD00800C59912 /* AppDelegate.swift in Sources */,
+				93639535237CF33F00C59912 /* TabOverView.swift in Sources */,
 				93639502237CD00800C59912 /* DetailViewController.swift in Sources */,
 				936394FC237CD00800C59912 /* PetJournal.xcdatamodeld in Sources */,
+				9363952E237CD59E00C59912 /* PetViewController.swift in Sources */,
 				936394FE237CD00800C59912 /* SceneDelegate.swift in Sources */,
+				93639531237CED9300C59912 /* CreatePetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
