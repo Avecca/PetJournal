@@ -13,8 +13,8 @@ class PetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
+        //to get this to work again, unedit in appdelegate as well
+       // self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
     }
     
 

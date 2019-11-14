@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {  //, UITabBarControllerDelegate
 
 
 
@@ -19,19 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         return true
     }
     
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if viewController is CreatePetViewController {
-            
-            if let newVC = tabBarController.storyboard?.instantiateViewController(identifier: "PopUpCreateViewController"){
-                newVC.modalPresentationStyle = .pageSheet
-                tabBarController.present(newVC, animated: true, completion: nil)
-                return false
-            }
-            
-        }
-        return true
-        
-    }
+//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+//        if viewController is CreatePetViewController {
+//
+//            if let newVC = tabBarController.storyboard?.instantiateViewController(identifier: "PopUpCreateViewController"){
+//                newVC.modalPresentationStyle = .pageSheet
+//                tabBarController.present(newVC, animated: true, completion: nil)
+//                return false
+//            }
+//
+//        }
+//        return true
+//
+//    }
 
     // MARK: UISceneSession Lifecycle
 
