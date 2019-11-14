@@ -1,5 +1,5 @@
 //
-//  CreatePetViewController.swift
+//  VetViewController.swift
 //  PetJournal
 //
 //  Created by Hanna Astlind on 2019-11-14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatePetViewController: UIViewController {
+class VetViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

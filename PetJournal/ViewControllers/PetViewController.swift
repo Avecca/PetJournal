@@ -1,0 +1,85 @@
+//
+//  PetViewController.swift
+//  PetJournal
+//
+//  Created by Hanna Astlind on 2019-11-14.
+//  Copyright © 2019 Hanna Astlind. All rights reserved.
+//
+
+import UIKit
+
+class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    
+    
+ 
+    @IBOutlet weak var petsTableView: UITableView!
+    
+    //var pets: [Pet] = []  //[Pet]
+    var pet: Pet?
+    private let pets = Pets();
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        //to get this to work again, unedit in appdelegate as well
+       // self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
+        
+        
+        petsTableView.delegate = self
+        petsTableView.dataSource = self
+        
+        self.petsTableView.reloadData()
+        
+        //petsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return  pets.countPets()//PetList.petList.count// pets.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = petsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PetTableViewCell
+        
+        let cellIndex = indexPath.item
+        //nameclick.tag = cellindex
+        
+        
+        pet = pets.entryPet(index: cellIndex)
+        cell.configCell(pet: pet)
+        cell.tag = cellIndex // btn?
+        
+        //TODO
+        //Make sure the names arnt upside down since we reversed the order of the cv
+       // cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        
+        //TODO temp
+        //cell.textLabel?.text = pets[cellIndex]
+        
+        return cell
+    }
+    
+    
+    
+    
+    
+    
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

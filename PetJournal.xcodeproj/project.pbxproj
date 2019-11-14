@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		931AD7F7237DD0CA009CC068 /* VetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD7F6237DD0CA009CC068 /* VetViewController.swift */; };
+		931AD7FB237DD59F009CC068 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD7FA237DD59F009CC068 /* Pet.swift */; };
+		931AD7FD237DD5B2009CC068 /* Pets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD7FC237DD5B2009CC068 /* Pets.swift */; };
+		931AD7FF237DE391009CC068 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD7FE237DE391009CC068 /* PetList.swift */; };
+		9359245D237DB48A0070FA42 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359245C237DB48A0070FA42 /* PetTableViewCell.swift */; };
+		93592460237DBDD10070FA42 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359245F237DBDD10070FA42 /* RoundedButton.swift */; };
 		936394F9237CD00800C59912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936394F8237CD00800C59912 /* AppDelegate.swift */; };
 		936394FC237CD00800C59912 /* PetJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 936394FA237CD00800C59912 /* PetJournal.xcdatamodeld */; };
 		936394FE237CD00800C59912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936394FD237CD00800C59912 /* SceneDelegate.swift */; };
@@ -40,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		931AD7F6237DD0CA009CC068 /* VetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetViewController.swift; sourceTree = "<group>"; };
+		931AD7FA237DD59F009CC068 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		931AD7FC237DD5B2009CC068 /* Pets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pets.swift; sourceTree = "<group>"; };
+		931AD7FE237DE391009CC068 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
+		9359245C237DB48A0070FA42 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
+		9359245F237DBDD10070FA42 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		936394F5237CD00800C59912 /* PetJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936394F8237CD00800C59912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936394FB237CD00800C59912 /* PetJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetJournal.xcdatamodel; sourceTree = "<group>"; };
@@ -87,6 +99,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		931AD7F8237DD0FD009CC068 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				93639534237CF33F00C59912 /* TabOverView.swift */,
+				93639530237CED9300C59912 /* CreatePetViewController.swift */,
+				9363952D237CD59E00C59912 /* PetViewController.swift */,
+				931AD7F6237DD0CA009CC068 /* VetViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		931AD7F9237DD22E009CC068 /* HelpClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9359245F237DBDD10070FA42 /* RoundedButton.swift */,
+				931AD7FC237DD5B2009CC068 /* Pets.swift */,
+				931AD7FA237DD59F009CC068 /* Pet.swift */,
+				931AD7FE237DE391009CC068 /* PetList.swift */,
+			);
+			path = HelpClasses;
+			sourceTree = "<group>";
+		};
+		9359245E237DB4960070FA42 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				9359245C237DB48A0070FA42 /* PetTableViewCell.swift */,
+			);
+			path = ViewCells;
+			sourceTree = "<group>";
+		};
 		936394EC237CD00800C59912 = {
 			isa = PBXGroup;
 			children = (
@@ -111,10 +153,11 @@
 		936394F7237CD00800C59912 /* PetJournal */ = {
 			isa = PBXGroup;
 			children = (
+				931AD7F9237DD22E009CC068 /* HelpClasses */,
+				931AD7F8237DD0FD009CC068 /* ViewControllers */,
+				9359245E237DB4960070FA42 /* ViewCells */,
 				936394F8237CD00800C59912 /* AppDelegate.swift */,
 				936394FD237CD00800C59912 /* SceneDelegate.swift */,
-				9363952D237CD59E00C59912 /* PetViewController.swift */,
-				93639530237CED9300C59912 /* CreatePetViewController.swift */,
 				936394FF237CD00800C59912 /* MasterViewController.swift */,
 				93639501237CD00800C59912 /* DetailViewController.swift */,
 				93639503237CD00800C59912 /* Main.storyboard */,
@@ -122,7 +165,6 @@
 				93639508237CD00900C59912 /* LaunchScreen.storyboard */,
 				9363950B237CD00900C59912 /* Info.plist */,
 				936394FA237CD00800C59912 /* PetJournal.xcdatamodeld */,
-				93639534237CF33F00C59912 /* TabOverView.swift */,
 			);
 			path = PetJournal;
 			sourceTree = "<group>";
@@ -277,11 +319,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				93639500237CD00800C59912 /* MasterViewController.swift in Sources */,
+				93592460237DBDD10070FA42 /* RoundedButton.swift in Sources */,
+				931AD7F7237DD0CA009CC068 /* VetViewController.swift in Sources */,
+				931AD7FF237DE391009CC068 /* PetList.swift in Sources */,
+				931AD7FD237DD5B2009CC068 /* Pets.swift in Sources */,
 				936394F9237CD00800C59912 /* AppDelegate.swift in Sources */,
 				93639535237CF33F00C59912 /* TabOverView.swift in Sources */,
 				93639502237CD00800C59912 /* DetailViewController.swift in Sources */,
+				9359245D237DB48A0070FA42 /* PetTableViewCell.swift in Sources */,
 				936394FC237CD00800C59912 /* PetJournal.xcdatamodeld in Sources */,
 				9363952E237CD59E00C59912 /* PetViewController.swift in Sources */,
+				931AD7FB237DD59F009CC068 /* Pet.swift in Sources */,
 				936394FE237CD00800C59912 /* SceneDelegate.swift in Sources */,
 				93639531237CED9300C59912 /* CreatePetViewController.swift in Sources */,
 			);
