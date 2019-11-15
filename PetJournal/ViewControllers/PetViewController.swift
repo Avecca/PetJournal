@@ -42,6 +42,14 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         //petsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
+    override func viewDidLayoutSubviews() {
+          //collectionview filled from bottom
+          petsTableView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
+      }
+    
+    
+    
+    //TABLE VIOEW FUNCTIONS
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -62,15 +70,18 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         pet = pets.entryPet(index: cellIndex)
         cell.configCell(obj: pet)
         cell.tag = cellIndex // btn?
+
         
-        //TODO
         //Make sure the names arnt upside down since we reversed the order of the cv
-       // cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-        
-        //TODO temp
-        //cell.textLabel?.text = pets[cellIndex]
+        cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        
+        
     }
     
     

@@ -378,35 +378,33 @@
         <!--Add Pet-->
         <scene sceneID="PAj-qX-I3M">
             <objects>
-                <viewController storyboardIdentifier="PopUpCreateViewController" id="sJE-Bf-sjF" customClass="CreatePetViewController" customModule="PetJournal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetPopUpViewController" id="sJE-Bf-sjF" customClass="CreatePetViewController" customModule="PetJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0d9-Va-FhF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzr-pP-8Mv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="backgroundColor" red="0.23137254900000001" green="0.52156862749999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="UDu-vT-iAI"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="PET">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="30" name="Charter-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANr-7G-btO">
+                                <rect key="frame" x="30" y="35" width="315" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.23137254900000001" green="0.52156862749999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xzr-pP-8Mv" firstAttribute="leading" secondItem="vs0-tt-NBH" secondAttribute="leading" id="Ztr-1F-N03"/>
-                            <constraint firstItem="xzr-pP-8Mv" firstAttribute="top" secondItem="vs0-tt-NBH" secondAttribute="top" id="jem-ko-Gcs"/>
-                            <constraint firstItem="xzr-pP-8Mv" firstAttribute="centerX" secondItem="0d9-Va-FhF" secondAttribute="centerX" id="kGP-Xe-nln"/>
+                            <constraint firstItem="ANr-7G-btO" firstAttribute="centerX" secondItem="0d9-Va-FhF" secondAttribute="centerX" id="2bn-vC-KK2"/>
+                            <constraint firstItem="vs0-tt-NBH" firstAttribute="trailing" secondItem="ANr-7G-btO" secondAttribute="trailing" constant="30" id="AEs-Xg-4Mu"/>
+                            <constraint firstItem="ANr-7G-btO" firstAttribute="leading" secondItem="vs0-tt-NBH" secondAttribute="leading" constant="30" id="Bcl-E8-YoS"/>
+                            <constraint firstItem="ANr-7G-btO" firstAttribute="centerY" secondItem="0d9-Va-FhF" secondAttribute="centerY" id="Y4a-FY-zaE"/>
+                            <constraint firstItem="ANr-7G-btO" firstAttribute="top" secondItem="vs0-tt-NBH" secondAttribute="top" constant="35" id="Z6W-1z-Zdx"/>
+                            <constraint firstItem="vs0-tt-NBH" firstAttribute="bottom" secondItem="ANr-7G-btO" secondAttribute="bottom" constant="35" id="lWy-xP-P31"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vs0-tt-NBH"/>
                     </view>
@@ -414,7 +412,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wiN-jv-0e1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="-1510"/>
+            <point key="canvasLocation" x="485.60000000000002" y="-1510.7946026986508"/>
         </scene>
         <!--Vet-->
         <scene sceneID="e9f-cB-iZw">
