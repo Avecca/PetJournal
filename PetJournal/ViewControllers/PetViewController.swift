@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import  CoreData
 
 class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -16,10 +17,17 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var petsTableView: UITableView!
     
     //var pets: [Pet] = []  //[Pet]
-    var pet: Pet?
+    var pet: NSManagedObject?
     private let pets = Pets();
     
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        pets.fetchPets()
+        self.petsTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,7 +60,7 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         
         pet = pets.entryPet(index: cellIndex)
-        cell.configCell(pet: pet)
+        cell.configCell(obj: pet)
         cell.tag = cellIndex // btn?
         
         //TODO

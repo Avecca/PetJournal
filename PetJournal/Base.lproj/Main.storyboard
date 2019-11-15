@@ -235,32 +235,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khv-nQ-Oh2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YvK-dg-0L0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="backgroundColor" red="0.23137254900000001" green="0.52156862749999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khv-nQ-Oh2">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <color key="backgroundColor" red="0.23137254900000001" green="0.52156862749999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="sYy-g5-arT"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Add Pet">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="30" name="Charter-Black"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBB-zQ-7bE">
+                                        <rect key="frame" x="323" y="11" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="CTi-TV-KP7"/>
+                                            <constraint firstAttribute="height" constant="22" id="Vuz-am-zST"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="eC4-fB-r1n"/>
+                                            <constraint firstAttribute="width" secondItem="iBB-zQ-7bE" secondAttribute="height" multiplier="1:1" id="tio-Ao-gdH"/>
+                                        </constraints>
+                                        <state key="normal" image="Cancel_Icon_Black">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelBtnClick:" destination="cZB-fW-Yhb" eventType="touchUpInside" id="KYe-UL-Ie7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="sYy-g5-arT"/>
+                                    <constraint firstAttribute="height" constant="44" id="AIM-SE-UUQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Edb-Nl-wfg"/>
+                                    <constraint firstItem="khv-nQ-Oh2" firstAttribute="top" secondItem="YvK-dg-0L0" secondAttribute="top" id="LG7-mW-g9e"/>
+                                    <constraint firstAttribute="trailing" secondItem="khv-nQ-Oh2" secondAttribute="trailing" id="LPL-5C-zaF"/>
+                                    <constraint firstAttribute="bottom" secondItem="khv-nQ-Oh2" secondAttribute="bottom" id="TrB-HL-zoV"/>
+                                    <constraint firstItem="iBB-zQ-7bE" firstAttribute="centerY" secondItem="khv-nQ-Oh2" secondAttribute="centerY" id="Vb2-LC-i0s"/>
+                                    <constraint firstAttribute="trailing" secondItem="iBB-zQ-7bE" secondAttribute="trailing" constant="30" id="b95-2J-eTl"/>
+                                    <constraint firstItem="khv-nQ-Oh2" firstAttribute="leading" secondItem="YvK-dg-0L0" secondAttribute="leading" id="rdK-Ba-Ukg"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Add Pet">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="30" name="Charter-Black"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Iu7-QN-5JM">
-                                <rect key="frame" x="30" y="213" width="315" height="34"/>
-                                <color key="backgroundColor" red="0.82352941176470584" green="0.88235294117647056" blue="0.92156862745098034" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" textContentType="name"/>
-                            </textField>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgy-8p-1US">
+                                <rect key="frame" x="30" y="155" width="315" height="410.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Iu7-QN-5JM">
+                                        <rect key="frame" x="5" y="8" width="305" height="34"/>
+                                        <color key="backgroundColor" red="0.82352941176470584" green="0.88235294117647056" blue="0.92156862745098034" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Animal Type: Dog/Cat" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="mcv-UP-pNf">
+                                        <rect key="frame" x="5" y="50" width="305" height="34"/>
+                                        <color key="backgroundColor" red="0.82352941180000006" green="0.88235294119999996" blue="0.92156862750000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Race : Poodle/Manx" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gLl-A8-gHF">
+                                        <rect key="frame" x="5" y="92" width="305" height="34"/>
+                                        <color key="backgroundColor" red="0.82352941180000006" green="0.88235294119999996" blue="0.92156862750000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="gLl-A8-gHF" firstAttribute="top" secondItem="mcv-UP-pNf" secondAttribute="bottom" constant="8" id="2HW-Rm-AII"/>
+                                    <constraint firstAttribute="trailing" secondItem="Iu7-QN-5JM" secondAttribute="trailing" constant="5" id="Fsn-P5-CW0"/>
+                                    <constraint firstItem="mcv-UP-pNf" firstAttribute="top" secondItem="Iu7-QN-5JM" secondAttribute="bottom" constant="8" id="JDx-JJ-5b0"/>
+                                    <constraint firstItem="gLl-A8-gHF" firstAttribute="top" secondItem="mcv-UP-pNf" secondAttribute="bottom" constant="8" id="M4M-xL-cLC"/>
+                                    <constraint firstAttribute="trailing" secondItem="mcv-UP-pNf" secondAttribute="trailing" constant="5" id="QJJ-eO-wiT"/>
+                                    <constraint firstItem="mcv-UP-pNf" firstAttribute="top" secondItem="Iu7-QN-5JM" secondAttribute="bottom" constant="8" id="Te0-Pa-Mvm"/>
+                                    <constraint firstItem="Iu7-QN-5JM" firstAttribute="top" secondItem="sgy-8p-1US" secondAttribute="top" constant="8" id="kI9-NM-QVQ"/>
+                                    <constraint firstItem="Iu7-QN-5JM" firstAttribute="leading" secondItem="sgy-8p-1US" secondAttribute="leading" constant="5" id="qV0-Zv-8rM"/>
+                                    <constraint firstAttribute="trailing" secondItem="gLl-A8-gHF" secondAttribute="trailing" constant="5" id="tFF-lK-byx"/>
+                                    <constraint firstItem="mcv-UP-pNf" firstAttribute="leading" secondItem="sgy-8p-1US" secondAttribute="leading" constant="5" id="unQ-Ed-Z8C"/>
+                                    <constraint firstItem="gLl-A8-gHF" firstAttribute="leading" secondItem="sgy-8p-1US" secondAttribute="leading" constant="5" id="yut-l9-Y9T"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P9y-bu-YHs" customClass="RoundedButton" customModule="PetJournal" customModuleProvider="target">
                                 <rect key="frame" x="30" y="570.5" width="315" height="42.5"/>
                                 <color key="backgroundColor" red="0.23137254900000001" green="0.52156862749999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42.5" id="w14-eZ-eTh"/>
+                                </constraints>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="SAVE">
@@ -286,21 +351,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="khv-nQ-Oh2" firstAttribute="top" secondItem="Jmh-31-oaB" secondAttribute="top" id="1Sm-bH-SpF"/>
-                            <constraint firstItem="Jmh-31-oaB" firstAttribute="trailing" secondItem="Iu7-QN-5JM" secondAttribute="trailing" constant="30" id="6Qy-sn-vnS"/>
-                            <constraint firstItem="Jmh-31-oaB" firstAttribute="trailing" secondItem="P9y-bu-YHs" secondAttribute="trailing" constant="30" id="P76-ZY-4u3"/>
-                            <constraint firstItem="Iu7-QN-5JM" firstAttribute="leading" secondItem="Jmh-31-oaB" secondAttribute="leading" constant="30" id="faz-5c-AYl"/>
-                            <constraint firstItem="Jmh-31-oaB" firstAttribute="bottom" secondItem="P9y-bu-YHs" secondAttribute="bottom" constant="5" id="lON-gk-Fuq"/>
-                            <constraint firstItem="khv-nQ-Oh2" firstAttribute="centerX" secondItem="hUt-4i-Szk" secondAttribute="centerX" id="qh9-y3-E0r"/>
-                            <constraint firstItem="Jmh-31-oaB" firstAttribute="bottom" secondItem="Iu7-QN-5JM" secondAttribute="bottom" constant="371" id="tZx-Ec-10l"/>
-                            <constraint firstItem="P9y-bu-YHs" firstAttribute="leading" secondItem="Jmh-31-oaB" secondAttribute="leading" constant="30" id="uaw-g9-oF0"/>
-                            <constraint firstItem="khv-nQ-Oh2" firstAttribute="leading" secondItem="Jmh-31-oaB" secondAttribute="leading" id="zDO-Ww-RNK"/>
+                            <constraint firstItem="Jmh-31-oaB" firstAttribute="trailing" secondItem="sgy-8p-1US" secondAttribute="trailing" constant="30" id="4qU-RA-Ibl"/>
+                            <constraint firstItem="P9y-bu-YHs" firstAttribute="top" secondItem="sgy-8p-1US" secondAttribute="bottom" constant="5" id="A2R-va-Ti1"/>
+                            <constraint firstItem="sgy-8p-1US" firstAttribute="top" secondItem="hUt-4i-Szk" secondAttribute="top" constant="155" id="Foc-jA-SIF"/>
+                            <constraint firstItem="Jmh-31-oaB" firstAttribute="bottom" secondItem="P9y-bu-YHs" secondAttribute="bottom" constant="5" id="RLj-cB-BPY"/>
+                            <constraint firstItem="sgy-8p-1US" firstAttribute="leading" secondItem="Jmh-31-oaB" secondAttribute="leading" constant="30" id="cRR-wm-R0j"/>
+                            <constraint firstItem="YvK-dg-0L0" firstAttribute="top" secondItem="Jmh-31-oaB" secondAttribute="top" id="oa0-jI-XPl"/>
+                            <constraint firstItem="YvK-dg-0L0" firstAttribute="leading" secondItem="Jmh-31-oaB" secondAttribute="leading" id="r4f-Or-aic"/>
+                            <constraint firstItem="P9y-bu-YHs" firstAttribute="leading" secondItem="Jmh-31-oaB" secondAttribute="leading" constant="30" id="w2h-NU-HCd"/>
+                            <constraint firstItem="Jmh-31-oaB" firstAttribute="trailing" secondItem="P9y-bu-YHs" secondAttribute="trailing" constant="30" id="ws6-LV-trz"/>
+                            <constraint firstItem="YvK-dg-0L0" firstAttribute="trailing" secondItem="Jmh-31-oaB" secondAttribute="trailing" id="zLp-qG-f4j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jmh-31-oaB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Pet" image="Pet_Journal_Add_White" id="Mp9-Iy-Ijf"/>
                     <connections>
                         <outlet property="nameLbl" destination="Iu7-QN-5JM" id="gLd-Xj-3Of"/>
+                        <outlet property="raceTxtField" destination="gLl-A8-gHF" id="v0c-la-Qzc"/>
+                        <outlet property="typeTxtField" destination="mcv-UP-pNf" id="zps-3m-f1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAp-s5-7Nj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -391,6 +459,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cancel_Icon_Black" width="512" height="512"/>
         <image name="Pet_Journal_ Veterinary" width="23" height="23"/>
         <image name="Pet_Journal_Add_White" width="23" height="23"/>
         <image name="Pet_Journal_White" width="23" height="23"/>

@@ -8,11 +8,11 @@
 
 import Foundation
     
-struct Pet {   //TODO Ska denna vara struct
-    var name : String
-    
-    init(name: String) {
-        self.name = name
-    }
-}
+//struct Pet {   //TODO Ska denna vara struct
+//    var name : String
+//
+//    init(name: String) {
+//        self.name = name
+//    }
+//}
 

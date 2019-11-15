@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PetTableViewCell: UITableViewCell {
 
@@ -23,12 +24,11 @@ class PetTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configCell(pet: Pet?){  //pet: Pet
+    func configCell(obj: NSManagedObject?){  //pet: Pet //Pet
         
-        if pet != nil {
-            nameLbl.text? = pet!.name
+        if obj != nil {
+            nameLbl?.text = obj!.value(forKeyPath : "name") as? String
         }
-        
         
     }
 
