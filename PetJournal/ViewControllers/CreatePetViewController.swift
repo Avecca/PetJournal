@@ -14,7 +14,7 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameLbl: UITextField!
     @IBOutlet weak var typeTxtField: UITextField!
     @IBOutlet weak var raceTxtField: UITextField!
-    
+    @IBOutlet weak var idTxtField: UITextField!
     
     var pet : NSManagedObject?
     private let pets = Pets()
@@ -27,6 +27,7 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
         nameLbl.delegate = self
         typeTxtField.delegate = self
         raceTxtField.delegate = self
+        idTxtField.delegate = self
         
         //alert msg initialized
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
@@ -47,6 +48,9 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
         guard let raceField = raceTxtField.text else {
             return
         }
+        guard let idField = idTxtField.text else {
+            return
+        }
         
         //pet = Pet(name: nameField)
         
@@ -56,7 +60,7 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
         
        // pets.addPet(obj: pet(nameField))
        
-        if (pets.addPet(name: nameField, type: typeField, race: raceField)){
+        if (pets.addPet(name: nameField, type: typeField, race: raceField, id : idField)){
             self.present(self.alert,animated: true)
         } else{
             //TODO other popup
@@ -87,7 +91,8 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
     func clearAllFields() {
         self.nameLbl.text = "Name"
         self.typeTxtField.text = "Animal Type: Dog/Cat"
-        self.raceTxtField.text = "Race : Poodle/Manx"
+        self.raceTxtField.text = "Breed : Poodle/Manx"
+        self.idTxtField.text = "ID Number"
     }
     
     

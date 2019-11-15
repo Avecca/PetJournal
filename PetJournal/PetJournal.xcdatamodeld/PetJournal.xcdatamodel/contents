@@ -5,12 +5,13 @@
         <userInfo/>
     </entity>
     <entity name="Pet" representedClassName="Pet" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="race" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
-        <element name="Pet" positionX="261" positionY="198" width="128" height="88"/>
+        <element name="Pet" positionX="261" positionY="198" width="128" height="103"/>
     </elements>
 </model>

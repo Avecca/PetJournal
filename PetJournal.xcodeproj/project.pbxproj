@@ -26,6 +26,7 @@
 		9363952E237CD59E00C59912 /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363952D237CD59E00C59912 /* PetViewController.swift */; };
 		93639531237CED9300C59912 /* CreatePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93639530237CED9300C59912 /* CreatePetViewController.swift */; };
 		93639535237CF33F00C59912 /* TabOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93639534237CF33F00C59912 /* TabOverView.swift */; };
+		93E14543237E3816005FA3D6 /* PetPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E14542237E3816005FA3D6 /* PetPopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		9363952F237CDE9000C59912 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		93639530237CED9300C59912 /* CreatePetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetViewController.swift; sourceTree = "<group>"; };
 		93639534237CF33F00C59912 /* TabOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOverView.swift; sourceTree = "<group>"; };
+		93E14542237E3816005FA3D6 /* PetPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				93639530237CED9300C59912 /* CreatePetViewController.swift */,
 				9363952D237CD59E00C59912 /* PetViewController.swift */,
 				931AD7F6237DD0CA009CC068 /* VetViewController.swift */,
+				93E14542237E3816005FA3D6 /* PetPopUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				9363952E237CD59E00C59912 /* PetViewController.swift in Sources */,
 				931AD7FB237DD59F009CC068 /* Pet.swift in Sources */,
 				936394FE237CD00800C59912 /* SceneDelegate.swift in Sources */,
+				93E14543237E3816005FA3D6 /* PetPopUpViewController.swift in Sources */,
 				93639531237CED9300C59912 /* CreatePetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

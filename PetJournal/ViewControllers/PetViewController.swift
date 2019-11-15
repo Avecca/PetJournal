@@ -16,6 +16,8 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
  
     @IBOutlet weak var petsTableView: UITableView!
     
+    let segueToPetPopUpId = "segueToPetPopUp"
+    
     //var pets: [Pet] = []  //[Pet]
     var pet: NSManagedObject?
     private let pets = Pets();
@@ -69,7 +71,8 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         pet = pets.entryPet(index: cellIndex)
         cell.configCell(obj: pet)
-        cell.tag = cellIndex // btn?
+        cell.nameLbl.tag = cellIndex // btn?
+        cell.nameBtn.tag = cellIndex
 
         
         //Make sure the names arnt upside down since we reversed the order of the cv
@@ -78,14 +81,65 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print(indexPath.row)
+//
+////
+//        self.performSegue(withIdentifier: self.segueToPetPopUpId, sender: self)
+//
+//        //OR
+////        let sb = UIStoryboard(name: "Main", bundle: nil)
+////        let pop = sb.instantiateViewController(identifier: "PetPopUpViewController")
+////
+////        self.present(pop, animated: true)
+//
+//
+//
+//
+//    }
+    
+//    @IBAction func petNameBtnClick(_ sender: UIButton) {
+//
+//       // let index = sender.tag
+//
+//        //print(index)
+//
+//
+////        self.performSegue(withIdentifier: self.segueToPetPopUpId, sender: self)
+//        //
+//        //        //OR
+//        ////        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        ////        let pop = sb.instantiateViewController(identifier: "PetPopUpViewController")
+//        ////
+//        ////        self.present(pop, animated: true)
+//
+//
+//    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
+        
+        if segue.identifier == segueToPetPopUpId {
+            
+            print(" CLICKKKKKKKK \(sender)")
+
+            let cell = sender as! UIButton
+            
+            let petId = cell.tag
+
+            print(" petid:  \(petId)")
+
+            let destinationVC = segue.destination as! PetPopUpViewController
+
+            destinationVC.recievingPetId = petId
+            destinationVC.oldVC = self
+
+            
+
+        }
         
     }
-    
-    
-    
     
     
     
