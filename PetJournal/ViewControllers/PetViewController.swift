@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import  CoreData
+import CoreData
 
 class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 

@@ -1,8 +1,8 @@
 //
-//  Pets.swift
+//  VeterinaryVisits.swift
 //  PetJournal
 //
-//  Created by Hanna Astlind on 2019-11-14.
+//  Created by Hanna Astlind on 2019-11-19.
 //  Copyright © 2019 Hanna Astlind. All rights reserved.
 //
 
@@ -11,54 +11,56 @@ import CoreData
 import UIKit
 
 
-struct Pets {
+struct VeterinaryVisits {
         //struct kan inte använda arv och objecten kan inte refereras på från flera olika instanser
     
-    let entityName = "Pet"
+    let entityName = "Visit"
     
     
-    func countPets() -> Int {
+    func countVisists() -> Int {
         return PetList.petList.count
     }
     
-    func addPet(name : String, type : String, race : String, id: String)  -> Bool{  //Pet  //obj: NSManagedObject
+    func addVisit(name : String, type : String, race : String, id: String)  -> Bool{  //Pet  //obj: NSManagedObject
         
         
-        //TODO NO DUPLICATE NAMES
+        //TODO
         let context = getContext()
         
             if let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) {
-                  let pet = NSManagedObject(entity: entity, insertInto: context)
+                  let visit = NSManagedObject(entity: entity, insertInto: context)
                 
-                pet.setValue(name, forKeyPath: "name")
-                pet.setValue(type, forKeyPath: "type")
-                pet.setValue(race, forKeyPath: "race")
-                pet.setValue(id, forKeyPath: "id")
+                let index =  countVisists() + 1
+                visit.setValue(index, forKey: "index")
+//                visit.setValue(name, forKeyPath: "name")
+//                visit.setValue(type, forKeyPath: "type")
+//                visit.setValue(race, forKeyPath: "race")
+//                visit.setValue(id, forKeyPath: "id")
                 
                 
                 do {
                     try context.save()
-                    PetList.petList.append(pet)
-                    print("Pet saved")
+                    VeterinaryVisitsList.vetList.append(visit)
+                    print("Visit saved")
                     return true
                 } catch let err as NSError {
-                    print("Unable to save pet. \(err), \(err.userInfo)")
+                    print("Unable to save VISIT. \(err), \(err.userInfo)")
                     
                 }
-        
             }
         return false
  
     }
     
-    func fetchPets(){
+    func fetchVisits(){
         let context = getContext()
         
         let fetchRq = NSFetchRequest<NSManagedObject>(entityName: entityName)
         
         
         do {
-            PetList.petList =  try context.fetch(fetchRq)
+            VeterinaryVisitsList.vetList = try context.fetch(fetchRq)
+            // TODO order them fro due time
         } catch let err as NSError {
             print("Unable to fetch pets. \(err), \(err.userInfo)")
         }
@@ -70,21 +72,16 @@ struct Pets {
     }
     
     
-     func addPet2(obj: NSManagedObject)  { // //Pet
-
-        PetList.petList.append(obj)
-
-     }
     
-    func deletePet(index: Int){
+    func deleteVisit(index: Int){
         
-        let pet = PetList.petList[index]
-        let name = pet.value(forKeyPath: "name") as? String
+        let visit = PetList.petList[index]
+        let visitIndex = visit.value(forKeyPath: "index") as? String
         
         let context = getContext()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        request.predicate = NSPredicate(format: "name = %@ ", name as! CVarArg)
+        request.predicate = NSPredicate(format: "index = %@ ", visitIndex as! CVarArg)
         
 
         do {
@@ -92,7 +89,7 @@ struct Pets {
             
             if result.count > 0 {
                 context.delete(result[0])
-                PetList.petList.remove(at: index)
+                VeterinaryVisitsList.vetList.remove(at: index)
 
                 print("DELETEING ITEM FROM DB AND LIST")
             }
@@ -108,16 +105,12 @@ struct Pets {
             
         }
         
-        
-        
-       
-        //TODO add database
     }
     
-    func entryPet(index: Int) -> NSManagedObject? {
+    func entryVisit(index: Int) -> NSManagedObject? {
         
-        if index >= 0 && index <= PetList.petList.count {
-            return PetList.petList[index]
+        if index >= 0 && index <= VeterinaryVisitsList.vetList.count {
+            return VeterinaryVisitsList.vetList[index]
         }
         
         return nil
@@ -153,3 +146,4 @@ struct Pets {
         
         //PetList.petList.append(obj)
         //petList.append(pet)
+

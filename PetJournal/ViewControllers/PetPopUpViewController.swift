@@ -30,7 +30,6 @@ class PetPopUpViewController: UIViewController {
         styleInnerView()
         
         fillLabels()
-        
 
     }
     
@@ -42,7 +41,7 @@ class PetPopUpViewController: UIViewController {
     
     func fillLabels() {
         
-        print("RECIEVING ID \(recievingPetId)")
+        //print("RECIEVING ID \(recievingPetId)")
         pet = pets.entryPet(index: recievingPetId!)
         
         if let name = pet!.value(forKeyPath: "name") as? String {
@@ -67,7 +66,7 @@ class PetPopUpViewController: UIViewController {
     
     @IBAction func deleteBtnClick(_ sender: Any) {
         
-        print("DELETE PRESSED \(recievingPetId)")
+       // print("DELETE PRESSED \(recievingPetId)")
         
         pets.deletePet(index: recievingPetId!)
         oldVC.petsTableView.reloadData()
