@@ -21,7 +21,7 @@ struct VeterinaryVisits {
         return PetList.petList.count
     }
     
-    func addVisit(name : String, type : String, race : String, id: String)  -> Bool{  //Pet  //obj: NSManagedObject
+    func addVisit(reason : String, time : Date, info: String)  -> Bool{  //Pet  //obj: NSManagedObject
         
         
         //TODO
@@ -32,9 +32,10 @@ struct VeterinaryVisits {
                 
                 let index =  countVisists() + 1
                 visit.setValue(index, forKey: "index")
-//                visit.setValue(name, forKeyPath: "name")
-//                visit.setValue(type, forKeyPath: "type")
-//                visit.setValue(race, forKeyPath: "race")
+                visit.setValue(reason, forKeyPath: "reason")
+                visit.setValue(time, forKeyPath: "date")
+                visit.setValue(info, forKeyPath: "info")
+                //TODO Add Pets
 //                visit.setValue(id, forKeyPath: "id")
                 
                 

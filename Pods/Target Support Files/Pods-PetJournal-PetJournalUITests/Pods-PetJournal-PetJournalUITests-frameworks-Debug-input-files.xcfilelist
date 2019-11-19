@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-PetJournal-PetJournalUITests/Pods-PetJournal-PetJournalUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/MultiSelectSegmentedControl/MultiSelectSegmentedControl.framework
+${BUILT_PRODUCTS_DIR}/SweeterSwift/SweeterSwift.framework

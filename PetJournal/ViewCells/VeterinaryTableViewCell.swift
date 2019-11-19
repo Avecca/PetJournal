@@ -11,6 +11,8 @@ import CoreData
 
 class VeterinaryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var reasonBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,7 +27,8 @@ class VeterinaryTableViewCell: UITableViewCell {
     func configCell(obj: NSManagedObject?){  //pet: Pet //Pet
         
         if obj != nil {
-            let name = obj!.value(forKeyPath: "name") as? String
+            let reason = obj!.value(forKeyPath: "reason") as? String
+            reasonBtn?.setTitle(reason, for: .normal)
            // nameLbl?.text = name
            // nameBtn?.setTitle(name, for: .normal)
             

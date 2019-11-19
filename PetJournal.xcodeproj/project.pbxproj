@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D413B8E5882F84CE641A50B /* Pods_PetJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DBF2A7F012100CFEAB910 /* Pods_PetJournal.framework */; };
+		5738C80F51973AB9F91834B8 /* Pods_PetJournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E568321B812DFAB0EED26267 /* Pods_PetJournalTests.framework */; };
+		707E356E31D707CC1863C310 /* Pods_PetJournal_PetJournalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF80CF9DA6CBD31E568AA7D4 /* Pods_PetJournal_PetJournalUITests.framework */; };
 		931AD7FB237DD59F009CC068 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD7FA237DD59F009CC068 /* Pet.swift */; };
 		931AD7FD237DD5B2009CC068 /* Pets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD7FC237DD5B2009CC068 /* Pets.swift */; };
 		931AD7FF237DE391009CC068 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD7FE237DE391009CC068 /* PetList.swift */; };
@@ -51,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B303EF41A0B610B080ED7AC /* Pods-PetJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetJournal.debug.xcconfig"; path = "Target Support Files/Pods-PetJournal/Pods-PetJournal.debug.xcconfig"; sourceTree = "<group>"; };
 		931AD7FA237DD59F009CC068 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		931AD7FC237DD5B2009CC068 /* Pets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pets.swift; sourceTree = "<group>"; };
 		931AD7FE237DE391009CC068 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
@@ -82,6 +86,14 @@
 		93639530237CED9300C59912 /* CreatePetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetViewController.swift; sourceTree = "<group>"; };
 		93639534237CF33F00C59912 /* TabOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOverView.swift; sourceTree = "<group>"; };
 		93E14542237E3816005FA3D6 /* PetPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPopUpViewController.swift; sourceTree = "<group>"; };
+		B02DBF2A7F012100CFEAB910 /* Pods_PetJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7A80571AF420421ABC4DD15 /* Pods-PetJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetJournal.release.xcconfig"; path = "Target Support Files/Pods-PetJournal/Pods-PetJournal.release.xcconfig"; sourceTree = "<group>"; };
+		BE58A92AD81C06E019B9959E /* Pods-PetJournal-PetJournalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetJournal-PetJournalUITests.release.xcconfig"; path = "Target Support Files/Pods-PetJournal-PetJournalUITests/Pods-PetJournal-PetJournalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C28DA62E2163A7D05D21D2D9 /* Pods-PetJournalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetJournalTests.debug.xcconfig"; path = "Target Support Files/Pods-PetJournalTests/Pods-PetJournalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8A0347A98B59DFB2AB11530 /* Pods-PetJournal-PetJournalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetJournal-PetJournalUITests.debug.xcconfig"; path = "Target Support Files/Pods-PetJournal-PetJournalUITests/Pods-PetJournal-PetJournalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E568321B812DFAB0EED26267 /* Pods_PetJournalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetJournalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBFC28351CDE981A49F5AFF7 /* Pods-PetJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetJournalTests.release.xcconfig"; path = "Target Support Files/Pods-PetJournalTests/Pods-PetJournalTests.release.xcconfig"; sourceTree = "<group>"; };
+		FF80CF9DA6CBD31E568AA7D4 /* Pods_PetJournal_PetJournalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetJournal_PetJournalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D413B8E5882F84CE641A50B /* Pods_PetJournal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5738C80F51973AB9F91834B8 /* Pods_PetJournalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,12 +117,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				707E356E31D707CC1863C310 /* Pods_PetJournal_PetJournalUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		462EDE6C3222F24874D0B1EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B303EF41A0B610B080ED7AC /* Pods-PetJournal.debug.xcconfig */,
+				B7A80571AF420421ABC4DD15 /* Pods-PetJournal.release.xcconfig */,
+				D8A0347A98B59DFB2AB11530 /* Pods-PetJournal-PetJournalUITests.debug.xcconfig */,
+				BE58A92AD81C06E019B9959E /* Pods-PetJournal-PetJournalUITests.release.xcconfig */,
+				C28DA62E2163A7D05D21D2D9 /* Pods-PetJournalTests.debug.xcconfig */,
+				EBFC28351CDE981A49F5AFF7 /* Pods-PetJournalTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		931AD7F8237DD0FD009CC068 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +181,8 @@
 				93639513237CD00900C59912 /* PetJournalTests */,
 				9363951E237CD00900C59912 /* PetJournalUITests */,
 				936394F6237CD00800C59912 /* Products */,
+				462EDE6C3222F24874D0B1EC /* Pods */,
+				CEA798FAA9C1C90C38431CEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +233,16 @@
 			path = PetJournalUITests;
 			sourceTree = "<group>";
 		};
+		CEA798FAA9C1C90C38431CEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B02DBF2A7F012100CFEAB910 /* Pods_PetJournal.framework */,
+				FF80CF9DA6CBD31E568AA7D4 /* Pods_PetJournal_PetJournalUITests.framework */,
+				E568321B812DFAB0EED26267 /* Pods_PetJournalTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,9 +250,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93639524237CD00900C59912 /* Build configuration list for PBXNativeTarget "PetJournal" */;
 			buildPhases = (
+				BF747C1B7C96396F91B94AF1 /* [CP] Check Pods Manifest.lock */,
 				936394F1237CD00800C59912 /* Sources */,
 				936394F2237CD00800C59912 /* Frameworks */,
 				936394F3237CD00800C59912 /* Resources */,
+				F9C41230EB3C0B64E1D7D985 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93639527237CD00900C59912 /* Build configuration list for PBXNativeTarget "PetJournalTests" */;
 			buildPhases = (
+				C0DD27557A8859188301A85C /* [CP] Check Pods Manifest.lock */,
 				9363950C237CD00900C59912 /* Sources */,
 				9363950D237CD00900C59912 /* Frameworks */,
 				9363950E237CD00900C59912 /* Resources */,
@@ -244,9 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9363952A237CD00900C59912 /* Build configuration list for PBXNativeTarget "PetJournalUITests" */;
 			buildPhases = (
+				6A02DA3461BF8FBAB08708EF /* [CP] Check Pods Manifest.lock */,
 				93639517237CD00900C59912 /* Sources */,
 				93639518237CD00900C59912 /* Frameworks */,
 				93639519237CD00900C59912 /* Resources */,
+				AAEDA6690105754CF5507362 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -327,6 +373,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A02DA3461BF8FBAB08708EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetJournal-PetJournalUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAEDA6690105754CF5507362 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetJournal-PetJournalUITests/Pods-PetJournal-PetJournalUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetJournal-PetJournalUITests/Pods-PetJournal-PetJournalUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PetJournal-PetJournalUITests/Pods-PetJournal-PetJournalUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF747C1B7C96396F91B94AF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetJournal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0DD27557A8859188301A85C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetJournalTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9C41230EB3C0B64E1D7D985 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetJournal/Pods-PetJournal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetJournal/Pods-PetJournal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PetJournal/Pods-PetJournal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		936394F1237CD00800C59912 /* Sources */ = {
@@ -522,6 +671,7 @@
 		};
 		93639525237CD00900C59912 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B303EF41A0B610B080ED7AC /* Pods-PetJournal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +690,7 @@
 		};
 		93639526237CD00900C59912 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7A80571AF420421ABC4DD15 /* Pods-PetJournal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +709,7 @@
 		};
 		93639528237CD00900C59912 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C28DA62E2163A7D05D21D2D9 /* Pods-PetJournalTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -580,6 +732,7 @@
 		};
 		93639529237CD00900C59912 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBFC28351CDE981A49F5AFF7 /* Pods-PetJournalTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -602,6 +755,7 @@
 		};
 		9363952B237CD00900C59912 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8A0347A98B59DFB2AB11530 /* Pods-PetJournal-PetJournalUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -622,6 +776,7 @@
 		};
 		9363952C237CD00900C59912 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE58A92AD81C06E019B9959E /* Pods-PetJournal-PetJournalUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

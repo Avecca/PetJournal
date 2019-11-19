@@ -1,0 +1,6 @@
+framework module Pods_PetJournal {
+  umbrella header "Pods-PetJournal-umbrella.h"
+
+  export *
+  module * { export * }
+}

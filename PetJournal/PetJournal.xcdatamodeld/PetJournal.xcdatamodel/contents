@@ -10,8 +10,15 @@
         <attribute name="race" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Visit" representedClassName="Visit" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="index" optional="YES" attributeType="String"/>
+        <attribute name="info" optional="YES" attributeType="String"/>
+        <attribute name="reason" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
         <element name="Pet" positionX="261" positionY="198" width="128" height="103"/>
+        <element name="Visit" positionX="261" positionY="225" width="128" height="103"/>
     </elements>
 </model>

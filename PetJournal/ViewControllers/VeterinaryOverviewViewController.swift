@@ -14,6 +14,8 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
     
     @IBOutlet weak var VeterinaryTV: UITableView!
     
+     let segueCreate = "segueToCreateVisit"
+    
     var visit: NSManagedObject?
     private let veterinaryVisits = VeterinaryVisits();
     
@@ -39,13 +41,15 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
     
 
     
+    
+    //TableView Delegate and Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return veterinaryVisits.countVisists()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = VeterinaryTV.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PetTableViewCell
+        let cell = VeterinaryTV.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! VeterinaryTableViewCell
         
         let cellIndex = indexPath.item
         
@@ -59,6 +63,23 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
         
         return cell
     }
+    
+    
+    //Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+
+        if segue.identifier == segueCreate  {
+
+        }
+        
+    }
+    
+   @IBAction func unwindToHere( segue: UIStoryboardSegue) {
+        self.VeterinaryTV.reloadData()
+    }
+    
+    
     
     
     /*

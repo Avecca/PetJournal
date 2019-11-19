@@ -51,7 +51,7 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     
     
-    //TABLE VIOEW FUNCTIONS
+    //TABLE VIEW FUNCTIONS
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -71,7 +71,7 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         pet = pets.entryPet(index: cellIndex)
         cell.configCell(obj: pet)
-        cell.nameLbl.tag = cellIndex // btn?
+       // cell.nameLbl.tag = cellIndex // btn?
         cell.nameBtn.tag = cellIndex
 
         

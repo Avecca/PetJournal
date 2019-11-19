@@ -11,7 +11,7 @@ import CoreData
 
 class PetTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameLbl: UILabel!
+   // @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var nameBtn: UIButton!
     
     override func awakeFromNib() {
@@ -29,7 +29,7 @@ class PetTableViewCell: UITableViewCell {
         
         if obj != nil {
             let name = obj!.value(forKeyPath: "name") as? String
-            nameLbl?.text = name
+           // nameLbl?.text = name
             nameBtn?.setTitle(name, for: .normal)
             
         }

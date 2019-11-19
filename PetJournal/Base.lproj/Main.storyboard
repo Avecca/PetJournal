@@ -713,7 +713,19 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W62-n3-ygH" id="AAQ-M3-o4y">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teT-vb-1Th">
+                                                    <rect key="frame" x="152" y="6" width="51" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Reason">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="reasonBtn" destination="teT-vb-1Th" id="z6t-FM-xW3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -747,6 +759,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="savePetBtn:" destination="cZB-fW-Yhb" eventType="touchUpInside" id="Wpw-W4-4vU"/>
+                                    <segue destination="9NM-el-R0b" kind="show" identifier="segueToCreateVisit" id="r84-Yo-FhA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -782,7 +795,7 @@
             <objects>
                 <viewController id="9NM-el-R0b" customClass="CreateVeterinaryVisitViewController" customModule="PetJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mup-ss-TE5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10p-CE-ev7">
@@ -813,6 +826,9 @@
                                             <constraint firstAttribute="height" constant="28" id="Nql-W2-cuI"/>
                                         </constraints>
                                         <state key="normal" title="Cancel" image="Cancel_Icon_Black"/>
+                                        <connections>
+                                            <segue destination="8bV-7Y-fHP" kind="unwind" unwindAction="unwindToHereWithSegue:" id="AFS-TE-uaL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -827,7 +843,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztq-Be-hY8">
-                                <rect key="frame" x="30" y="52" width="315" height="556.5"/>
+                                <rect key="frame" x="30" y="52" width="315" height="536.5"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="C3b-Rl-45j">
                                         <rect key="frame" x="-5" y="131" width="320" height="114"/>
@@ -888,7 +904,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7i1-fD-5V8" customClass="RoundedButton" customModule="PetJournal" customModuleProvider="target">
-                                <rect key="frame" x="30" y="616.5" width="315" height="42.5"/>
+                                <rect key="frame" x="30" y="596.5" width="315" height="42.5"/>
                                 <color key="backgroundColor" red="0.23137254900000001" green="0.52156862749999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42.5" id="5jO-Ni-XC9"/>
@@ -931,11 +947,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9uM-UB-Uc2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mZa-Un-tWV"/>
                     <connections>
                         <outlet property="typePicker" destination="IMV-Tr-YEQ" id="DE9-X1-88o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2DO-4X-55T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="8bV-7Y-fHP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="485.60000000000002" y="-790.25487256371821"/>
         </scene>

@@ -1,0 +1,1227 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1BC948A82F936095D92C99C403DC9CC0 /* Pods-PetJournal-PetJournalUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 656A6C5FA9F49D514A778E4017611F0C /* Pods-PetJournal-PetJournalUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2AEF27AC3489E1272A33D69659F8296C /* UIView+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F864515272F799DEA7C1566EF1ACC1 /* UIView+Sweeter.swift */; };
+		2B05DA5803C7A2A1432D4B92CF095B22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3461C63A635534B5863746CF9DCBC09 /* Foundation.framework */; };
+		4038863CD4813D55B69E94303B14DBF0 /* Codable+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582E32715F3190581E0CFE2F9731EFB4 /* Codable+Sweeter.swift */; };
+		460EA54D97EE82F7F61E1F2688B07964 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3461C63A635534B5863746CF9DCBC09 /* Foundation.framework */; };
+		520E45FB2C347FC665140DB3CB40ABEA /* Swift+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76933A8172DF0BCB4419CF69A55916B8 /* Swift+Sweeter.swift */; };
+		59B625B2D90C71B32B0E0704D761CDD7 /* UIStackView+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388AA715096B2E4C01DDEAF9BB6B8388 /* UIStackView+Sweeter.swift */; };
+		60A0A8F2A384C7A5767FD4E9ADDCD22D /* TimeInterval+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F732D15C74F3DD484BA9A7AE439AFD0A /* TimeInterval+Sweeter.swift */; };
+		6175A276E8E4F609670CBBA89D6A4337 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3461C63A635534B5863746CF9DCBC09 /* Foundation.framework */; };
+		62DE58663711708F734A06EF117247F6 /* String+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E98D2C3E62B77A0DE44952F9DE9E41 /* String+Sweeter.swift */; };
+		6BBA9A01CA9E60F0D32E467E3583A740 /* Pods-PetJournalTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05A1EB0E383D4A4E28AFEBD3B74B11EB /* Pods-PetJournalTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E04C807A917AA4D257FC81216A9D796 /* SweeterSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ACC502B0D84C2393D75B73FCFE24A6 /* SweeterSwift-dummy.m */; };
+		78E2B878743A4272620FB0FF0613EF29 /* Pods-PetJournal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E385DB7B52FFF6EBB7550591E47CBD /* Pods-PetJournal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AC33252136F5ED0A2700739A6B82B97 /* UITextView+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424DC2B7D57004AB4D27CCCBE61EBB81 /* UITextView+Sweeter.swift */; };
+		83AA375AE436D0CED99B6B759E257702 /* MultiSelectSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5EAC41A93E01B89DBE8E03480B112E /* MultiSelectSegmentedControl.swift */; };
+		87A142ECC0747858303621E495784C5E /* Bundle+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1190A7D665ED229FEF7FCC63A1EBB88 /* Bundle+Sweeter.swift */; };
+		94680F01F1F24CC38332E5043C12E4F0 /* UIApplication+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788AC6775B7312EDC199AED5FFD23FBC /* UIApplication+Sweeter.swift */; };
+		A04B59627D363282D0F9DC90F3536A91 /* SweeterSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C31CCDCC24C934C6C48AAFB87E5743E /* SweeterSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A152D2781E0413045E8BCC5D4FCABDDF /* MultiSelectSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0868B0FB9E41F6112471710AB75657 /* MultiSelectSegment.swift */; };
+		AD9389DEA12145A36BA9B766A29CF2B3 /* UIViewController+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647D3DDFFB8BEE4948E81880DAD2787D /* UIViewController+Sweeter.swift */; };
+		B60E2CA29ABA24F57730792C6A5B5D57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3461C63A635534B5863746CF9DCBC09 /* Foundation.framework */; };
+		C04E3E69EDEC84A78201C3A4EDECA4BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3461C63A635534B5863746CF9DCBC09 /* Foundation.framework */; };
+		C9270CE30177CC4B3D978D6049C5E410 /* NSObject+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535C738B1AC1094FFE7186A772FB5D9 /* NSObject+Sweeter.swift */; };
+		DACB8332B40C4586D202A0A4F10FAF30 /* Pods-PetJournalTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11662CA7A341A8D65A85EE424FCF2A18 /* Pods-PetJournalTests-dummy.m */; };
+		DEFFE827B27BEBAB4E002A113ECAE792 /* NSAttributedString+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C3D6CCB1CECDD70A471481F0F6BFBD /* NSAttributedString+Sweeter.swift */; };
+		E146BC4630D63705C0483331F986423F /* Pods-PetJournal-PetJournalUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BD106B32C6FEE7FA7D947F0B85505D /* Pods-PetJournal-PetJournalUITests-dummy.m */; };
+		E414035CBA2D9172A4DDB8AA15A252BF /* MultiSelectSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F81737EBA7740170F996D6B7E5EC2B5 /* MultiSelectSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBABA2301185D72E9F6307972A991564 /* DateFormatter+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B225D9A3DD8DA1C90A925999E4E301A6 /* DateFormatter+Sweeter.swift */; };
+		EF66886C0608730B46C2F1C23ADD0058 /* NSManagedObjectContext+Sweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43485078FFE192C76548E3ACA4A76486 /* NSManagedObjectContext+Sweeter.swift */; };
+		F4A8DBE2B5E39A6BBDE5980E9388D13D /* MultiSelectSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92DFC37C08C6FC086C797FBD2C6173 /* MultiSelectSegmentedControl-dummy.m */; };
+		F99137DC33C671562634165FE8B643CC /* SweeterSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C0A5590195FEA5C460F2CB16D3DED3 /* SweeterSwift.framework */; };
+		FE9D81C8C6BBEB86EA095A7BEEE98FCB /* Pods-PetJournal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DECCA3E3D04AEA2E7C36B946BD7303A /* Pods-PetJournal-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		320F13D78AEA640E398AD110FC23FFC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ED7B28EFD1E7AB01C794CAE4F3A6ACE;
+			remoteInfo = "Pods-PetJournal";
+		};
+		38233792F4CE122439127B4A9DF67F6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6819F499159C87193DDD7D51504DD6C1;
+			remoteInfo = SweeterSwift;
+		};
+		6F96449BC708D20974D1E335A4350730 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6819F499159C87193DDD7D51504DD6C1;
+			remoteInfo = SweeterSwift;
+		};
+		C1F32C0C0411EC773395599060EEDED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C07B7AE734D89C24DB2D55FFF6D96DA3;
+			remoteInfo = MultiSelectSegmentedControl;
+		};
+		FD360246F5242EEC3A9468477A981FBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C07B7AE734D89C24DB2D55FFF6D96DA3;
+			remoteInfo = MultiSelectSegmentedControl;
+		};
+		FEF8A764D7460C963B98333A25FD60BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6819F499159C87193DDD7D51504DD6C1;
+			remoteInfo = SweeterSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00ACC502B0D84C2393D75B73FCFE24A6 /* SweeterSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SweeterSwift-dummy.m"; sourceTree = "<group>"; };
+		05A1EB0E383D4A4E28AFEBD3B74B11EB /* Pods-PetJournalTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PetJournalTests-umbrella.h"; sourceTree = "<group>"; };
+		05BD106B32C6FEE7FA7D947F0B85505D /* Pods-PetJournal-PetJournalUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PetJournal-PetJournalUITests-dummy.m"; sourceTree = "<group>"; };
+		09807ABB6EEEF0D97F4A833AC62DA4FD /* Pods-PetJournal-PetJournalUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PetJournal-PetJournalUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0E5EAC41A93E01B89DBE8E03480B112E /* MultiSelectSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiSelectSegmentedControl.swift; path = Sources/MultiSelectSegmentedControl.swift; sourceTree = "<group>"; };
+		101DCDD6D601BEFE93BF25F1D2AA7751 /* Pods-PetJournal-PetJournalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetJournal-PetJournalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		10C3D6CCB1CECDD70A471481F0F6BFBD /* NSAttributedString+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Sweeter.swift"; path = "Source/NSAttributedString+Sweeter.swift"; sourceTree = "<group>"; };
+		11662CA7A341A8D65A85EE424FCF2A18 /* Pods-PetJournalTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PetJournalTests-dummy.m"; sourceTree = "<group>"; };
+		187926C1046AC3012C473F9C403B7EB3 /* Pods-PetJournal-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetJournal-frameworks.sh"; sourceTree = "<group>"; };
+		20E98D2C3E62B77A0DE44952F9DE9E41 /* String+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Sweeter.swift"; path = "Source/String+Sweeter.swift"; sourceTree = "<group>"; };
+		27B1D0FDA3024B095FFFA668F241372C /* SweeterSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SweeterSwift.xcconfig; sourceTree = "<group>"; };
+		29E385DB7B52FFF6EBB7550591E47CBD /* Pods-PetJournal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PetJournal-umbrella.h"; sourceTree = "<group>"; };
+		2E96C178A8C2428CB7967A2FE201C514 /* Pods-PetJournal-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetJournal-acknowledgements.plist"; sourceTree = "<group>"; };
+		34022BE141B7A0F5B117F3D314B0A204 /* Pods-PetJournal-PetJournalUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetJournal-PetJournalUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		388AA715096B2E4C01DDEAF9BB6B8388 /* UIStackView+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStackView+Sweeter.swift"; path = "Source/UIStackView+Sweeter.swift"; sourceTree = "<group>"; };
+		3E92DFC37C08C6FC086C797FBD2C6173 /* MultiSelectSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MultiSelectSegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		3F81737EBA7740170F996D6B7E5EC2B5 /* MultiSelectSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MultiSelectSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
+		41F864515272F799DEA7C1566EF1ACC1 /* UIView+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Sweeter.swift"; path = "Source/UIView+Sweeter.swift"; sourceTree = "<group>"; };
+		424DC2B7D57004AB4D27CCCBE61EBB81 /* UITextView+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+Sweeter.swift"; path = "Source/UITextView+Sweeter.swift"; sourceTree = "<group>"; };
+		43485078FFE192C76548E3ACA4A76486 /* NSManagedObjectContext+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Sweeter.swift"; path = "Source/NSManagedObjectContext+Sweeter.swift"; sourceTree = "<group>"; };
+		514B4F4D020360A3B29F39CC1F6761B1 /* MultiSelectSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MultiSelectSegmentedControl.modulemap; sourceTree = "<group>"; };
+		51C0A5590195FEA5C460F2CB16D3DED3 /* SweeterSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SweeterSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D29592DDB414383C05E1E4DA98A6D1 /* Pods-PetJournal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PetJournal.modulemap"; sourceTree = "<group>"; };
+		582E32715F3190581E0CFE2F9731EFB4 /* Codable+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Codable+Sweeter.swift"; path = "Source/Codable+Sweeter.swift"; sourceTree = "<group>"; };
+		5F83E88FFB31AE73B11F40671CBF6B27 /* Pods-PetJournal-PetJournalUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PetJournal-PetJournalUITests.modulemap"; sourceTree = "<group>"; };
+		647D3DDFFB8BEE4948E81880DAD2787D /* UIViewController+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Sweeter.swift"; path = "Source/UIViewController+Sweeter.swift"; sourceTree = "<group>"; };
+		656A6C5FA9F49D514A778E4017611F0C /* Pods-PetJournal-PetJournalUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PetJournal-PetJournalUITests-umbrella.h"; sourceTree = "<group>"; };
+		6D4893CE835F1E0597B37E5481B7AA21 /* Pods-PetJournalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetJournalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7186E0076C75997E11E4C1E8CC4A7088 /* Pods-PetJournalTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PetJournalTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7308E0125B649759EA600D9E39B7FFDA /* Pods-PetJournal-PetJournalUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetJournal-PetJournalUITests-Info.plist"; sourceTree = "<group>"; };
+		76933A8172DF0BCB4419CF69A55916B8 /* Swift+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Swift+Sweeter.swift"; path = "Source/Swift+Sweeter.swift"; sourceTree = "<group>"; };
+		788AC6775B7312EDC199AED5FFD23FBC /* UIApplication+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIApplication+Sweeter.swift"; path = "Source/UIApplication+Sweeter.swift"; sourceTree = "<group>"; };
+		792EAAEE8F5A1E9C2C6C0F2EEDD138EC /* Pods_PetJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PetJournal.framework; path = "Pods-PetJournal.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8535C738B1AC1094FFE7186A772FB5D9 /* NSObject+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Sweeter.swift"; path = "Source/NSObject+Sweeter.swift"; sourceTree = "<group>"; };
+		89C2697F8C6298CC4485C0FA87B54272 /* Pods_PetJournal_PetJournalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PetJournal_PetJournalUITests.framework; path = "Pods-PetJournal-PetJournalUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B591707406B48E14F34B2038E8AE33C /* Pods-PetJournalTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetJournalTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8DECCA3E3D04AEA2E7C36B946BD7303A /* Pods-PetJournal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PetJournal-dummy.m"; sourceTree = "<group>"; };
+		90AA08270AAED519682ACC4C375ED194 /* Pods-PetJournal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetJournal-Info.plist"; sourceTree = "<group>"; };
+		95EB6CA6EF736574313A598E28D93E8C /* Pods-PetJournal-PetJournalUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetJournal-PetJournalUITests-frameworks.sh"; sourceTree = "<group>"; };
+		9C31CCDCC24C934C6C48AAFB87E5743E /* SweeterSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SweeterSwift-umbrella.h"; sourceTree = "<group>"; };
+		9C915D64883FDF2D5AEA0F6DC19FCAB1 /* Pods-PetJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetJournal.release.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3461C63A635534B5863746CF9DCBC09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A62A8868F17572508CFCD899F05F9558 /* Pods-PetJournal-PetJournalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetJournal-PetJournalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AB3BB588788ED2F7E87E63DAEC524C71 /* SweeterSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SweeterSwift.modulemap; sourceTree = "<group>"; };
+		AD0868B0FB9E41F6112471710AB75657 /* MultiSelectSegment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiSelectSegment.swift; path = Sources/MultiSelectSegment.swift; sourceTree = "<group>"; };
+		B04645E1BBCFA805F6C7BCB8520F5F72 /* MultiSelectSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MultiSelectSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
+		B225D9A3DD8DA1C90A925999E4E301A6 /* DateFormatter+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateFormatter+Sweeter.swift"; path = "Source/DateFormatter+Sweeter.swift"; sourceTree = "<group>"; };
+		B2AACD0082B0A43BC98F1D5CCC394C79 /* MultiSelectSegmentedControl-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MultiSelectSegmentedControl-Info.plist"; sourceTree = "<group>"; };
+		B379B1350B81667661288FDD86E36C30 /* Pods-PetJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetJournal.debug.xcconfig"; sourceTree = "<group>"; };
+		B76CD9F952582A6A4387D799501B3950 /* SweeterSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SweeterSwift.framework; path = SweeterSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B93B5544317F2F3521586A0ABC156229 /* Pods_PetJournalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PetJournalTests.framework; path = "Pods-PetJournalTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0346628999DFE270E4C1097AC2C8F98 /* Pods-PetJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetJournalTests.release.xcconfig"; sourceTree = "<group>"; };
+		C1190A7D665ED229FEF7FCC63A1EBB88 /* Bundle+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Sweeter.swift"; path = "Source/Bundle+Sweeter.swift"; sourceTree = "<group>"; };
+		C69783F91341EBC4D1A8480BE57D3D80 /* MultiSelectSegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MultiSelectSegmentedControl.xcconfig; sourceTree = "<group>"; };
+		CB565E68C293AE6BFFE39440261866E5 /* Pods-PetJournalTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetJournalTests-Info.plist"; sourceTree = "<group>"; };
+		CC8FA6E20482794B7ADE937496F98E7D /* Pods-PetJournalTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PetJournalTests.modulemap"; sourceTree = "<group>"; };
+		DB265C6CD43AF25418DF7BC5A7249980 /* SweeterSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SweeterSwift-Info.plist"; sourceTree = "<group>"; };
+		E3411832E6378C5CEDEFE5A9EDFACDBC /* SweeterSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SweeterSwift-prefix.pch"; sourceTree = "<group>"; };
+		F732D15C74F3DD484BA9A7AE439AFD0A /* TimeInterval+Sweeter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimeInterval+Sweeter.swift"; path = "Source/TimeInterval+Sweeter.swift"; sourceTree = "<group>"; };
+		F75AA00BE79A85F485A628B9C0D5263F /* MultiSelectSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MultiSelectSegmentedControl.framework; path = MultiSelectSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCB53FF7C5E74F2312B3FCE93C0FF7F5 /* Pods-PetJournal-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PetJournal-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6BF43FE0CD2FF2EB31D32525942C63D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B05DA5803C7A2A1432D4B92CF095B22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA7BB117331DB7E1E8AB410A2E97A5BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04E3E69EDEC84A78201C3A4EDECA4BB /* Foundation.framework in Frameworks */,
+				F99137DC33C671562634165FE8B643CC /* SweeterSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C20F4A2DBF92D7B9E78F19522BCA66E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B60E2CA29ABA24F57730792C6A5B5D57 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4556884EF7B4E0B1941E494BB036C86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				460EA54D97EE82F7F61E1F2688B07964 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F283392AE9B164A75A74E63D002D3A7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6175A276E8E4F609670CBBA89D6A4337 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10035BCD190DEE0A95E2165070720160 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F75AA00BE79A85F485A628B9C0D5263F /* MultiSelectSegmentedControl.framework */,
+				792EAAEE8F5A1E9C2C6C0F2EEDD138EC /* Pods_PetJournal.framework */,
+				89C2697F8C6298CC4485C0FA87B54272 /* Pods_PetJournal_PetJournalUITests.framework */,
+				B93B5544317F2F3521586A0ABC156229 /* Pods_PetJournalTests.framework */,
+				B76CD9F952582A6A4387D799501B3950 /* SweeterSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31E5043134D0CED6FC43193143E9458B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				98AD2C7E1674E51B99EA797A3CD812EA /* Pods-PetJournal */,
+				607415FEE0DD0C39736F3816445A90DF /* Pods-PetJournal-PetJournalUITests */,
+				64AB097686BA4C2111E663BA1836CA88 /* Pods-PetJournalTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		341E83D6AEAC7081E4AB039AA2BC0FAA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A3461C63A635534B5863746CF9DCBC09 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		607415FEE0DD0C39736F3816445A90DF /* Pods-PetJournal-PetJournalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5F83E88FFB31AE73B11F40671CBF6B27 /* Pods-PetJournal-PetJournalUITests.modulemap */,
+				09807ABB6EEEF0D97F4A833AC62DA4FD /* Pods-PetJournal-PetJournalUITests-acknowledgements.markdown */,
+				34022BE141B7A0F5B117F3D314B0A204 /* Pods-PetJournal-PetJournalUITests-acknowledgements.plist */,
+				05BD106B32C6FEE7FA7D947F0B85505D /* Pods-PetJournal-PetJournalUITests-dummy.m */,
+				95EB6CA6EF736574313A598E28D93E8C /* Pods-PetJournal-PetJournalUITests-frameworks.sh */,
+				7308E0125B649759EA600D9E39B7FFDA /* Pods-PetJournal-PetJournalUITests-Info.plist */,
+				656A6C5FA9F49D514A778E4017611F0C /* Pods-PetJournal-PetJournalUITests-umbrella.h */,
+				A62A8868F17572508CFCD899F05F9558 /* Pods-PetJournal-PetJournalUITests.debug.xcconfig */,
+				101DCDD6D601BEFE93BF25F1D2AA7751 /* Pods-PetJournal-PetJournalUITests.release.xcconfig */,
+			);
+			name = "Pods-PetJournal-PetJournalUITests";
+			path = "Target Support Files/Pods-PetJournal-PetJournalUITests";
+			sourceTree = "<group>";
+		};
+		64AB097686BA4C2111E663BA1836CA88 /* Pods-PetJournalTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC8FA6E20482794B7ADE937496F98E7D /* Pods-PetJournalTests.modulemap */,
+				7186E0076C75997E11E4C1E8CC4A7088 /* Pods-PetJournalTests-acknowledgements.markdown */,
+				8B591707406B48E14F34B2038E8AE33C /* Pods-PetJournalTests-acknowledgements.plist */,
+				11662CA7A341A8D65A85EE424FCF2A18 /* Pods-PetJournalTests-dummy.m */,
+				CB565E68C293AE6BFFE39440261866E5 /* Pods-PetJournalTests-Info.plist */,
+				05A1EB0E383D4A4E28AFEBD3B74B11EB /* Pods-PetJournalTests-umbrella.h */,
+				6D4893CE835F1E0597B37E5481B7AA21 /* Pods-PetJournalTests.debug.xcconfig */,
+				C0346628999DFE270E4C1097AC2C8F98 /* Pods-PetJournalTests.release.xcconfig */,
+			);
+			name = "Pods-PetJournalTests";
+			path = "Target Support Files/Pods-PetJournalTests";
+			sourceTree = "<group>";
+		};
+		69F236FFB7DC546B12B63F8AD508487C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				514B4F4D020360A3B29F39CC1F6761B1 /* MultiSelectSegmentedControl.modulemap */,
+				C69783F91341EBC4D1A8480BE57D3D80 /* MultiSelectSegmentedControl.xcconfig */,
+				3E92DFC37C08C6FC086C797FBD2C6173 /* MultiSelectSegmentedControl-dummy.m */,
+				B2AACD0082B0A43BC98F1D5CCC394C79 /* MultiSelectSegmentedControl-Info.plist */,
+				B04645E1BBCFA805F6C7BCB8520F5F72 /* MultiSelectSegmentedControl-prefix.pch */,
+				3F81737EBA7740170F996D6B7E5EC2B5 /* MultiSelectSegmentedControl-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MultiSelectSegmentedControl";
+			sourceTree = "<group>";
+		};
+		6AA93D6DF215BA0C860F1452CEE88174 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB3BB588788ED2F7E87E63DAEC524C71 /* SweeterSwift.modulemap */,
+				27B1D0FDA3024B095FFFA668F241372C /* SweeterSwift.xcconfig */,
+				00ACC502B0D84C2393D75B73FCFE24A6 /* SweeterSwift-dummy.m */,
+				DB265C6CD43AF25418DF7BC5A7249980 /* SweeterSwift-Info.plist */,
+				E3411832E6378C5CEDEFE5A9EDFACDBC /* SweeterSwift-prefix.pch */,
+				9C31CCDCC24C934C6C48AAFB87E5743E /* SweeterSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SweeterSwift";
+			sourceTree = "<group>";
+		};
+		8B10675BE1FC7A0DB33261725AFC02E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA7AA5F541DD94AD117D3438F3F92128 /* MultiSelectSegmentedControl */,
+				B80CB5CB18D9970213140F9746F9318C /* SweeterSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		98AD2C7E1674E51B99EA797A3CD812EA /* Pods-PetJournal */ = {
+			isa = PBXGroup;
+			children = (
+				51D29592DDB414383C05E1E4DA98A6D1 /* Pods-PetJournal.modulemap */,
+				FCB53FF7C5E74F2312B3FCE93C0FF7F5 /* Pods-PetJournal-acknowledgements.markdown */,
+				2E96C178A8C2428CB7967A2FE201C514 /* Pods-PetJournal-acknowledgements.plist */,
+				8DECCA3E3D04AEA2E7C36B946BD7303A /* Pods-PetJournal-dummy.m */,
+				187926C1046AC3012C473F9C403B7EB3 /* Pods-PetJournal-frameworks.sh */,
+				90AA08270AAED519682ACC4C375ED194 /* Pods-PetJournal-Info.plist */,
+				29E385DB7B52FFF6EBB7550591E47CBD /* Pods-PetJournal-umbrella.h */,
+				B379B1350B81667661288FDD86E36C30 /* Pods-PetJournal.debug.xcconfig */,
+				9C915D64883FDF2D5AEA0F6DC19FCAB1 /* Pods-PetJournal.release.xcconfig */,
+			);
+			name = "Pods-PetJournal";
+			path = "Target Support Files/Pods-PetJournal";
+			sourceTree = "<group>";
+		};
+		AA7AA5F541DD94AD117D3438F3F92128 /* MultiSelectSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				AD0868B0FB9E41F6112471710AB75657 /* MultiSelectSegment.swift */,
+				0E5EAC41A93E01B89DBE8E03480B112E /* MultiSelectSegmentedControl.swift */,
+				69F236FFB7DC546B12B63F8AD508487C /* Support Files */,
+			);
+			name = MultiSelectSegmentedControl;
+			path = MultiSelectSegmentedControl;
+			sourceTree = "<group>";
+		};
+		B80CB5CB18D9970213140F9746F9318C /* SweeterSwift */ = {
+			isa = PBXGroup;
+			children = (
+				C1190A7D665ED229FEF7FCC63A1EBB88 /* Bundle+Sweeter.swift */,
+				582E32715F3190581E0CFE2F9731EFB4 /* Codable+Sweeter.swift */,
+				B225D9A3DD8DA1C90A925999E4E301A6 /* DateFormatter+Sweeter.swift */,
+				10C3D6CCB1CECDD70A471481F0F6BFBD /* NSAttributedString+Sweeter.swift */,
+				43485078FFE192C76548E3ACA4A76486 /* NSManagedObjectContext+Sweeter.swift */,
+				8535C738B1AC1094FFE7186A772FB5D9 /* NSObject+Sweeter.swift */,
+				20E98D2C3E62B77A0DE44952F9DE9E41 /* String+Sweeter.swift */,
+				76933A8172DF0BCB4419CF69A55916B8 /* Swift+Sweeter.swift */,
+				F732D15C74F3DD484BA9A7AE439AFD0A /* TimeInterval+Sweeter.swift */,
+				788AC6775B7312EDC199AED5FFD23FBC /* UIApplication+Sweeter.swift */,
+				388AA715096B2E4C01DDEAF9BB6B8388 /* UIStackView+Sweeter.swift */,
+				424DC2B7D57004AB4D27CCCBE61EBB81 /* UITextView+Sweeter.swift */,
+				41F864515272F799DEA7C1566EF1ACC1 /* UIView+Sweeter.swift */,
+				647D3DDFFB8BEE4948E81880DAD2787D /* UIViewController+Sweeter.swift */,
+				6AA93D6DF215BA0C860F1452CEE88174 /* Support Files */,
+			);
+			name = SweeterSwift;
+			path = SweeterSwift;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D2A4E4C2B9AB233C330C04365A549B28 /* Frameworks */,
+				8B10675BE1FC7A0DB33261725AFC02E8 /* Pods */,
+				10035BCD190DEE0A95E2165070720160 /* Products */,
+				31E5043134D0CED6FC43193143E9458B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D2A4E4C2B9AB233C330C04365A549B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51C0A5590195FEA5C460F2CB16D3DED3 /* SweeterSwift.framework */,
+				341E83D6AEAC7081E4AB039AA2BC0FAA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		06FB042216ECBB1D80A98CB6A95E76E8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78E2B878743A4272620FB0FF0613EF29 /* Pods-PetJournal-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A6C493EBFC0C37C77F29011B59EA67E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E414035CBA2D9172A4DDB8AA15A252BF /* MultiSelectSegmentedControl-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66EC1656C1F1978399513656229DF59D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BC948A82F936095D92C99C403DC9CC0 /* Pods-PetJournal-PetJournalUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B1C1AB08889BF47DBDCE7B948FF5A03 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BBA9A01CA9E60F0D32E467E3583A740 /* Pods-PetJournalTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7FBED072CC0BC3D96B7A06D3EAFAF48 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A04B59627D363282D0F9DC90F3536A91 /* SweeterSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0ED7B28EFD1E7AB01C794CAE4F3A6ACE /* Pods-PetJournal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E56767ED45CCF6EB0BC4971C62C54016 /* Build configuration list for PBXNativeTarget "Pods-PetJournal" */;
+			buildPhases = (
+				06FB042216ECBB1D80A98CB6A95E76E8 /* Headers */,
+				32C375F4BE4042CA2E28FCA7D295AFFC /* Sources */,
+				B6BF43FE0CD2FF2EB31D32525942C63D /* Frameworks */,
+				85DE6E62B676135D83AA01A808C48838 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1A165F8EACBFE9F09DBBDBAA730DC7E /* PBXTargetDependency */,
+				FC8ED0892B745BD3CDF228ABFF6F387E /* PBXTargetDependency */,
+			);
+			name = "Pods-PetJournal";
+			productName = "Pods-PetJournal";
+			productReference = 792EAAEE8F5A1E9C2C6C0F2EEDD138EC /* Pods_PetJournal.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		579A1285320ADA414AA15B26E29C8A7F /* Pods-PetJournalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61155396316302EF9C56D8C5DEEED06A /* Build configuration list for PBXNativeTarget "Pods-PetJournalTests" */;
+			buildPhases = (
+				9B1C1AB08889BF47DBDCE7B948FF5A03 /* Headers */,
+				E3E3B313007D943ED7076345ACE895A8 /* Sources */,
+				F283392AE9B164A75A74E63D002D3A7D /* Frameworks */,
+				89596195BB9A112E25A1C2CD135B01FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22DA1132DC2D377822947FA5369F04BB /* PBXTargetDependency */,
+			);
+			name = "Pods-PetJournalTests";
+			productName = "Pods-PetJournalTests";
+			productReference = B93B5544317F2F3521586A0ABC156229 /* Pods_PetJournalTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6819F499159C87193DDD7D51504DD6C1 /* SweeterSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CEBF07F485CE95D99F6A234684B3E4F /* Build configuration list for PBXNativeTarget "SweeterSwift" */;
+			buildPhases = (
+				F7FBED072CC0BC3D96B7A06D3EAFAF48 /* Headers */,
+				8E6F786948D6577A3052DAEEAAE00DBC /* Sources */,
+				E4556884EF7B4E0B1941E494BB036C86 /* Frameworks */,
+				D23A74C72E54FF9FFE7D85DD5E056E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SweeterSwift;
+			productName = SweeterSwift;
+			productReference = B76CD9F952582A6A4387D799501B3950 /* SweeterSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C07B7AE734D89C24DB2D55FFF6D96DA3 /* MultiSelectSegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D8F50C350AD0DEA6CC7F09507287605 /* Build configuration list for PBXNativeTarget "MultiSelectSegmentedControl" */;
+			buildPhases = (
+				0A6C493EBFC0C37C77F29011B59EA67E /* Headers */,
+				A62ED8CBD1BDC84478A93CD31BA48CBE /* Sources */,
+				BA7BB117331DB7E1E8AB410A2E97A5BF /* Frameworks */,
+				4A6DF91834495A1B75E407D58D580130 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C43BF3E32446F8A188F47597F01633C9 /* PBXTargetDependency */,
+			);
+			name = MultiSelectSegmentedControl;
+			productName = MultiSelectSegmentedControl;
+			productReference = F75AA00BE79A85F485A628B9C0D5263F /* MultiSelectSegmentedControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ECE86E799314428B76DD9B2E9FADB8AF /* Pods-PetJournal-PetJournalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33402A1FAF46F4A990987C3FC7CBA321 /* Build configuration list for PBXNativeTarget "Pods-PetJournal-PetJournalUITests" */;
+			buildPhases = (
+				66EC1656C1F1978399513656229DF59D /* Headers */,
+				69940B7B750CF2201FF4ECD2F1DF221B /* Sources */,
+				C20F4A2DBF92D7B9E78F19522BCA66E4 /* Frameworks */,
+				A7C5AB2D28A0BCFBD9A15ED2D63A9482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C49D28143328DEB59643AF2065D6799 /* PBXTargetDependency */,
+				7550C4E6197BA477AA2F3D9D12E78990 /* PBXTargetDependency */,
+			);
+			name = "Pods-PetJournal-PetJournalUITests";
+			productName = "Pods-PetJournal-PetJournalUITests";
+			productReference = 89C2697F8C6298CC4485C0FA87B54272 /* Pods_PetJournal_PetJournalUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 10035BCD190DEE0A95E2165070720160 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C07B7AE734D89C24DB2D55FFF6D96DA3 /* MultiSelectSegmentedControl */,
+				0ED7B28EFD1E7AB01C794CAE4F3A6ACE /* Pods-PetJournal */,
+				ECE86E799314428B76DD9B2E9FADB8AF /* Pods-PetJournal-PetJournalUITests */,
+				579A1285320ADA414AA15B26E29C8A7F /* Pods-PetJournalTests */,
+				6819F499159C87193DDD7D51504DD6C1 /* SweeterSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A6DF91834495A1B75E407D58D580130 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85DE6E62B676135D83AA01A808C48838 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89596195BB9A112E25A1C2CD135B01FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7C5AB2D28A0BCFBD9A15ED2D63A9482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D23A74C72E54FF9FFE7D85DD5E056E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32C375F4BE4042CA2E28FCA7D295AFFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE9D81C8C6BBEB86EA095A7BEEE98FCB /* Pods-PetJournal-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69940B7B750CF2201FF4ECD2F1DF221B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E146BC4630D63705C0483331F986423F /* Pods-PetJournal-PetJournalUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E6F786948D6577A3052DAEEAAE00DBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87A142ECC0747858303621E495784C5E /* Bundle+Sweeter.swift in Sources */,
+				4038863CD4813D55B69E94303B14DBF0 /* Codable+Sweeter.swift in Sources */,
+				EBABA2301185D72E9F6307972A991564 /* DateFormatter+Sweeter.swift in Sources */,
+				DEFFE827B27BEBAB4E002A113ECAE792 /* NSAttributedString+Sweeter.swift in Sources */,
+				EF66886C0608730B46C2F1C23ADD0058 /* NSManagedObjectContext+Sweeter.swift in Sources */,
+				C9270CE30177CC4B3D978D6049C5E410 /* NSObject+Sweeter.swift in Sources */,
+				62DE58663711708F734A06EF117247F6 /* String+Sweeter.swift in Sources */,
+				6E04C807A917AA4D257FC81216A9D796 /* SweeterSwift-dummy.m in Sources */,
+				520E45FB2C347FC665140DB3CB40ABEA /* Swift+Sweeter.swift in Sources */,
+				60A0A8F2A384C7A5767FD4E9ADDCD22D /* TimeInterval+Sweeter.swift in Sources */,
+				94680F01F1F24CC38332E5043C12E4F0 /* UIApplication+Sweeter.swift in Sources */,
+				59B625B2D90C71B32B0E0704D761CDD7 /* UIStackView+Sweeter.swift in Sources */,
+				7AC33252136F5ED0A2700739A6B82B97 /* UITextView+Sweeter.swift in Sources */,
+				2AEF27AC3489E1272A33D69659F8296C /* UIView+Sweeter.swift in Sources */,
+				AD9389DEA12145A36BA9B766A29CF2B3 /* UIViewController+Sweeter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A62ED8CBD1BDC84478A93CD31BA48CBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A152D2781E0413045E8BCC5D4FCABDDF /* MultiSelectSegment.swift in Sources */,
+				F4A8DBE2B5E39A6BBDE5980E9388D13D /* MultiSelectSegmentedControl-dummy.m in Sources */,
+				83AA375AE436D0CED99B6B759E257702 /* MultiSelectSegmentedControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E3B313007D943ED7076345ACE895A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DACB8332B40C4586D202A0A4F10FAF30 /* Pods-PetJournalTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22DA1132DC2D377822947FA5369F04BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-PetJournal";
+			target = 0ED7B28EFD1E7AB01C794CAE4F3A6ACE /* Pods-PetJournal */;
+			targetProxy = 320F13D78AEA640E398AD110FC23FFC1 /* PBXContainerItemProxy */;
+		};
+		6C49D28143328DEB59643AF2065D6799 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MultiSelectSegmentedControl;
+			target = C07B7AE734D89C24DB2D55FFF6D96DA3 /* MultiSelectSegmentedControl */;
+			targetProxy = C1F32C0C0411EC773395599060EEDED7 /* PBXContainerItemProxy */;
+		};
+		7550C4E6197BA477AA2F3D9D12E78990 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SweeterSwift;
+			target = 6819F499159C87193DDD7D51504DD6C1 /* SweeterSwift */;
+			targetProxy = FEF8A764D7460C963B98333A25FD60BF /* PBXContainerItemProxy */;
+		};
+		C43BF3E32446F8A188F47597F01633C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SweeterSwift;
+			target = 6819F499159C87193DDD7D51504DD6C1 /* SweeterSwift */;
+			targetProxy = 38233792F4CE122439127B4A9DF67F6D /* PBXContainerItemProxy */;
+		};
+		F1A165F8EACBFE9F09DBBDBAA730DC7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MultiSelectSegmentedControl;
+			target = C07B7AE734D89C24DB2D55FFF6D96DA3 /* MultiSelectSegmentedControl */;
+			targetProxy = FD360246F5242EEC3A9468477A981FBE /* PBXContainerItemProxy */;
+		};
+		FC8ED0892B745BD3CDF228ABFF6F387E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SweeterSwift;
+			target = 6819F499159C87193DDD7D51504DD6C1 /* SweeterSwift */;
+			targetProxy = 6F96449BC708D20974D1E335A4350730 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		05C1C0263869558FCC9EB7F1AE53D8ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B379B1350B81667661288FDD86E36C30 /* Pods-PetJournal.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PetJournal/Pods-PetJournal-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetJournal/Pods-PetJournal.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		10155CA7AFBE6D8B5966293656586534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C915D64883FDF2D5AEA0F6DC19FCAB1 /* Pods-PetJournal.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PetJournal/Pods-PetJournal-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetJournal/Pods-PetJournal.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1ABB09862CB70096F1CF2172F84DCC90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C69783F91341EBC4D1A8480BE57D3D80 /* MultiSelectSegmentedControl.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MultiSelectSegmentedControl/MultiSelectSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MultiSelectSegmentedControl/MultiSelectSegmentedControl-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = "Target Support Files/MultiSelectSegmentedControl/MultiSelectSegmentedControl.modulemap";
+				PRODUCT_MODULE_NAME = MultiSelectSegmentedControl;
+				PRODUCT_NAME = MultiSelectSegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		26D309AA2CFAB42BE4E008EA97ED6AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B1D0FDA3024B095FFFA668F241372C /* SweeterSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SweeterSwift/SweeterSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SweeterSwift/SweeterSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SweeterSwift/SweeterSwift.modulemap";
+				PRODUCT_MODULE_NAME = SweeterSwift;
+				PRODUCT_NAME = SweeterSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		404370A05EF74A205D2F79114234AD6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D4893CE835F1E0597B37E5481B7AA21 /* Pods-PetJournalTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PetJournalTests/Pods-PetJournalTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetJournalTests/Pods-PetJournalTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		45C282308FB398BE6BCD291880A5E916 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B1D0FDA3024B095FFFA668F241372C /* SweeterSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SweeterSwift/SweeterSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SweeterSwift/SweeterSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SweeterSwift/SweeterSwift.modulemap";
+				PRODUCT_MODULE_NAME = SweeterSwift;
+				PRODUCT_NAME = SweeterSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		510B057D2E9F059C50D52DA5D90F3ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		54195FD6B7598BAB3813C7417C55E546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 101DCDD6D601BEFE93BF25F1D2AA7751 /* Pods-PetJournal-PetJournalUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PetJournal-PetJournalUITests/Pods-PetJournal-PetJournalUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetJournal-PetJournalUITests/Pods-PetJournal-PetJournalUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		804E13245C9FBBE6A340C555CA8B2B4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		8483B91C603CC290982B521AD17CD594 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0346628999DFE270E4C1097AC2C8F98 /* Pods-PetJournalTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PetJournalTests/Pods-PetJournalTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetJournalTests/Pods-PetJournalTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BF26A51DEEA5F936A5728B48D2632438 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C69783F91341EBC4D1A8480BE57D3D80 /* MultiSelectSegmentedControl.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MultiSelectSegmentedControl/MultiSelectSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MultiSelectSegmentedControl/MultiSelectSegmentedControl-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = "Target Support Files/MultiSelectSegmentedControl/MultiSelectSegmentedControl.modulemap";
+				PRODUCT_MODULE_NAME = MultiSelectSegmentedControl;
+				PRODUCT_NAME = MultiSelectSegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C8205A00D6E73BBC1DE917B73FE370EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A62A8868F17572508CFCD899F05F9558 /* Pods-PetJournal-PetJournalUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PetJournal-PetJournalUITests/Pods-PetJournal-PetJournalUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetJournal-PetJournalUITests/Pods-PetJournal-PetJournalUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33402A1FAF46F4A990987C3FC7CBA321 /* Build configuration list for PBXNativeTarget "Pods-PetJournal-PetJournalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8205A00D6E73BBC1DE917B73FE370EF /* Debug */,
+				54195FD6B7598BAB3813C7417C55E546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				804E13245C9FBBE6A340C555CA8B2B4C /* Debug */,
+				510B057D2E9F059C50D52DA5D90F3ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CEBF07F485CE95D99F6A234684B3E4F /* Build configuration list for PBXNativeTarget "SweeterSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26D309AA2CFAB42BE4E008EA97ED6AC1 /* Debug */,
+				45C282308FB398BE6BCD291880A5E916 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D8F50C350AD0DEA6CC7F09507287605 /* Build configuration list for PBXNativeTarget "MultiSelectSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ABB09862CB70096F1CF2172F84DCC90 /* Debug */,
+				BF26A51DEEA5F936A5728B48D2632438 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61155396316302EF9C56D8C5DEEED06A /* Build configuration list for PBXNativeTarget "Pods-PetJournalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				404370A05EF74A205D2F79114234AD6C /* Debug */,
+				8483B91C603CC290982B521AD17CD594 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E56767ED45CCF6EB0BC4971C62C54016 /* Build configuration list for PBXNativeTarget "Pods-PetJournal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05C1C0263869558FCC9EB7F1AE53D8ED /* Debug */,
+				10155CA7AFBE6D8B5966293656586534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
