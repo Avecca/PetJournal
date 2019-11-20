@@ -14,7 +14,8 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
     
     @IBOutlet weak var VeterinaryTV: UITableView!
     
-     let segueCreate = "segueToCreateVisit"
+    let segueCreate = "segueToCreateVisit"
+    let segueView = "segueToViewVisit"
     
     var visit: NSManagedObject?
     private let veterinaryVisits = VeterinaryVisits();
@@ -35,9 +36,18 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
         
         self.VeterinaryTV.reloadData()
         
+
+        
         
 
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        print("VetVisistNo: \(veterinaryVisits.countVisits())")
+//        for item in VeterinaryVisitsList.vetList {
+//            print(item)
+//        }
+//    }
     
 
     
@@ -45,7 +55,7 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
     //TableView Delegate and Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return veterinaryVisits.countVisists()
+        return veterinaryVisits.countVisits()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,8 +65,12 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
         
         visit = veterinaryVisits.entryVisit(index: cellIndex)!
         cell.configCell(obj: visit)
+        let visitIndex = visit?.value(forKey: "index") as! String
+        cell.reasonBtn.tag = Int(visitIndex)!
+        cell.dateBtn.tag = Int(visitIndex)!
         
-        //TODO TAG
+        
+        //cell.reasonBtn.tag =  Int(visitIndex)!
 //        TODO upside down
 //                cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         
@@ -68,9 +82,29 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
     //Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
+        let dSegue = segue.destination as! CreateVeterinaryVisitViewController
+//
 
         if segue.identifier == segueCreate  {
+            
 
+            dSegue.recievingCreate = true
+           
+
+        }
+        
+        if segue.identifier == segueView {
+
+
+            let cell = sender as! UIButton
+            
+            let visitId = cell.tag
+
+            print(" visitId:  \(visitId)")
+            
+            dSegue.recievingPetId = visitId
+            dSegue.recievingCreate = false
+            
         }
         
     }

@@ -12,6 +12,9 @@ import CoreData
 class VeterinaryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var reasonBtn: UIButton!
+    @IBOutlet weak var dateBtn: UIButton!
+    
+    var formatter = DateFormatter()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +32,12 @@ class VeterinaryTableViewCell: UITableViewCell {
         if obj != nil {
             let reason = obj!.value(forKeyPath: "reason") as? String
             reasonBtn?.setTitle(reason, for: .normal)
+            let date = (obj!.value(forKeyPath: "date") as? Date)!
+            
+            formatter.locale = Locale(identifier: "sv_SE")
+            formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd-HH:mm")
+            
+            dateBtn?.setTitle(formatter.string(from: date), for: .normal)
            // nameLbl?.text = name
            // nameBtn?.setTitle(name, for: .normal)
             

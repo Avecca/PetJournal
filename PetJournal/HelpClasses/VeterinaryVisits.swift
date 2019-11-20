@@ -15,26 +15,45 @@ struct VeterinaryVisits {
         //struct kan inte använda arv och objecten kan inte refereras på från flera olika instanser
     
     let entityName = "Visit"
+    var index = 0
     
     
-    func countVisists() -> Int {
-        return PetList.petList.count
+    func countVisits() -> Int {
+        return VeterinaryVisitsList.vetList.count
     }
     
-    func addVisit(reason : String, time : Date, info: String)  -> Bool{  //Pet  //obj: NSManagedObject
+    mutating func addVisit(reason : String, time : Date, info: String, petNames: [String])  -> Bool{  //Pet  //obj: NSManagedObject
         
         
         //TODO
         let context = getContext()
         
             if let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) {
-                  let visit = NSManagedObject(entity: entity, insertInto: context)
+                  
+                let visit = NSManagedObject(entity: entity, insertInto: context)
                 
-                let index =  countVisists() + 1
-                visit.setValue(index, forKey: "index")
+                if (countVisits() > 0 ){
+                    
+                    for item in VeterinaryVisitsList.vetList {
+                        
+                        let x = item.value(forKey: "index") as! Int
+
+                        if  x > self.index {
+                            self.index = x
+                        }
+                    }
+                }
+                
+                visit.setValue(String(self.index), forKey: "index")
                 visit.setValue(reason, forKeyPath: "reason")
                 visit.setValue(time, forKeyPath: "date")
-                visit.setValue(info, forKeyPath: "info")
+                if info != "" {
+                    visit.setValue(info, forKeyPath: "info")
+                }
+                if petNames != [] {
+                    //TODO Add pets
+                }
+                
                 //TODO Add Pets
 //                visit.setValue(id, forKeyPath: "id")
                 
@@ -63,7 +82,7 @@ struct VeterinaryVisits {
             VeterinaryVisitsList.vetList = try context.fetch(fetchRq)
             // TODO order them fro due time
         } catch let err as NSError {
-            print("Unable to fetch pets. \(err), \(err.userInfo)")
+            print("Unable to fetch visits. \(err), \(err.userInfo)")
         }
     }
     
@@ -76,13 +95,14 @@ struct VeterinaryVisits {
     
     func deleteVisit(index: Int){
         
-        let visit = PetList.petList[index]
-        let visitIndex = visit.value(forKeyPath: "index") as? String
+//        let visit = VeterinaryVisitsList.vetList[index]
+//        let visitIndex = visit.value(forKeyPath: "index") as? String
+        let indexString = String(index)
         
         let context = getContext()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        request.predicate = NSPredicate(format: "index = %@ ", visitIndex as! CVarArg)
+        request.predicate = NSPredicate(format: "index = %@ ", indexString as! CVarArg)
         
 
         do {
@@ -102,7 +122,7 @@ struct VeterinaryVisits {
             try context.save()
         
         } catch let err as NSError {
-            print("Unable to find pet to delete. \(err), \(err.userInfo)")
+            print("Unable to find visit to delete. \(err), \(err.userInfo)")
             
         }
         
@@ -110,7 +130,7 @@ struct VeterinaryVisits {
     
     func entryVisit(index: Int) -> NSManagedObject? {
         
-        if index >= 0 && index <= VeterinaryVisitsList.vetList.count {
+        if index >= 0 && index <= VeterinaryVisitsList.vetList.count  {
             return VeterinaryVisitsList.vetList[index]
         }
         
@@ -119,32 +139,4 @@ struct VeterinaryVisits {
     
 }
 
-        //Todo bryt ut appdelegate, managedcontext, entity så bara 1 gång
-        
-        
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-//            return
-//        }
-//
-//        let context = appDelegate.persistentContainer.viewContext
-
-        
-//        guard let entity = NSEntityDescription.entity(forEntityName: "Pet", in: context) else { return
-//
-//        }
-//
-//        let pet = NSManagedObject(entity: entity, insertInto: context)
-//
-//        pet.setValue(name, forKeyPath: "name")
-//
-//
-//        do {
-//            try context.save()
-//            PetList.petList.append(pet)
-//        } catch let err as NSError {
-//            print("unable to save pet. \(err), \(err.userInfo)")
-//        }
-        
-        //PetList.petList.append(obj)
-        //petList.append(pet)
 

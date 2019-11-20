@@ -7,19 +7,37 @@
 //
 
 import UIKit
-import  MultiSelectSegmentedControl
+import MultiSelectSegmentedControl
 
 class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
     
+    @IBOutlet weak var headerLbl: UILabel!
+    @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var typePicker: UIPickerView!
+    @IBOutlet weak var visitDP: UIDatePicker!
+    @IBOutlet weak var infoTV: UITextView!
+        @IBOutlet weak var petView: UIView!
+    @IBOutlet weak var verticalPetMSC: MultiSelectSegmentedControl!
+
     
-    var visitType = [String]()
+    var visitType: [String] = []
+    private let pets = Pets();
+    var petNames: [String] = [] // [String]()
+    var selected : [String] = []
+    private var visits = VeterinaryVisits();
+    var info = ""
+    
+    var recievingPetId : Int?
+    var recievingCreate = true
     
     
     override func viewWillAppear(_ animated: Bool) {
         fillPicker()
+        
+        getPetNames()
+        verticalPetMSC.items = petNames
         
 //        let labelW = typePicker.frame.width
 //
@@ -43,17 +61,100 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
 
         typePicker.dataSource = self
         typePicker.delegate = self
+        
+//        getPetNames()
+//        verticalPetMSC.items = petNames
+//        verticalPetMSC.setTitleTextAttributes([.foregroundColor: UIColor.blue], for: .selected)
+//        verticalPetMSC.setTitleTextAttributes([.obliqueness: 0.25], for: .normal)
+        
+//        for x in petNames {
+//            print("petname:  \(x)")
+//        }
+        
+        if !recievingCreate {
+            fillForEdit()
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("pet id: \(String(describing: recievingPetId))")
+        print("create \(recievingCreate)")
+    }
+    
+    
 
+    func fillForEdit(){
+        print("EDIT TIME")
+        headerLbl.text = "Edit Visit"
+        self.saveBtn?.setTitle("Save Changes", for: .normal)
         
     }
     
+    
+    func getPetNames(){
+        
+       // print("Trying to get petnames")
+        if pets.countPets() > 0 {
+            petView.isHidden = false
+            for pet in PetList.petList {
+                petNames.append((pet.value(forKey: "name") as? String)!)
+                print("Adding petname!")
+            }
+        } else{
+            petView.isHidden = true
+            
+        }
+        
+    }
+    
+ 
+    
+        @IBAction func SaveClicked(_ sender: Any){
+
+            guard let reason = visitType[typePicker.selectedRow(inComponent: 0)] as String? else {
+                return
+            }
+
+            guard let date = visitDP.date as Date? else {
+                return
+            }
+            
+            if infoTV.text != nil {
+                info = infoTV.text
+            }
+
+
+            if !petView.isHidden {
+                selected = verticalPetMSC.selectedSegmentTitles
+               // print("Selected : \(selected)")
+            }
+            
+            if recievingCreate {
+                if visits.addVisit(reason: reason, time: date, info: self.info, petNames: selected ) {
+                      
+                }
+                
+            } else{
+                //TODO
+     //           recievingPetId
+    //            if visits.editVisit() {
+    //                <#code#>
+    //            }
+                print("EDITING !!!")
+            }
+            
+            //TODO segue
+
+            
+        }
+    
+    
+    //Pickerview Delegate, Datasource and functions
     func fillPicker(){
-        
-        visitType = ["Checkup", "Vaccination",  "Spaying/Neuturing", "Dental", "Planned Procedure", "Other"]
-    }
-    
-    
-    //Pickerview Delegate and Datasource
+         
+         visitType = ["Checkup", "Vaccination",  "Spaying/Neuturing", "Dental", "Planned Procedure", "Other"]
+     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -65,6 +166,23 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return visitType[row]
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+//        guard let label = pickerView.view(forRow: row, forComponent: component) as? UILabel else {
+//            return
+//        }
+//        label.backgroundColor = #colorLiteral(red: 0.8558072448, green: 0.9056435227, blue: 0.9374967217, alpha: 0.8470588235)
+        
+    }
+    
+    
+    //MultiSegmentPicker(){
+        
+    //}
+    
+    //MultiSegmentPicker
+
     
 
     
@@ -82,4 +200,9 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     }
     */
 
+}
+extension CreateVeterinaryVisitViewController: MultiSelectSegmentedControlDelegate {
+    func multiSelect(_ multiSelectSegmentedControl: MultiSelectSegmentedControl, didChange value: Bool, at index: Int) {
+        print("\(value) at \(index)")
+    }
 }
