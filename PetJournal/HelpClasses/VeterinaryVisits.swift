@@ -16,6 +16,7 @@ struct VeterinaryVisits {
     
     private let entityName = "Visit"
     private var index = 0
+    //TODO context var up here
     
     
     func countVisits() -> Int {
@@ -32,6 +33,7 @@ struct VeterinaryVisits {
                   
                 let visit = NSManagedObject(entity: entity, insertInto: context)
                 self.index = 0
+                
                 if (countVisits() > 0 ){
                     
                     for item in VeterinaryVisitsList.vetList {
@@ -71,14 +73,46 @@ struct VeterinaryVisits {
                 }
             }
         return false
- 
     }
     
-    func updateVisits(reason : String, time : Date, info: String, petNames: [String]) -> Bool {
+    func updateVisits(index: Int, reason : String, time : Date, info: String, petNames: [String]) -> Bool {
         
+        let indexString = String(index)
+        let context = getContext()
         
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         
+        request.predicate = NSPredicate(format: "index = %@ ", indexString as CVarArg)
         
+            do {
+                guard let result = try? context.fetch(request)  else { return false }
+                    
+                if result.count > 0 {
+                        
+                    let obj = result[0] as! NSManagedObject
+                    obj.setValue(reason, forKeyPath: "reason")
+                    obj.setValue(time, forKeyPath: "date")
+                    obj.setValue(info, forKeyPath: "info")
+                        
+                    do {
+                        //save changes
+                        try context.save()
+                                               
+                        if let foundIndex = findVisitListIndex(index: indexString)  {
+                        
+                            VeterinaryVisitsList.vetList[foundIndex] = obj
+                        }
+                        
+                        return true
+                        
+                    } catch let err as NSError {
+                        print("Unable to update visit \( String(describing: err.localizedFailureReason))")
+                    }
+                }
+      
+            } catch let err as NSError {
+                print("Unable to find visit to delete. \(err), \(err.userInfo)")
+            }
         
         return false
     }
@@ -97,13 +131,6 @@ struct VeterinaryVisits {
         }
     }
     
-    private func getContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
-    }
-    
-    
-    
     func deleteVisit(index: Int){
         
 //        let visit = VeterinaryVisitsList.vetList[index]
@@ -113,11 +140,11 @@ struct VeterinaryVisits {
         let context = getContext()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        request.predicate = NSPredicate(format: "index = %@ ", indexString as! CVarArg)
+        request.predicate = NSPredicate(format: "index = %@ ", indexString as CVarArg)
         
 
         do {
-            guard let result = try? context.fetch(request) as! [NSManagedObject] else { return }
+            guard let result = try? (context.fetch(request) as! [NSManagedObject]) else { return }
             
             if result.count > 0 {
                 //delete from DB
@@ -144,10 +171,16 @@ struct VeterinaryVisits {
         }
         
     }
+    
+    private func getContext() -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
     private func findVisitListIndex(index: String) -> Int? {
         if let listIndex = VeterinaryVisitsList.vetList.firstIndex(where:{$0.value(forKeyPath: "index")as! String == index}){
             
-                               // print("Trying to remove index \(indexString) from listindex \(listIndex)")
+            // print("Trying to remove index \(indexString) from listindex \(listIndex)")
             return listIndex
         }
         return nil
@@ -162,7 +195,6 @@ struct VeterinaryVisits {
                 return entryVisit(listIndex: listIndex)
             }
         }
-        
         return nil
     }
     
@@ -170,7 +202,6 @@ struct VeterinaryVisits {
         if listIndex >= 0 && index <= VeterinaryVisitsList.vetList.count  {
             return VeterinaryVisitsList.vetList[listIndex]
         }
-        
         return nil
     }
     

@@ -15,6 +15,7 @@ struct Pets {
         //struct kan inte använda arv och objecten kan inte refereras på från flera olika instanser
     
     private let entityName = "Pet"
+    //TODO context var up here
     
     
     func countPets() -> Int {
@@ -23,32 +24,31 @@ struct Pets {
     
     func addPet(name : String, type : String, race : String, id: String)  -> Bool{  //Pet  //obj: NSManagedObject
         
+        if checkIfNameAlreadyExistsInList(name: name) {
+            return false
+        }
         
         //TODO NO DUPLICATE NAMES
         let context = getContext()
         
-            if let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) {
-                  let pet = NSManagedObject(entity: entity, insertInto: context)
+        if let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) {
                 
-                pet.setValue(name, forKeyPath: "name")
-                pet.setValue(type, forKeyPath: "type")
-                pet.setValue(race, forKeyPath: "race")
-                pet.setValue(id, forKeyPath: "id")
+            let pet = NSManagedObject(entity: entity, insertInto: context)
+            pet.setValue(name, forKeyPath: "name")
+            pet.setValue(type, forKeyPath: "type")
+            pet.setValue(race, forKeyPath: "race")
+            pet.setValue(id, forKeyPath: "id")
                 
-                
-                do {
-                    try context.save()
-                    PetList.petList.append(pet)
-                    print("Pet saved")
-                    return true
-                } catch let err as NSError {
-                    print("Unable to save pet. \(err), \(err.userInfo)")
-                    
-                }
-        
+            do {
+                try context.save()
+                PetList.petList.append(pet)
+                print("Pet saved")
+                return true
+            } catch let err as NSError {
+                print("Unable to save pet. \(err), \(err.userInfo)")
             }
+        }
         return false
- 
     }
     
     func fetchPets(){
@@ -70,6 +70,20 @@ struct Pets {
     }
     
     
+    func checkIfNameAlreadyExistsInList(name : String) -> Bool{
+        
+        
+        for pet in PetList.petList {
+            if (pet.value(forKey: "name") as! String) == name {
+                print("Name already exists")
+                return true
+            }
+        }
+
+        return false
+    }
+    
+    
 //     func addPet2(obj: NSManagedObject)  { // //Pet
 //
 //        PetList.petList.append(obj)
@@ -77,6 +91,9 @@ struct Pets {
 //     }
     
     func deletePet(index: Int){
+        
+        
+        //TODO Delete mentions in Visits
         
         let pet = PetList.petList[index]
         let name = pet.value(forKeyPath: "name") as? String
@@ -109,9 +126,6 @@ struct Pets {
         }
         
         
-        
-       
-        //TODO add database
     }
     
     func entryPet(index: Int) -> NSManagedObject? {
@@ -119,7 +133,6 @@ struct Pets {
         if index >= 0 && index <= PetList.petList.count {
             return PetList.petList[index]
         }
-        
         return nil
     }
     

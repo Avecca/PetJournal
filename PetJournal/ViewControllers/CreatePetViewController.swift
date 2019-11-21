@@ -19,6 +19,7 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
     var pet : NSManagedObject?
     private let pets = Pets()
         let alert = UIAlertController(title: "Adding Pet", message: "Your pet was added to your Journal", preferredStyle: .alert)
+        let alertError = UIAlertController(title: "Adding Pet Failed", message: "A pet with that name already exists", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
         
         //alert msg initialized
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+        alertError.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
         
         //nameLbl.becomeFirstResponder()
     }
@@ -38,8 +40,7 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func savePetBtn(_ sender: Any) {
         
-        
-        
+
         //TODO alla är inte obligatoriska
         guard let nameField = nameLbl.text else {
             return
@@ -66,7 +67,7 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
         if (pets.addPet(name: nameField, type: typeField, race: raceField, id : idField)){
             self.present(self.alert,animated: true)
         } else{
-            //TODO other popup
+            self.present(self.alertError, animated: true)
         }
         
         

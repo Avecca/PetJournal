@@ -130,6 +130,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     
     func getPetNames(){
         
+        petNames = []
        // print("Trying to get petnames")
         if pets.countPets() > 0 {
             petView.isHidden = false
@@ -171,25 +172,24 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
             if !petView.isHidden {
                 selected = verticalPetMSC.selectedSegmentTitles
                // print("Selected : \(selected)")
+                //TODO Make this go with
             }
             
             if recievingCreate {
                 if visits.addVisit(reason: reason, time: date, info: self.info, petNames: selected ) {
+                    print("Visit created")
                       
                 }
                 
-            } else{
-                //TODO
-     //           recievingPetId
-    //            if visits.editVisit() {
-    //                <#code#>
-    //            }
-                print("EDITING !!!")
+            } else{  //TODO let petnames come with
+                //Edit time
+                if recievingPetId != nil {
+                    if visits.updateVisits(index: recievingPetId!, reason: reason, time: date, info: info, petNames: []) {
+                        print("Updated visit with idIndex \(String(describing: recievingPetId))")
+                    }
+                }
             }
-            
-            //TODO segue
-
-            
+            //Segue happens
         }
     
     
