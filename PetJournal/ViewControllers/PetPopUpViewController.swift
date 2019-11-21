@@ -57,6 +57,8 @@ class PetPopUpViewController: UIViewController {
             idLbl.text = id
         }
         
+        print("PET ON DISPLAY: \(pet)")
+        
     }
     
     @IBAction func cancelBtnClick(_ sender: Any) {

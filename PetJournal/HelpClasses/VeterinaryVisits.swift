@@ -15,6 +15,7 @@ struct VeterinaryVisits {
         //struct kan inte använda arv och objecten kan inte refereras på från flera olika instanser
     
     private let entityName = "Visit"
+    private let entityPet = "Pet"
     private var index = 0
     //TODO context var up here
     
@@ -55,17 +56,40 @@ struct VeterinaryVisits {
                     visit.setValue(info, forKeyPath: "info")
                 }
                 if petNames != [] {
-                    //TODO Add pets
+                    //var x = 0
+//                    print("petnames NOT EMPTY")
+//
+//
+//
+//                    let con = getContext()
+//                    for pet in petNames {
+//
+//                        print("PETNAME: \(pet)")
+//                        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityPet)
+//                        fetchRequest.predicate = NSPredicate(format: "name = %@ ", pet as CVarArg)
+//
+//                        guard let r = try? (con.fetch(fetchRequest) as! [NSManagedObject]) else { return false }
+//
+//                        print("ITERATING")
+//
+//                        visit.setValue(NSSet(object: r[0]), forKey: "pets")
+//                        //visit.setValue(r[0], forKey: "pets")
+//                        print("ITERATINGAFTER SET \(r[0])")
+//                        //x += 1
+//                    }
+                    
                 }
                 
                 //TODO Add Pets
 //                visit.setValue(id, forKeyPath: "id")
-                
+                print(context)
                 
                 do {
                     try context.save()
                     VeterinaryVisitsList.vetList.append(visit)
                     print("Visit saved W INDEX: \(self.index)")
+                    
+                    
                     return true
                 } catch let err as NSError {
                     print("Unable to save VISIT. \(err), \(err.userInfo)")

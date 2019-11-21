@@ -29,6 +29,8 @@ class VeterinaryTableViewCell: UITableViewCell {
     
     func configCell(obj: NSManagedObject?){  //pet: Pet //Pet
         
+         //let x = obj?.value(forKey: <#T##String#>)
+        
         if obj != nil {
             let reason = obj!.value(forKeyPath: "reason") as? String
             reasonBtn?.setTitle(reason, for: .normal)
@@ -42,7 +44,7 @@ class VeterinaryTableViewCell: UITableViewCell {
                 
             }
             
-
+           
             formatter.locale = Locale(identifier: "sv_SE")
             formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd-HH:mm")
             

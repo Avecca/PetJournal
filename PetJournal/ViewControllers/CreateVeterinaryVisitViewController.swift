@@ -77,6 +77,8 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
             
             let visit = visits.findVisitByDBIndex(index: self.recievingPetId!)
             
+            print(visit)
+            
             if visit != nil {
                 
                 guard let reason = visit!.value(forKeyPath: "reason") else { return  }
@@ -157,7 +159,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
 
             if !petView.isHidden {
                 selected = verticalPetMSC.selectedSegmentTitles
-               // print("Selected : \(selected)")
+                print("Selected : \(selected)")
                 //TODO Make this go with
             }
             

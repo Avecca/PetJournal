@@ -9,16 +9,18 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="race" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="visits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Visit" inverseName="pets" inverseEntity="Visit"/>
     </entity>
     <entity name="Visit" representedClassName="Visit" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="index" optional="YES" attributeType="String"/>
         <attribute name="info" optional="YES" attributeType="String"/>
         <attribute name="reason" optional="YES" attributeType="String"/>
+        <relationship name="pets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pet" inverseName="visits" inverseEntity="Pet"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
-        <element name="Pet" positionX="261" positionY="198" width="128" height="103"/>
-        <element name="Visit" positionX="261" positionY="225" width="128" height="103"/>
+        <element name="Event" positionX="165.1015625" positionY="185.0625" width="128" height="60"/>
+        <element name="Pet" positionX="28.42578125" positionY="-2.68359375" width="128" height="118"/>
+        <element name="Visit" positionX="-69.59375" positionY="257.578125" width="128" height="118"/>
     </elements>
 </model>
