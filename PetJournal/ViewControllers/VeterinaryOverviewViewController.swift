@@ -115,6 +115,8 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
     }
     
    @IBAction func unwindToHere( segue: UIStoryboardSegue) {
+        veterinaryVisits.reOrderVetList()
+    
         self.VeterinaryTV.reloadData()
     }
     

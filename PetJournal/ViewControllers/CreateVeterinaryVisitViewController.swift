@@ -25,8 +25,8 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     
     var visitType: [String] =  ["Checkup", "Vaccination",  "Spaying/Neuturing", "Dental", "Planned Procedure", "Other"]
     private let pets = Pets();
-    var petNames: [String] = [] // [String]()
-    var selected : [String] = []
+    var petNames: [String] = [] // Exists[String]()
+    var selected : [String] = []  //PetNames
     private var visits = VeterinaryVisits();
     var info = ""
     
@@ -49,14 +49,6 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         typePicker.dataSource = self
         typePicker.delegate = self
         
-//        getPetNames()
-//        verticalPetMSC.items = petNames
-//        verticalPetMSC.setTitleTextAttributes([.foregroundColor: UIColor.blue], for: .selected)
-//        verticalPetMSC.setTitleTextAttributes([.obliqueness: 0.25], for: .normal)
-        
-//        for x in petNames {
-//            print("petname:  \(x)")
-//        }
         
         if !recievingCreate {
             fillForEdit()
@@ -109,7 +101,6 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
                     typePicker.selectRow(reasonIndex, inComponent: 0, animated: true)
                 }
                 
-                
                 visitDP.date = time as! Date
                 
                 if addedInfo != "" {
@@ -123,7 +114,6 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         } else{
             //TODO unwindSegue
         }
-
         
     }
     
@@ -140,9 +130,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
             }
         } else{
             petView.isHidden = true
-            
         }
-        
     }
     
     @IBAction func deleteVisitClicked(_ sender: Any) {
@@ -150,7 +138,6 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
             
             visits.deleteVisit(index: recievingPetId!)
         }
-        
     }
     
     
@@ -167,7 +154,6 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
             if infoTV.text != nil {
                 info = infoTV.text
             }
-
 
             if !petView.isHidden {
                 selected = verticalPetMSC.selectedSegmentTitles
@@ -194,10 +180,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     
     
     //Pickerview Delegate, Datasource and functions
-//    func fillPicker(){
-//
-//         visitType = ["Checkup", "Vaccination",  "Spaying/Neuturing", "Dental", "Planned Procedure", "Other"]
-//     }
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -220,13 +203,6 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     }
     
 
-
-    
-
-    
-    
-    
-    
     
     /*
     // MARK: - Navigation
@@ -245,7 +221,19 @@ extension CreateVeterinaryVisitViewController: MultiSelectSegmentedControlDelega
     }
 }
 
+//        getPetNames()
+//        verticalPetMSC.items = petNames
+//        verticalPetMSC.setTitleTextAttributes([.foregroundColor: UIColor.blue], for: .selected)
+//        verticalPetMSC.setTitleTextAttributes([.obliqueness: 0.25], for: .normal)
+        
+//        for x in petNames {
+//            print("petname:  \(x)")
+//        }
 
+//    func fillPicker(){
+//
+//         visitType = ["Checkup", "Vaccination",  "Spaying/Neuturing", "Dental", "Planned Procedure", "Other"]
+//     }
 
         
 //        let labelW = typePicker.frame.width

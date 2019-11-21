@@ -58,7 +58,7 @@ struct Pets {
         
         
         do {
-            PetList.petList =  try context.fetch(fetchRq)
+            PetList.petList =  try context.fetch(fetchRq) //as! [Pet]
         } catch let err as NSError {
             print("Unable to fetch pets. \(err), \(err.userInfo)")
         }

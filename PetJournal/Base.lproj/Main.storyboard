@@ -1008,7 +1008,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDX-ah-4pL" customClass="MultiSelectSegmentedControl" customModule="MultiSelectSegmentedControl">
-                                                <rect key="frame" x="127.5" y="26" width="56" height="174.5"/>
+                                                <rect key="frame" x="30" y="26" width="251" height="174.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -1023,8 +1023,10 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.82352941180000006" green="0.88235294119999996" blue="0.92156862750000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="gDX-ah-4pL" secondAttribute="trailing" constant="30" id="DPj-QF-Qv0"/>
                                             <constraint firstItem="gNb-Rk-7xv" firstAttribute="top" secondItem="ceJ-aO-Tzc" secondAttribute="top" constant="2" id="YER-PK-8Is"/>
                                             <constraint firstItem="gNb-Rk-7xv" firstAttribute="leading" secondItem="ceJ-aO-Tzc" secondAttribute="leading" constant="2" id="Z5f-yn-Xuq"/>
+                                            <constraint firstItem="gDX-ah-4pL" firstAttribute="leading" secondItem="ceJ-aO-Tzc" secondAttribute="leading" constant="30" id="aXu-6f-Z2J"/>
                                             <constraint firstItem="gDX-ah-4pL" firstAttribute="centerX" secondItem="ceJ-aO-Tzc" secondAttribute="centerX" id="amD-Bv-Eh8"/>
                                             <constraint firstAttribute="bottom" secondItem="gDX-ah-4pL" secondAttribute="bottom" constant="5" id="juG-EN-yvt"/>
                                             <constraint firstItem="gDX-ah-4pL" firstAttribute="top" secondItem="gNb-Rk-7xv" secondAttribute="bottom" constant="2" id="kB4-rj-vup"/>

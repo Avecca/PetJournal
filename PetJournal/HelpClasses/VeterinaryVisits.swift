@@ -118,10 +118,12 @@ struct VeterinaryVisits {
     }
     
     func fetchVisits(){
+        
         let context = getContext()
         
         let fetchRq = NSFetchRequest<NSManagedObject>(entityName: entityName)
-        
+        let sort = NSSortDescriptor(key: "date", ascending: false)
+        fetchRq.sortDescriptors = [sort]
         
         do {
             VeterinaryVisitsList.vetList = try context.fetch(fetchRq)
@@ -197,6 +199,11 @@ struct VeterinaryVisits {
         }
         return nil
     }
+    
+    func reOrderVetList(){
+        fetchVisits()
+    }
+
     
     func entryVisit(listIndex: Int) -> NSManagedObject? {
         if listIndex >= 0 && index <= VeterinaryVisitsList.vetList.count  {
