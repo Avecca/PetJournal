@@ -723,6 +723,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teT-vb-1Th">
                                                     <rect key="frame" x="20" y="13" width="150" height="30.5"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Gfo-Jz-uMw"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="SeP-05-RhP"/>
                                                     </constraints>
                                                     <state key="normal" title="Planned Procedure">
@@ -735,6 +736,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fP-sn-x5i">
                                                     <rect key="frame" x="190" y="13" width="150" height="30.5"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="fWg-Rv-BKl"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="mhS-pg-geP"/>
                                                     </constraints>
                                                     <state key="normal" title="Date">
@@ -844,6 +846,24 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-w5-k1a">
+                                        <rect key="frame" x="8" y="8" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="22" id="Vh8-nL-hKu"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="Xly-oR-LSE"/>
+                                            <constraint firstAttribute="height" constant="22" id="foU-ey-ejL"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="ya4-FV-RSr"/>
+                                        </constraints>
+                                        <state key="normal" title="Edit" image="delete-button">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelBtnClick:" destination="cZB-fW-Yhb" eventType="touchUpInside" id="GoY-Hu-VcP"/>
+                                            <action selector="deleteBtnClick:" destination="sJE-Bf-sjF" eventType="touchUpInside" id="dyw-Fn-Uhh"/>
+                                            <action selector="deleteVisitClicked:" destination="9NM-el-R0b" eventType="touchUpInside" id="VDh-vY-FGI"/>
+                                            <segue destination="8bV-7Y-fHP" kind="unwind" unwindAction="unwindToHereWithSegue:" id="ywn-gv-wqC"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6d-Tq-shR">
                                         <rect key="frame" x="339" y="8" width="28" height="28"/>
                                         <constraints>
@@ -858,6 +878,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="IDm-w5-k1a" firstAttribute="top" secondItem="10p-CE-ev7" secondAttribute="top" constant="8" id="7vG-F2-QGH"/>
+                                    <constraint firstItem="IDm-w5-k1a" firstAttribute="leading" secondItem="10p-CE-ev7" secondAttribute="leading" constant="8" id="CQM-P5-wog"/>
                                     <constraint firstAttribute="height" constant="44" id="Dth-se-cVO"/>
                                     <constraint firstAttribute="bottom" secondItem="LzK-xS-LZb" secondAttribute="bottom" id="PSf-ZT-Ep4"/>
                                     <constraint firstItem="LzK-xS-LZb" firstAttribute="top" secondItem="10p-CE-ev7" secondAttribute="top" id="StY-se-Pjj"/>
@@ -882,7 +904,7 @@
                                             </label>
                                             <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="IMV-Tr-YEQ">
                                                 <rect key="frame" x="5" y="23" width="305" height="71"/>
-                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="8" right="0.0"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="9NM-el-R0b" id="qCR-Rm-520"/>
@@ -918,7 +940,7 @@
                                             </label>
                                             <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="C3b-Rl-45j">
                                                 <rect key="frame" x="5" y="23.5" width="305" height="70.5"/>
-                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <date key="minimumDate" timeIntervalSinceReferenceDate="568033200">
                                                     <!--2019-01-01 11:00:00 +0000-->
                                                 </date>
@@ -953,7 +975,7 @@
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JDt-Sw-i8m">
                                                 <rect key="frame" x="2" y="24" width="311" height="100"/>
-                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
@@ -1035,23 +1057,16 @@
                                     <constraint firstItem="0hj-iA-2Li" firstAttribute="top" secondItem="Ztq-Be-hY8" secondAttribute="top" constant="2" id="xXG-XH-5hw"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7i1-fD-5V8" customClass="RoundedButton" customModule="PetJournal" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7i1-fD-5V8" customClass="RoundedButton" customModule="PetJournal" customModuleProvider="target">
                                 <rect key="frame" x="30" y="596.5" width="315" height="42.5"/>
                                 <color key="backgroundColor" red="0.23137254900000001" green="0.52156862749999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42.5" id="5jO-Ni-XC9"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42.5" id="gxp-M2-7fJ"/>
                                 </constraints>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="SAVE">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="25" name="Charter-Black"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="25"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
@@ -1061,7 +1076,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="SaveClicked:" destination="9NM-el-R0b" eventType="touchUpInside" id="mKK-Pe-DUS"/>
-                                    <action selector="savePetBtn:" destination="cZB-fW-Yhb" eventType="touchUpInside" id="xLr-aK-50o"/>
+                                    <segue destination="8bV-7Y-fHP" kind="unwind" unwindAction="unwindToHereWithSegue:" id="bCj-CS-HNx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1082,10 +1097,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="mZa-Un-tWV"/>
                     <connections>
+                        <outlet property="deleteBtn" destination="IDm-w5-k1a" id="uu9-bd-9xJ"/>
                         <outlet property="headerLbl" destination="LzK-xS-LZb" id="5VX-6k-JMo"/>
                         <outlet property="infoTV" destination="JDt-Sw-i8m" id="qlW-zA-dlm"/>
                         <outlet property="petView" destination="ceJ-aO-Tzc" id="a8y-30-0Oe"/>
-                        <outlet property="saveBtn" destination="7i1-fD-5V8" id="IsU-8O-Tec"/>
+                        <outlet property="saveBtn" destination="7i1-fD-5V8" id="4Mo-hc-zvV"/>
                         <outlet property="typePicker" destination="IMV-Tr-YEQ" id="DE9-X1-88o"/>
                         <outlet property="verticalPetMSC" destination="gDX-ah-4pL" id="HMt-p4-57j"/>
                         <outlet property="visitDP" destination="C3b-Rl-45j" id="iiT-C9-rbd"/>

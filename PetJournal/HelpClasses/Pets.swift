@@ -14,7 +14,7 @@ import UIKit
 struct Pets {
         //struct kan inte använda arv och objecten kan inte refereras på från flera olika instanser
     
-    let entityName = "Pet"
+    private let entityName = "Pet"
     
     
     func countPets() -> Int {
@@ -70,11 +70,11 @@ struct Pets {
     }
     
     
-     func addPet2(obj: NSManagedObject)  { // //Pet
-
-        PetList.petList.append(obj)
-
-     }
+//     func addPet2(obj: NSManagedObject)  { // //Pet
+//
+//        PetList.petList.append(obj)
+//
+//     }
     
     func deletePet(index: Int){
         

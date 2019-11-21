@@ -14,8 +14,8 @@ import UIKit
 struct VeterinaryVisits {
         //struct kan inte använda arv och objecten kan inte refereras på från flera olika instanser
     
-    let entityName = "Visit"
-    var index = 0
+    private let entityName = "Visit"
+    private var index = 0
     
     
     func countVisits() -> Int {
@@ -31,19 +31,21 @@ struct VeterinaryVisits {
             if let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) {
                   
                 let visit = NSManagedObject(entity: entity, insertInto: context)
-                
+                self.index = 0
                 if (countVisits() > 0 ){
                     
                     for item in VeterinaryVisitsList.vetList {
                         
-                        let x = item.value(forKey: "index") as! Int
+                        let x = item.value(forKey: "index") as! String
 
-                        if  x > self.index {
-                            self.index = x
+                        if  Int(x)! > self.index {
+                            self.index = Int(x)!
                         }
                     }
                 }
                 
+                self.index += 1
+                    
                 visit.setValue(String(self.index), forKey: "index")
                 visit.setValue(reason, forKeyPath: "reason")
                 visit.setValue(time, forKeyPath: "date")
@@ -61,7 +63,7 @@ struct VeterinaryVisits {
                 do {
                     try context.save()
                     VeterinaryVisitsList.vetList.append(visit)
-                    print("Visit saved")
+                    print("Visit saved W INDEX: \(self.index)")
                     return true
                 } catch let err as NSError {
                     print("Unable to save VISIT. \(err), \(err.userInfo)")
@@ -70,6 +72,15 @@ struct VeterinaryVisits {
             }
         return false
  
+    }
+    
+    func updateVisits(reason : String, time : Date, info: String, petNames: [String]) -> Bool {
+        
+        
+        
+        
+        
+        return false
     }
     
     func fetchVisits(){
@@ -86,7 +97,7 @@ struct VeterinaryVisits {
         }
     }
     
-    func getContext() -> NSManagedObjectContext {
+    private func getContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }
@@ -109,16 +120,22 @@ struct VeterinaryVisits {
             guard let result = try? context.fetch(request) as! [NSManagedObject] else { return }
             
             if result.count > 0 {
+                //delete from DB
                 context.delete(result[0])
-                VeterinaryVisitsList.vetList.remove(at: index)
+                
+                //remove from local list
+                if let foundIndex = findVisitListIndex(index: indexString)  {
+                    
+                    VeterinaryVisitsList.vetList.remove(at: Int(foundIndex))
+                }
 
-                print("DELETEING ITEM FROM DB AND LIST")
+                print("DELETEING ITEM FROM DB AND LIST with index : \(indexString)")
             }
             
 //            for obj in result {
 //                context.delete(obj)
 //            }
-            //TODO Kom ihåg detta
+            //Save the delete try TODO Kom ihåg detta
             try context.save()
         
         } catch let err as NSError {
@@ -127,15 +144,37 @@ struct VeterinaryVisits {
         }
         
     }
+    private func findVisitListIndex(index: String) -> Int? {
+        if let listIndex = VeterinaryVisitsList.vetList.firstIndex(where:{$0.value(forKeyPath: "index")as! String == index}){
+            
+                               // print("Trying to remove index \(indexString) from listindex \(listIndex)")
+            return listIndex
+        }
+        return nil
+    }
     
-    func entryVisit(index: Int) -> NSManagedObject? {
+    func findVisitByDBIndex(index: Int) -> NSManagedObject? {
         
-        if index >= 0 && index <= VeterinaryVisitsList.vetList.count  {
-            return VeterinaryVisitsList.vetList[index]
+        if index >= 0  {
+            
+            if let listIndex = findVisitListIndex(index: String(index)) {
+                
+                return entryVisit(listIndex: listIndex)
+            }
         }
         
         return nil
     }
+    
+    func entryVisit(listIndex: Int) -> NSManagedObject? {
+        if listIndex >= 0 && index <= VeterinaryVisitsList.vetList.count  {
+            return VeterinaryVisitsList.vetList[listIndex]
+        }
+        
+        return nil
+    }
+    
+    
     
 }
 

@@ -38,6 +38,9 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func savePetBtn(_ sender: Any) {
         
+        
+        
+        //TODO alla är inte obligatoriska
         guard let nameField = nameLbl.text else {
             return
         }

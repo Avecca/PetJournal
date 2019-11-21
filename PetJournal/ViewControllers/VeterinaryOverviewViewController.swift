@@ -37,10 +37,11 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
         self.VeterinaryTV.reloadData()
         
 
-        
-        
-
     }
+    override func viewDidLayoutSubviews() {
+          //collectionview filled from bottom
+          VeterinaryTV.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
+      }
     
 //    override func viewDidAppear(_ animated: Bool) {
 //        print("VetVisistNo: \(veterinaryVisits.countVisits())")
@@ -63,16 +64,20 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
         
         let cellIndex = indexPath.item
         
-        visit = veterinaryVisits.entryVisit(index: cellIndex)!
+        visit = veterinaryVisits.entryVisit(listIndex: cellIndex)!
         cell.configCell(obj: visit)
         let visitIndex = visit?.value(forKey: "index") as! String
         cell.reasonBtn.tag = Int(visitIndex)!
         cell.dateBtn.tag = Int(visitIndex)!
         
+        //print("ADDING CELL INDEX: \(visitIndex)")
+        
+        //Make sure the names arnt upside down since we reversed the order of the cv
+        cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        
         
         //cell.reasonBtn.tag =  Int(visitIndex)!
-//        TODO upside down
-//                cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+
         
         
         return cell

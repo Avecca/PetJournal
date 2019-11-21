@@ -22,6 +22,9 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var pet: NSManagedObject?
     private let pets = Pets();
     
+    
+    //TODO make things private
+    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -121,8 +124,6 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         
         if segue.identifier == segueToPetPopUpId {
-            
-            print(" CLICKKKKKKKK \(sender)")
 
             let cell = sender as! UIButton
             

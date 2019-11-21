@@ -14,15 +14,16 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     
     
     @IBOutlet weak var headerLbl: UILabel!
-    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var saveBtn: RoundedButton!
+    @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var typePicker: UIPickerView!
     @IBOutlet weak var visitDP: UIDatePicker!
     @IBOutlet weak var infoTV: UITextView!
-        @IBOutlet weak var petView: UIView!
+    @IBOutlet weak var petView: UIView!
     @IBOutlet weak var verticalPetMSC: MultiSelectSegmentedControl!
 
     
-    var visitType: [String] = []
+    var visitType: [String] =  ["Checkup", "Vaccination",  "Spaying/Neuturing", "Dental", "Planned Procedure", "Other"]
     private let pets = Pets();
     var petNames: [String] = [] // [String]()
     var selected : [String] = []
@@ -34,26 +35,12 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     
     
     override func viewWillAppear(_ animated: Bool) {
-        fillPicker()
+       // fillPicker()
         
         getPetNames()
         verticalPetMSC.items = petNames
-        
-//        let labelW = typePicker.frame.width
-//
-//        //TODO check if works
-//        let label: UILabel = UILabel.init(frame:)
-//
-//            //UILabel.init(frame: (typePicker.frame.origin.x + labelW, 0, labelW, 20 ))
-//
-//           // UILabel = UILabel.init(frame: CGRectMake(typePicker.frame.origin.x + labelW * CGFloat(index), 0, labelW, 20))
-//        
-//        label.text = "Visit Reason"
-//        label.textAlignment = .center
-//        typePicker.addSubview(label)
-        
-        
-        
+    
+
     }
 
     override func viewDidLoad() {
@@ -77,17 +64,66 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("pet id: \(String(describing: recievingPetId))")
-        print("create \(recievingCreate)")
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        print("pet id: \(String(describing: recievingPetId))")
+//        print("create \(recievingCreate)")
+//
+//
+//    }
     
     
 
     func fillForEdit(){
-        print("EDIT TIME")
-        headerLbl.text = "Edit Visit"
-        self.saveBtn?.setTitle("Save Changes", for: .normal)
+        
+        if recievingPetId != nil {
+            print("EDIT TIME")
+            deleteBtn.isHidden = false
+            headerLbl.text = "Edit Visit"
+            //TODO Rememeber, only works if title type is PLain not Attributed in inspector
+            saveBtn.setTitle("Save Changes", for: [])
+            saveBtn.backgroundColor = #colorLiteral(red: 1, green: 0.05490196078, blue: 0.02352941176, alpha: 1)
+            
+            let visit = visits.findVisitByDBIndex(index: self.recievingPetId!)
+            
+            if visit != nil {
+                
+                guard let reason = visit!.value(forKeyPath: "reason") else { return  }
+                
+                guard let time = visit!.value(forKeyPath: "date") else { return  }
+                
+                var addedInfo = ""
+                if let info2 = visit!.value(forKeyPath: "info")  {
+                    addedInfo = info2 as! String
+                }
+                
+                
+                //TODO
+//                var petsToVisit = [String]
+//                if let petsFound = visit!.value(forKeyPath: <#T##String#>) {
+//                    petsToVisit = petsFound
+//                }
+//
+                if let reasonIndex = visitType.firstIndex(of: reason as! String){  //of: reason as! String
+                    //[self.view addSubview:self.picker];
+                    print("reasonIndex: \(reasonIndex)")
+                    typePicker.selectRow(reasonIndex, inComponent: 0, animated: true)
+                }
+                
+                
+                visitDP.date = time as! Date
+                
+                if addedInfo != "" {
+                    infoTV.text = addedInfo
+                }
+ 
+            }
+            
+            print("pet id IN EDIT: \(String(describing: recievingPetId))")
+            
+        } else{
+            //TODO unwindSegue
+        }
+
         
     }
     
@@ -108,7 +144,14 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         
     }
     
- 
+    @IBAction func deleteVisitClicked(_ sender: Any) {
+        if !recievingCreate && recievingPetId != nil {
+            
+            visits.deleteVisit(index: recievingPetId!)
+        }
+        
+    }
+    
     
         @IBAction func SaveClicked(_ sender: Any){
 
@@ -151,10 +194,10 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     
     
     //Pickerview Delegate, Datasource and functions
-    func fillPicker(){
-         
-         visitType = ["Checkup", "Vaccination",  "Spaying/Neuturing", "Dental", "Planned Procedure", "Other"]
-     }
+//    func fillPicker(){
+//
+//         visitType = ["Checkup", "Vaccination",  "Spaying/Neuturing", "Dental", "Planned Procedure", "Other"]
+//     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -176,12 +219,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         
     }
     
-    
-    //MultiSegmentPicker(){
-        
-    //}
-    
-    //MultiSegmentPicker
+
 
     
 
@@ -206,3 +244,36 @@ extension CreateVeterinaryVisitViewController: MultiSelectSegmentedControlDelega
         print("\(value) at \(index)")
     }
 }
+
+
+
+        
+//        let labelW = typePicker.frame.width
+//
+//        //TODO check if works
+//        let label: UILabel = UILabel.init(frame:)
+//
+//            //UILabel.init(frame: (typePicker.frame.origin.x + labelW, 0, labelW, 20 ))
+//
+//           // UILabel = UILabel.init(frame: CGRectMake(typePicker.frame.origin.x + labelW * CGFloat(index), 0, labelW, 20))
+//
+//        label.text = "Visit Reason"
+//        label.textAlignment = .center
+//        typePicker.addSubview(label)
+
+
+
+//
+//                print("CHecking where exit, reason = \(reason)")
+//                let stringReason: String = reason as! String
+//
+//                var currentIndex = 0
+//
+//                for type in visitType {
+//
+//                    if type == stringReason {
+//                        break
+//                    }
+//                    currentIndex += 1
+//                }
+//                print("Current index \(currentIndex) and no in list = \(visitType.count)")
