@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Detail" representedClassName="Detail" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="info" optional="YES" attributeType="String"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entry" inverseName="detail" inverseEntity="Entry"/>
+    </entity>
+    <entity name="Entry" representedClassName="Entry" syncable="YES" codeGenerationType="class">
+        <attribute name="subject" optional="YES" attributeType="String"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="detail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Detail" inverseName="entry" inverseEntity="Detail"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="entry" inverseEntity="Pet"/>
+    </entity>
     <entity name="Event" representedClassName="Event" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date"/>
         <userInfo/>
@@ -9,6 +21,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="race" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="entry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entry" inverseName="pet" inverseEntity="Entry"/>
         <relationship name="visits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Visit" inverseName="pets" inverseEntity="Visit"/>
     </entity>
     <entity name="Visit" representedClassName="Visit" syncable="YES" codeGenerationType="class">
@@ -20,7 +33,9 @@
     </entity>
     <elements>
         <element name="Event" positionX="165.1015625" positionY="185.0625" width="128" height="60"/>
-        <element name="Pet" positionX="28.42578125" positionY="-2.68359375" width="128" height="118"/>
+        <element name="Pet" positionX="28.42578125" positionY="-2.68359375" width="128" height="133"/>
         <element name="Visit" positionX="-69.59375" positionY="257.578125" width="128" height="118"/>
+        <element name="Entry" positionX="45" positionY="153" width="128" height="103"/>
+        <element name="Detail" positionX="54" positionY="162" width="128" height="103"/>
     </elements>
 </model>

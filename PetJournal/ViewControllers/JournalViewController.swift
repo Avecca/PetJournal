@@ -55,6 +55,8 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     @IBAction func newJournalEntry(_ sender: UIButton) {
+//        let managedObjectContext = persistentContainer.viewContext
+//        let e = Entry(context: managedObjectContext)
         
         //TODO popup
     }

@@ -56,6 +56,8 @@ struct VeterinaryVisits {
                     visit.setValue(info, forKeyPath: "info")
                 }
                 if petNames != [] {
+                    
+                    
                     //var x = 0
 //                    print("petnames NOT EMPTY")
 //
@@ -176,20 +178,23 @@ struct VeterinaryVisits {
                 //delete from DB
                 context.delete(result[0])
                 
-                //remove from local list
-                if let foundIndex = findVisitListIndex(index: indexString)  {
-                    
-                    VeterinaryVisitsList.vetList.remove(at: Int(foundIndex))
+                
+                do {
+                     try context.save()   //Save the delete try TODO Kom ihåg detta   
+                     //remove from local list
+                     if let foundIndex = findVisitListIndex(index: indexString)  {
+                         VeterinaryVisitsList.vetList.remove(at: Int(foundIndex))
+                     }
+                     print("DELETEING ITEM FROM DB AND LIST with index : \(indexString)")
+                } catch  {
+                    print(error)
                 }
 
-                print("DELETEING ITEM FROM DB AND LIST with index : \(indexString)")
             }
-            
 //            for obj in result {
 //                context.delete(obj)
 //            }
-            //Save the delete try TODO Kom ihåg detta
-            try context.save()
+                   
         
         } catch let err as NSError {
             print("Unable to find visit to delete. \(err), \(err.userInfo)")
