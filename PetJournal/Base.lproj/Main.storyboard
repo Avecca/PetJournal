@@ -933,17 +933,38 @@
                                         </constraints>
                                         <state key="normal" title="Cancel" image="Cancel_Icon_Black"/>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAG-s7-rvh">
+                                        <rect key="frame" x="8" y="8" width="28" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="IV0-NU-TOW"/>
+                                            <constraint firstAttribute="width" constant="28" id="PCh-mc-ged"/>
+                                        </constraints>
+                                        <state key="normal" title="Edit" image="delete-button">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelBtnClick:" destination="cZB-fW-Yhb" eventType="touchUpInside" id="nim-83-RNd"/>
+                                            <action selector="deleteBtnClick:" destination="sJE-Bf-sjF" eventType="touchUpInside" id="qTI-59-0bM"/>
+                                            <action selector="deleteVisitClicked:" destination="9NM-el-R0b" eventType="touchUpInside" id="4T4-8q-H6v"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="VO3-Lb-QLp" firstAttribute="leading" secondItem="QYd-kh-dYD" secondAttribute="leading" id="42l-YV-kj3"/>
+                                    <constraint firstItem="UAG-s7-rvh" firstAttribute="leading" secondItem="QYd-kh-dYD" secondAttribute="leading" constant="8" id="9Ob-XK-zi5"/>
                                     <constraint firstAttribute="height" constant="44" id="F1V-1S-Yp4"/>
                                     <constraint firstAttribute="trailing" secondItem="n1F-rW-lrL" secondAttribute="trailing" constant="8" id="GZr-7l-VYN"/>
                                     <constraint firstItem="n1F-rW-lrL" firstAttribute="top" secondItem="QYd-kh-dYD" secondAttribute="top" constant="8" id="Iwx-31-OhB"/>
                                     <constraint firstAttribute="trailing" secondItem="VO3-Lb-QLp" secondAttribute="trailing" id="JbQ-EH-ViZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="UAG-s7-rvh" secondAttribute="bottom" constant="8" id="NQE-d6-ncG"/>
+                                    <constraint firstItem="UAG-s7-rvh" firstAttribute="top" secondItem="QYd-kh-dYD" secondAttribute="top" constant="8" id="f8e-zv-MaT"/>
                                     <constraint firstAttribute="bottom" secondItem="VO3-Lb-QLp" secondAttribute="bottom" id="gWs-dl-XeH"/>
                                     <constraint firstItem="VO3-Lb-QLp" firstAttribute="top" secondItem="QYd-kh-dYD" secondAttribute="top" id="ijm-4A-WVC"/>
+                                    <constraint firstItem="UAG-s7-rvh" firstAttribute="leading" secondItem="QYd-kh-dYD" secondAttribute="leading" constant="8" id="ioS-u6-5Gp"/>
+                                    <constraint firstItem="UAG-s7-rvh" firstAttribute="top" secondItem="QYd-kh-dYD" secondAttribute="top" constant="8" id="tp9-Je-4gZ"/>
                                     <constraint firstAttribute="bottom" secondItem="n1F-rW-lrL" secondAttribute="bottom" constant="8" id="w8a-iN-6tD"/>
+                                    <constraint firstAttribute="bottom" secondItem="UAG-s7-rvh" secondAttribute="bottom" constant="8" id="wtL-u2-S5t"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZB-QR-KWX" customClass="RoundedButton" customModule="PetJournal" customModuleProvider="target">

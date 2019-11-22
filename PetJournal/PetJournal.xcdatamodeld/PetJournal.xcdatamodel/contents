@@ -33,9 +33,9 @@
     </entity>
     <elements>
         <element name="Event" positionX="165.1015625" positionY="185.0625" width="128" height="60"/>
-        <element name="Pet" positionX="28.42578125" positionY="-2.68359375" width="128" height="133"/>
-        <element name="Visit" positionX="-69.59375" positionY="257.578125" width="128" height="118"/>
-        <element name="Entry" positionX="45" positionY="153" width="128" height="103"/>
-        <element name="Detail" positionX="54" positionY="162" width="128" height="103"/>
+        <element name="Pet" positionX="-69.03125" positionY="-435.375" width="128" height="133"/>
+        <element name="Visit" positionX="90.58203125" positionY="-430.71484375" width="128" height="118"/>
+        <element name="Entry" positionX="-54.98046875" positionY="-205.328125" width="128" height="103"/>
+        <element name="Detail" positionX="124.828125" positionY="-199.1796875" width="128" height="103"/>
     </elements>
 </model>

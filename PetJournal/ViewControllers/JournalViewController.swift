@@ -21,6 +21,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     private var pets = Pets()
     var pet : NSManagedObject?
     var recievingPetId : Int? //In local list
+   
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +42,11 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
             petDetails()
         }
     }
+    
+    override func viewDidLayoutSubviews() {
+          //collectionview filled from bottom
+          journalTV.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
+      }
     
     private func petDetails(){
         pet = pets.entryPet(index: recievingPetId!)
@@ -90,6 +96,9 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
 
+    @IBAction func unwindToJournal( segue: UIStoryboardSegue) {
+
+      }
     
 
 
@@ -100,14 +109,16 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
 
             let cell = sender as! UIButton
             
-            let journalId = cell.tag
+            let entryId = cell.tag
 
-            print(" journalId:  \(journalId)")
+            print(" journalId:  \(entryId)")
 
            // let destinationVC = segue.destination as! NÅNTING
-
-
-
+            
+//            destinationVC.recievingEntryId = entryId
+//            destinationVC.recievingPetId = petId
+//            destinationVC.oldVC = self
+            // i nästa  var recievingOldVC: JournalViewController!
             
 
         }
