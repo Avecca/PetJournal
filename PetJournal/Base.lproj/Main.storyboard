@@ -733,7 +733,7 @@
                                             <constraint firstAttribute="height" constant="44" id="Xdx-sX-M77"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="Journal">
+                                            <fragment content="Journal Entries">
                                                 <attributes>
                                                     <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" size="30" name="Charter-Black"/>
@@ -896,6 +896,100 @@
                 <exit id="CCd-h7-4BB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1232.8" y="-1511.6941529235382"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n1p-0Y-U7l">
+            <objects>
+                <viewController id="PsU-nD-vFm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kf5-P1-hSL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYd-kh-dYD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VO3-Lb-QLp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <color key="backgroundColor" red="0.23137254900000001" green="0.52156862749999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="bPT-BX-ZdZ"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Entry Details">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="30" name="Charter-Black"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1F-rW-lrL">
+                                        <rect key="frame" x="339" y="8" width="28" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="ROc-5b-4PV"/>
+                                            <constraint firstAttribute="width" constant="28" id="nRY-IN-qH1"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel" image="Cancel_Icon_Black"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="VO3-Lb-QLp" firstAttribute="leading" secondItem="QYd-kh-dYD" secondAttribute="leading" id="42l-YV-kj3"/>
+                                    <constraint firstAttribute="height" constant="44" id="F1V-1S-Yp4"/>
+                                    <constraint firstAttribute="trailing" secondItem="n1F-rW-lrL" secondAttribute="trailing" constant="8" id="GZr-7l-VYN"/>
+                                    <constraint firstItem="n1F-rW-lrL" firstAttribute="top" secondItem="QYd-kh-dYD" secondAttribute="top" constant="8" id="Iwx-31-OhB"/>
+                                    <constraint firstAttribute="trailing" secondItem="VO3-Lb-QLp" secondAttribute="trailing" id="JbQ-EH-ViZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="VO3-Lb-QLp" secondAttribute="bottom" id="gWs-dl-XeH"/>
+                                    <constraint firstItem="VO3-Lb-QLp" firstAttribute="top" secondItem="QYd-kh-dYD" secondAttribute="top" id="ijm-4A-WVC"/>
+                                    <constraint firstAttribute="bottom" secondItem="n1F-rW-lrL" secondAttribute="bottom" constant="8" id="w8a-iN-6tD"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZB-QR-KWX" customClass="RoundedButton" customModule="PetJournal" customModuleProvider="target">
+                                <rect key="frame" x="30" y="616.5" width="315" height="42.5"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.52156862749999999" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42.5" id="4sA-nR-ht3"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Add Detail">
+                                            <attributes>
+                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="25" name="Charter-Black"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="newJournalEntry:" destination="hzA-qI-igB" eventType="touchUpInside" id="YYe-3F-bZQ"/>
+                                    <action selector="savePetBtn:" destination="cZB-fW-Yhb" eventType="touchUpInside" id="Tj0-Rh-XwL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vZB-QR-KWX" firstAttribute="leading" secondItem="3yS-8p-vXo" secondAttribute="leading" constant="30" id="0S3-Y3-VeZ"/>
+                            <constraint firstItem="QYd-kh-dYD" firstAttribute="leading" secondItem="Kf5-P1-hSL" secondAttribute="leading" id="7ui-MI-g5n"/>
+                            <constraint firstItem="QYd-kh-dYD" firstAttribute="top" secondItem="Kf5-P1-hSL" secondAttribute="top" id="FG4-ff-dUI"/>
+                            <constraint firstAttribute="trailing" secondItem="QYd-kh-dYD" secondAttribute="trailing" id="RGj-vA-Atu"/>
+                            <constraint firstItem="3yS-8p-vXo" firstAttribute="bottom" secondItem="vZB-QR-KWX" secondAttribute="bottom" constant="8" id="rv5-d8-Wm3"/>
+                            <constraint firstItem="3yS-8p-vXo" firstAttribute="trailing" secondItem="vZB-QR-KWX" secondAttribute="trailing" constant="30" id="vPD-ig-6lg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3yS-8p-vXo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D3R-zT-IQy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1951" y="-1505"/>
         </scene>
         <!--Vet-->
         <scene sceneID="e9f-cB-iZw">

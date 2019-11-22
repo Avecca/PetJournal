@@ -21,6 +21,14 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     private var pets = Pets()
     var pet : NSManagedObject?
     var recievingPetId : Int? //In local list
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+       //todo fetch data
+        self.journalTV.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,6 +117,6 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     
-   // ADD DETAIL
+   // ADD DETAIL/event
 
 }
