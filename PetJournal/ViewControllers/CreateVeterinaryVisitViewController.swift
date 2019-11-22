@@ -8,6 +8,7 @@
 
 import UIKit
 import MultiSelectSegmentedControl
+import  CoreData
 
 class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -28,6 +29,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     var petNames: [String] = [] // Exists[String]()
     var selected : [String] = []  //PetNames
     private var visits = VeterinaryVisits();
+    var visit: NSManagedObject?
     var info = ""
     
     var recievingPetId : Int?
@@ -75,7 +77,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
             saveBtn.setTitle("Save Changes", for: [])
             saveBtn.backgroundColor = #colorLiteral(red: 1, green: 0.05490196078, blue: 0.02352941176, alpha: 1)
             
-            let visit = visits.findVisitByDBIndex(index: self.recievingPetId!)
+            visit = visits.findVisitByDBIndex(index: self.recievingPetId!)
             
             print(visit)
             

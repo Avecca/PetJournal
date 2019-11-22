@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		934A626423845BF1002791BF /* VeterinaryVisits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934A626323845BF1002791BF /* VeterinaryVisits.swift */; };
 		934A626623845C08002791BF /* VeterinaryVisitsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934A626523845C08002791BF /* VeterinaryVisitsList.swift */; };
 		934A6268238468ED002791BF /* CreateVeterinaryVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934A6267238468ED002791BF /* CreateVeterinaryVisitViewController.swift */; };
+		935451532387E66000B6DD16 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935451522387E66000B6DD16 /* JournalViewController.swift */; };
+		935451552387E99300B6DD16 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935451542387E99300B6DD16 /* JournalTableViewCell.swift */; };
 		9359245D237DB48A0070FA42 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359245C237DB48A0070FA42 /* PetTableViewCell.swift */; };
 		93592460237DBDD10070FA42 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359245F237DBDD10070FA42 /* RoundedButton.swift */; };
 		936394F9237CD00800C59912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936394F8237CD00800C59912 /* AppDelegate.swift */; };
@@ -63,6 +65,8 @@
 		934A626323845BF1002791BF /* VeterinaryVisits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeterinaryVisits.swift; sourceTree = "<group>"; };
 		934A626523845C08002791BF /* VeterinaryVisitsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeterinaryVisitsList.swift; sourceTree = "<group>"; };
 		934A6267238468ED002791BF /* CreateVeterinaryVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVeterinaryVisitViewController.swift; sourceTree = "<group>"; };
+		935451522387E66000B6DD16 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		935451542387E99300B6DD16 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
 		9359245C237DB48A0070FA42 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		9359245F237DBDD10070FA42 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		936394F5237CD00800C59912 /* PetJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +138,6 @@
 				C28DA62E2163A7D05D21D2D9 /* Pods-PetJournalTests.debug.xcconfig */,
 				EBFC28351CDE981A49F5AFF7 /* Pods-PetJournalTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,6 +150,7 @@
 				93E14542237E3816005FA3D6 /* PetPopUpViewController.swift */,
 				934A625F238459AF002791BF /* VeterinaryOverviewViewController.swift */,
 				934A6267238468ED002791BF /* CreateVeterinaryVisitViewController.swift */,
+				935451522387E66000B6DD16 /* JournalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +173,7 @@
 			children = (
 				9359245C237DB48A0070FA42 /* PetTableViewCell.swift */,
 				934A626123845A63002791BF /* VeterinaryTableViewCell.swift */,
+				935451542387E99300B6DD16 /* JournalTableViewCell.swift */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 				93639500237CD00800C59912 /* MasterViewController.swift in Sources */,
 				93592460237DBDD10070FA42 /* RoundedButton.swift in Sources */,
 				931AD7FF237DE391009CC068 /* PetList.swift in Sources */,
+				935451532387E66000B6DD16 /* JournalViewController.swift in Sources */,
 				931AD7FD237DD5B2009CC068 /* Pets.swift in Sources */,
 				936394F9237CD00800C59912 /* AppDelegate.swift in Sources */,
 				93639535237CF33F00C59912 /* TabOverView.swift in Sources */,
@@ -497,6 +503,7 @@
 				936394FC237CD00800C59912 /* PetJournal.xcdatamodeld in Sources */,
 				9363952E237CD59E00C59912 /* PetViewController.swift in Sources */,
 				934A626223845A63002791BF /* VeterinaryTableViewCell.swift in Sources */,
+				935451552387E99300B6DD16 /* JournalTableViewCell.swift in Sources */,
 				931AD7FB237DD59F009CC068 /* Pet.swift in Sources */,
 				936394FE237CD00800C59912 /* SceneDelegate.swift in Sources */,
 				93E14543237E3816005FA3D6 /* PetPopUpViewController.swift in Sources */,

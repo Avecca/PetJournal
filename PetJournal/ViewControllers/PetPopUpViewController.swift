@@ -23,6 +23,8 @@ class PetPopUpViewController: UIViewController {
     var recievingPetId : Int?
     var oldVC: PetViewController!
     
+    let segueJournal = "segueToJournal"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +59,7 @@ class PetPopUpViewController: UIViewController {
             idLbl.text = id
         }
         
-        print("PET ON DISPLAY: \(pet)")
+        print("PET ON DISPLAY: \(String(describing: pet))")
         
     }
     
@@ -77,14 +79,21 @@ class PetPopUpViewController: UIViewController {
        
         // dismiss(animated: true, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)  //Do something in complettion
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        
+        if segue.identifier == segueJournal && self.recievingPetId != nil {
+            
+             let destinationVC = segue.destination as! JournalViewController
+
+             destinationVC.recievingPetId = self.recievingPetId
+           
+
+        }
     }
-    */
+
 
 }
