@@ -2,23 +2,26 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Detail" representedClassName="Detail" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="index" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="info" optional="YES" attributeType="String"/>
         <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entry" inverseName="detail" inverseEntity="Entry"/>
+        <relationship name="entry" maxCount="1" deletionRule="Nullify" destinationEntity="Entry" inverseName="detail" inverseEntity="Entry"/>
     </entity>
     <entity name="Entry" representedClassName="Entry" syncable="YES" codeGenerationType="class">
+        <attribute name="index" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="subject" optional="YES" attributeType="String"/>
         <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="detail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Detail" inverseName="entry" inverseEntity="Detail"/>
-        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="entry" inverseEntity="Pet"/>
+        <relationship name="pet" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="entry" inverseEntity="Pet"/>
     </entity>
     <entity name="Event" representedClassName="Event" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date"/>
         <userInfo/>
     </entity>
     <entity name="Pet" representedClassName="Pet" syncable="YES" codeGenerationType="class">
+        <attribute name="birthDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
         <attribute name="race" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="entry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entry" inverseName="pet" inverseEntity="Entry"/>
@@ -26,16 +29,16 @@
     </entity>
     <entity name="Visit" representedClassName="Visit" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="index" optional="YES" attributeType="String"/>
+        <attribute name="index" attributeType="String"/>
         <attribute name="info" optional="YES" attributeType="String"/>
         <attribute name="reason" optional="YES" attributeType="String"/>
         <relationship name="pets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pet" inverseName="visits" inverseEntity="Pet"/>
     </entity>
     <elements>
+        <element name="Detail" positionX="124.828125" positionY="-199.1796875" width="128" height="118"/>
+        <element name="Entry" positionX="-54.98046875" positionY="-205.328125" width="128" height="118"/>
         <element name="Event" positionX="165.1015625" positionY="185.0625" width="128" height="60"/>
-        <element name="Pet" positionX="-69.03125" positionY="-435.375" width="128" height="133"/>
+        <element name="Pet" positionX="-69.03125" positionY="-435.375" width="128" height="148"/>
         <element name="Visit" positionX="90.58203125" positionY="-430.71484375" width="128" height="118"/>
-        <element name="Entry" positionX="-54.98046875" positionY="-205.328125" width="128" height="103"/>
-        <element name="Detail" positionX="124.828125" positionY="-199.1796875" width="128" height="103"/>
     </elements>
 </model>
