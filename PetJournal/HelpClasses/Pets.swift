@@ -28,7 +28,6 @@ struct Pets {
             return false
         }
         
-        //TODO NO DUPLICATE NAMES
         let context = getContext()
         
         if let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) {
@@ -54,7 +53,7 @@ struct Pets {
     func fetchPets(){
         let context = getContext()
         
-        let fetchRq = NSFetchRequest<NSManagedObject>(entityName: entityName)
+        let fetchRq = NSFetchRequest<NSManagedObject>(entityName: entityName) //<Pet>
         
         
         do {
