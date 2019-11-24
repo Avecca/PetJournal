@@ -20,6 +20,8 @@
 		934A6268238468ED002791BF /* CreateVeterinaryVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934A6267238468ED002791BF /* CreateVeterinaryVisitViewController.swift */; };
 		935451532387E66000B6DD16 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935451522387E66000B6DD16 /* JournalViewController.swift */; };
 		935451552387E99300B6DD16 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935451542387E99300B6DD16 /* JournalTableViewCell.swift */; };
+		93579D2D2389FFDC008E6799 /* EntryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93579D2C2389FFDC008E6799 /* EntryDetailTableViewCell.swift */; };
+		93579D2F238A1365008E6799 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93579D2E238A1365008E6799 /* EntryDetailViewController.swift */; };
 		9359245D237DB48A0070FA42 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359245C237DB48A0070FA42 /* PetTableViewCell.swift */; };
 		93592460237DBDD10070FA42 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359245F237DBDD10070FA42 /* RoundedButton.swift */; };
 		936394F9237CD00800C59912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936394F8237CD00800C59912 /* AppDelegate.swift */; };
@@ -67,6 +69,8 @@
 		934A6267238468ED002791BF /* CreateVeterinaryVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVeterinaryVisitViewController.swift; sourceTree = "<group>"; };
 		935451522387E66000B6DD16 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		935451542387E99300B6DD16 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
+		93579D2C2389FFDC008E6799 /* EntryDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailTableViewCell.swift; sourceTree = "<group>"; };
+		93579D2E238A1365008E6799 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		9359245C237DB48A0070FA42 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		9359245F237DBDD10070FA42 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		936394F5237CD00800C59912 /* PetJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +155,7 @@
 				934A625F238459AF002791BF /* VeterinaryOverviewViewController.swift */,
 				934A6267238468ED002791BF /* CreateVeterinaryVisitViewController.swift */,
 				935451522387E66000B6DD16 /* JournalViewController.swift */,
+				93579D2E238A1365008E6799 /* EntryDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				9359245C237DB48A0070FA42 /* PetTableViewCell.swift */,
 				934A626123845A63002791BF /* VeterinaryTableViewCell.swift */,
 				935451542387E99300B6DD16 /* JournalTableViewCell.swift */,
+				93579D2C2389FFDC008E6799 /* EntryDetailTableViewCell.swift */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -506,6 +512,8 @@
 				935451552387E99300B6DD16 /* JournalTableViewCell.swift in Sources */,
 				931AD7FB237DD59F009CC068 /* Pet.swift in Sources */,
 				936394FE237CD00800C59912 /* SceneDelegate.swift in Sources */,
+				93579D2F238A1365008E6799 /* EntryDetailViewController.swift in Sources */,
+				93579D2D2389FFDC008E6799 /* EntryDetailTableViewCell.swift in Sources */,
 				93E14543237E3816005FA3D6 /* PetPopUpViewController.swift in Sources */,
 				93639531237CED9300C59912 /* CreatePetViewController.swift in Sources */,
 			);

@@ -74,6 +74,7 @@ class PetPopUpViewController: UIViewController {
         
         pets.deletePet(index: recievingPetId!)
         oldVC.petsTableView.reloadData()
+    
         
         dismiss(animated: true)
        

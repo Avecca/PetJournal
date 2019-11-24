@@ -13,6 +13,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var journalTV: UITableView!
     @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var petImgView: UIImageView!
     
     let segueDetail = "segueToJournalDetail"
     
@@ -21,8 +22,13 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     private var pets = Pets()
     var pet : NSManagedObject?
     var recievingPetId : Int? //In local list
-   
     
+    var selectedTitle: String = ""
+    var selectedId: Int?
+   
+    var entryId: Int?
+    var newEntry: Bool = false
+        
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -40,7 +46,10 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if recievingPetId != nil {
             petDetails()
+        } else{
+            //todo dismiss back
         }
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -61,10 +70,44 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     @IBAction func newJournalEntry(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "New Journal Entry", message: "Add a title for your new Journal Entry", preferredStyle: .alert)
+    
+        let alertSaveAction = UIAlertAction(title: "Save", style: .default){
+            [unowned self] action in
+            
+            guard let txtField = alert.textFields?.first, let title = txtField.text else {
+                return
+            }
+            
+            //TODO SAVE DATA, title
+            
+            //GET NEW ENTRY ID entryId =
+            print(title + " saved")
+            //self.entryId = NEW ID
+            self.selectedTitle = title
+            self.newEntry = true
+            
+            self.journalTV.reloadData()
+            
+            //Segue to Entry page
+            self.performSegue(withIdentifier: self.segueDetail, sender: self)
+            
+        }
+        
+        let alertCancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addTextField()
+        alert.addAction(alertSaveAction)
+        alert.addAction(alertCancelAction)
+        
+        present(alert, animated: true)
+        
+        
 //        let managedObjectContext = persistentContainer.viewContext
 //        let e = Entry(context: managedObjectContext)
         
-        //TODO popup
+      
     }
     
     //Tableview Delegate and Datasource
@@ -83,8 +126,8 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         //entry = veterinaryVisits.entryVisit(listIndex: cellIndex)!
             
         cell.configCell(obj: entry)
-        let visitIndex = entry?.value(forKey: "index") as! String
-        cell.entryBtn.tag = Int(visitIndex)!
+        let entryIndex = entry?.value(forKey: "index") as! String
+        cell.entryBtn.tag = Int(entryIndex)!
         
         //print("ADDING CELL INDEX: \(visitIndex)")
         
@@ -97,6 +140,8 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     
 
     @IBAction func unwindToJournal( segue: UIStoryboardSegue) {
+        
+        print("unwinded to journal entries w \(String(describing: recievingPetId))")
 
       }
     
@@ -107,17 +152,34 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if segue.identifier == segueDetail {
 
-            let cell = sender as! UIButton
             
-            let entryId = cell.tag
-
-            print(" journalId:  \(entryId)")
-
-           // let destinationVC = segue.destination as! NÅNTING
+            let destinationVC = segue.destination as! EntryDetailViewController
             
-//            destinationVC.recievingEntryId = entryId
-//            destinationVC.recievingPetId = petId
-//            destinationVC.oldVC = self
+            if (!newEntry){
+                let cell = sender as! UIButton
+                entryId = cell.tag
+                print("Sender is button")
+                if let txt = cell.titleLabel?.text{
+                    selectedTitle = txt
+                }
+                
+            } else {
+                
+                  
+            }
+            
+           // let entryId = (cell as AnyObject).tag
+
+            print(" journalId:  \(String(describing: entryId))")
+
+            
+            destinationVC.recievingEntryTitle = selectedTitle
+            //send the whole ITEM
+            destinationVC.recievingEntryId = entryId
+            destinationVC.recieivingPetName = nameLbl.text
+            //destinationVC.recievingPetImg = petImgView.image
+            destinationVC.recievingPetId = recievingPetId
+            destinationVC.recievingOldVC = self
             // i nästa  var recievingOldVC: JournalViewController!
             
 
