@@ -20,6 +20,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private var entry: Entry?
     private var entries: [Entry]?
+    private var selectedEntry: Entry?
     
     private var entriestList = EntriesList()
     private var pets = Pets()
@@ -111,7 +112,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             
             //SAVE DATA, title
-            self.entryIndex = self.createEntry(title: title)
+            self.createEntry(title: title)
             
             //GET NEW ENTRY ID entryId =
             print(title + " sending to save")
@@ -140,7 +141,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
       
     }
     
-    private func createEntry(title : String) -> Int32 {
+    private func createEntry(title : String) {
         
         let e = Entry(context: manager.context)
         e.subject = title
@@ -165,15 +166,14 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         e.pet = pet
         
         print("Sending to contect to save " + String(describing: e.self))
-        manager.saveContext()
-        entriestList.addEntry(entry: e)
-        entries?.append(e)
+        if (manager.saveContext()){
+            entriestList.addEntry(entry: e)
+            entries?.append(e)
+            selectedEntry = e
         
-        
-        journalEntryTV.reloadData()
-        
-        print(e)
-        return e.index
+            journalEntryTV.reloadData()
+            print(e)
+        }
     }
     
     //Tableview Delegate and Datasource
@@ -213,6 +213,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func unwindToJournal( segue: UIStoryboardSegue) {
         
         print("unwinded to journal entries w \(String(describing: recievingPetId))")
+        self.newEntry = false
 
       }
     
@@ -234,6 +235,10 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
                     selectedTitle = txt
                 }
                 
+                if let obj = entriestList.findVisitByDBIndex(index: entryIndex!){
+                    self.entry = obj
+                }
+                
             } else {
                 
                   
@@ -246,13 +251,16 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             destinationVC.recievingEntryTitle = selectedTitle
             //send the whole ITEM
+            destinationVC.recievingEntry = self.entry
             destinationVC.recievingEntryId = entryIndex
-            //destinationVC.recieivingPetName = nameLbl.text
-            //destinationVC.recievingPetImg = petImgView.image
             destinationVC.recievingPet = self.pet
             destinationVC.recievingPetId = recievingPetId
             destinationVC.recievingOldVC = self
             // i nästa  var recievingOldVC: JournalViewController!
+            
+            
+            //destinationVC.recieivingPetName = nameLbl.text
+            //destinationVC.recievingPetImg = petImgView.image
             
 
         }

@@ -47,6 +47,7 @@
 		9363952E237CD59E00C59912 /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9363952D237CD59E00C59912 /* PetViewController.swift */; };
 		93639531237CED9300C59912 /* CreatePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93639530237CED9300C59912 /* CreatePetViewController.swift */; };
 		93639535237CF33F00C59912 /* TabOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93639534237CF33F00C59912 /* TabOverView.swift */; };
+		938E0DD6238DD40000655B28 /* DetailsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E0DD5238DD40000655B28 /* DetailsList.swift */; };
 		93E14543237E3816005FA3D6 /* PetPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E14542237E3816005FA3D6 /* PetPopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		9363952F237CDE9000C59912 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		93639530237CED9300C59912 /* CreatePetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePetViewController.swift; sourceTree = "<group>"; };
 		93639534237CF33F00C59912 /* TabOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOverView.swift; sourceTree = "<group>"; };
+		938E0DD5238DD40000655B28 /* DetailsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsList.swift; sourceTree = "<group>"; };
 		93E14542237E3816005FA3D6 /* PetPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPopUpViewController.swift; sourceTree = "<group>"; };
 		B02DBF2A7F012100CFEAB910 /* Pods_PetJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A80571AF420421ABC4DD15 /* Pods-PetJournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetJournal.release.xcconfig"; path = "Target Support Files/Pods-PetJournal/Pods-PetJournal.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				934A626323845BF1002791BF /* VeterinaryVisits.swift */,
 				934A626523845C08002791BF /* VeterinaryVisitsList.swift */,
 				935BEAB8238CDE6800717093 /* EntriesList.swift */,
+				938E0DD5238DD40000655B28 /* DetailsList.swift */,
 			);
 			path = HelpClasses;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				931AD7FF237DE391009CC068 /* PetList.swift in Sources */,
 				935451532387E66000B6DD16 /* JournalViewController.swift in Sources */,
 				931AD7FD237DD5B2009CC068 /* Pets.swift in Sources */,
+				938E0DD6238DD40000655B28 /* DetailsList.swift in Sources */,
 				936394F9237CD00800C59912 /* AppDelegate.swift in Sources */,
 				93639535237CF33F00C59912 /* TabOverView.swift in Sources */,
 				934A626423845BF1002791BF /* VeterinaryVisits.swift in Sources */,

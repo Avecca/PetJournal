@@ -27,6 +27,7 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var recievingEntryId: Int32?
 //    var recieivingPetName: String?
 //    var recievingPetImg: UIImage?
+    var recievingEntry: Entry?
     var recievingPet : Pet?
     var recievingEntryTitle: String?
   

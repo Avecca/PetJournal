@@ -31,6 +31,18 @@ struct EntriesList {
         EntriesList.entriesList.append(entry)
     }
     
+    func findVisitByDBIndex(index: Int32) -> Entry? {
+        if let Obj = EntriesList.entriesList.first(where:{$0.value(forKeyPath: "index")as! Int32 == index}){
+            
+        
+        //firstIndex(where:{$0.value(forKeyPath: "index")as! String == index}){
+            
+            // print("Trying to remove index \(indexString) from listindex \(listIndex)")
+            return Obj
+        }
+        return nil
+    }
+    
     
     
 }

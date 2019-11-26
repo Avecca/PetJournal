@@ -35,18 +35,21 @@ final class PersistenceManager { //not able to subclass it
     }()
 
 
-    func saveContext () {
-        let context = persistentContainer.viewContext
+    func saveContext () -> Bool {
+       // let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
                 print("Saving through new method")
+                return true
             } catch {
 
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+               
             }
         }
+        return false
     }
     
     func fetchAll<T: NSManagedObject>(_ objectType: T.Type) -> [T] {
