@@ -32,7 +32,8 @@ class JournalTableViewCell: UITableViewCell {
     func configCell(obj: Entry?){  //pet: Pet //Pet
         
         
-        print("inside config")
+        print("inside config ")
+       // print((String(describing: obj.self)))
         if obj != nil {
             let subj = obj?.subject //obj!.value(forKeyPath: "name") as? String
            // nameLbl?.text = name
@@ -42,8 +43,8 @@ class JournalTableViewCell: UITableViewCell {
             formatter.locale = Locale(identifier: "sv_SE")
             formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd-HH:mm")
             
-            let subjString = (subj ?? "Unnamed entry") + " created at " + formatter.string(from: date)
-            journalEntryButton?.setTitle(subj, for: .normal)
+            let subjString = (subj?.uppercased() ?? "UNNAMED ENTRY") + "  @  " + formatter.string(from: date)
+            journalEntryButton?.setTitle(subjString, for: .normal)
 
         }
         
