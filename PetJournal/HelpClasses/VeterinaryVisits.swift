@@ -19,6 +19,8 @@ struct VeterinaryVisits {
     private var index = 0
     //TODO context var up here
     
+    private let manager = PersistenceManager.shared
+    
     
     func countVisits() -> Int {
         return VeterinaryVisitsList.vetList.count
@@ -28,7 +30,7 @@ struct VeterinaryVisits {
         
         
         //TODO
-        let context = getContext()
+        let context = manager.context // getContext()
         
             if let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) {
                   
@@ -104,7 +106,7 @@ struct VeterinaryVisits {
     func updateVisits(index: Int, reason : String, time : Date, info: String, petNames: [String]) -> Bool {
         
         let indexString = String(index)
-        let context = getContext()
+        let context = manager.context //getContext()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         
@@ -145,7 +147,7 @@ struct VeterinaryVisits {
     
     func fetchVisits(){
         
-        let context = getContext()
+        let context = manager.context// getContext()
         
         let fetchRq = NSFetchRequest<NSManagedObject>(entityName: entityName)
         let sort = NSSortDescriptor(key: "date", ascending: false)
@@ -165,7 +167,7 @@ struct VeterinaryVisits {
 //        let visitIndex = visit.value(forKeyPath: "index") as? String
         let indexString = String(index)
         
-        let context = getContext()
+        let context = manager.context//getContext()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         request.predicate = NSPredicate(format: "index = %@ ", indexString as CVarArg)
@@ -203,10 +205,10 @@ struct VeterinaryVisits {
         
     }
     
-    private func getContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
-    }
+//    private func getContext() -> NSManagedObjectContext {
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        return appDelegate.persistentContainer.viewContext
+//    }
     
     private func findVisitListIndex(index: String) -> Int? {
         if let listIndex = VeterinaryVisitsList.vetList.firstIndex(where:{$0.value(forKeyPath: "index")as! String == index}){

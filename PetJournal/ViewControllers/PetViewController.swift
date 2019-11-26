@@ -20,7 +20,7 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     //var pets: [Pet] = []  //[Pet]
     var pet: NSManagedObject?
-    private let pets = Pets();
+    private let pets = Pets()
     
     
     //TODO make things private

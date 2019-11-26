@@ -12,7 +12,11 @@ import CoreData
 class JournalTableViewCell: UITableViewCell {
     
 
-    @IBOutlet weak var entryBtn: UIButton!
+  //  @IBOutlet weak var entryBtn: UIButton!
+    @IBOutlet weak var journalEntryButton: UIButton!
+    
+    var formatter = DateFormatter()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,14 +29,23 @@ class JournalTableViewCell: UITableViewCell {
     }
     
     
-    func configCell(obj: NSManagedObject?){  //pet: Pet //Pet
+    func configCell(obj: Entry?){  //pet: Pet //Pet
         
-//        if obj != nil {
-//            let name = obj!.value(forKeyPath: "name") as? String
-//           // nameLbl?.text = name
-//            nameBtn?.setTitle(name, for: .normal)
-//
-//        }
+        
+        print("inside config")
+        if obj != nil {
+            let subj = obj?.subject //obj!.value(forKeyPath: "name") as? String
+           // nameLbl?.text = name
+            let date = obj?.timeStamp ?? Date()
+            
+            
+            formatter.locale = Locale(identifier: "sv_SE")
+            formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd-HH:mm")
+            
+            let subjString = (subj ?? "Unnamed entry") + " created at " + formatter.string(from: date)
+            journalEntryButton?.setTitle(subj, for: .normal)
+
+        }
         
     }
 

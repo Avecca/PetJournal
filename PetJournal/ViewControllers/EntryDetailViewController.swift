@@ -22,10 +22,12 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
     private var detail: NSManagedObject?
 
+    //todo remoce petid
     var recievingPetId : Int? //In local list
-    var recievingEntryId: Int?
-    var recieivingPetName: String?
-    var recievingPetImg: UIImage?
+    var recievingEntryId: Int32?
+//    var recieivingPetName: String?
+//    var recievingPetImg: UIImage?
+    var recievingPet : Pet?
     var recievingEntryTitle: String?
   
     var recievingOldVC: JournalViewController?
@@ -48,7 +50,7 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if recievingEntryTitle != nil {
                 
             entryNameLbl.text = recievingEntryTitle
-            nameLbl.text = recieivingPetName
+            nameLbl.text = recievingPet?.name
                 
         } else{
                

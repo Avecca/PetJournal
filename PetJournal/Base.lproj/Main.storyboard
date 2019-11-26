@@ -798,49 +798,44 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHl-8L-PVz">
                                 <rect key="frame" x="10" y="140" width="355" height="448.5"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KAc-fo-LuL">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="448.5"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2im-o3-xlq">
+                                        <rect key="frame" x="10" y="8" width="335" height="432.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hwl-YS-eSa" customClass="JournalTableViewCell" customModule="PetJournal" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="355" height="30.5"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="fJv-1s-Kfp" customClass="JournalTableViewCell" customModule="PetJournal" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="335" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hwl-YS-eSa" id="rx0-rG-fVu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="30.5"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fJv-1s-Kfp" id="4ot-H3-imj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8T-gx-p1X">
-                                                            <rect key="frame" x="15" y="0.0" width="325" height="30.5"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="K8T-gx-p1X">
+                                                            <rect key="frame" x="-10" y="6" width="355" height="30.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" title="Button"/>
                                                             <connections>
                                                                 <segue destination="PsU-nD-vFm" kind="show" identifier="segueToJournalDetail" id="qYk-cI-ccg"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="K8T-gx-p1X" secondAttribute="trailing" constant="15" id="DRA-16-a3c"/>
-                                                        <constraint firstItem="K8T-gx-p1X" firstAttribute="leading" secondItem="rx0-rG-fVu" secondAttribute="leading" constant="15" id="Jj4-yG-YNd"/>
-                                                        <constraint firstItem="K8T-gx-p1X" firstAttribute="top" secondItem="rx0-rG-fVu" secondAttribute="top" id="e6E-8n-7pK"/>
-                                                        <constraint firstAttribute="bottom" secondItem="K8T-gx-p1X" secondAttribute="bottom" id="kpG-82-jhG"/>
-                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="entryBtn" destination="K8T-gx-p1X" id="x70-m0-FUP"/>
+                                                    <outlet property="journalEntryButton" destination="K8T-gx-p1X" id="xx0-cu-s2q"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
-                                            <outlet property="dataSource" destination="hzA-qI-igB" id="YcM-2y-ySi"/>
-                                            <outlet property="delegate" destination="hzA-qI-igB" id="gg3-30-aAv"/>
+                                            <outlet property="dataSource" destination="hzA-qI-igB" id="zFo-ot-Ohl"/>
+                                            <outlet property="delegate" destination="hzA-qI-igB" id="iZP-X0-C81"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="KAc-fo-LuL" firstAttribute="top" secondItem="IHl-8L-PVz" secondAttribute="top" id="5Ye-Xx-v7p"/>
-                                    <constraint firstItem="KAc-fo-LuL" firstAttribute="leading" secondItem="IHl-8L-PVz" secondAttribute="leading" id="EU4-VK-ami"/>
-                                    <constraint firstAttribute="bottom" secondItem="KAc-fo-LuL" secondAttribute="bottom" id="eTU-Sc-rtB"/>
-                                    <constraint firstAttribute="trailing" secondItem="KAc-fo-LuL" secondAttribute="trailing" id="zJC-HP-Ube"/>
+                                    <constraint firstItem="2im-o3-xlq" firstAttribute="leading" secondItem="IHl-8L-PVz" secondAttribute="leading" constant="10" id="19Z-zs-5D7"/>
+                                    <constraint firstAttribute="trailing" secondItem="2im-o3-xlq" secondAttribute="trailing" constant="10" id="Y6y-VZ-m7b"/>
+                                    <constraint firstAttribute="bottom" secondItem="2im-o3-xlq" secondAttribute="bottom" constant="8" id="mLf-gM-vVF"/>
+                                    <constraint firstItem="2im-o3-xlq" firstAttribute="top" secondItem="IHl-8L-PVz" secondAttribute="top" constant="8" id="qaW-lO-QIY"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0D-rm-kBU" customClass="RoundedButton" customModule="PetJournal" customModuleProvider="target">
@@ -892,7 +887,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WkR-zF-pDx"/>
                     <connections>
-                        <outlet property="journalTV" destination="KAc-fo-LuL" id="xQQ-bG-ZcR"/>
+                        <outlet property="journalEntryTV" destination="2im-o3-xlq" id="zzq-DP-l3y"/>
                         <outlet property="nameLbl" destination="Sfd-Ux-pQo" id="gmm-h3-eOM"/>
                         <outlet property="petImgView" destination="7fN-Qd-jct" id="D1H-2d-5vg"/>
                     </connections>
@@ -1053,7 +1048,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="428.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="etu-Ae-E2p">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="etu-Ae-E2p">
                                                 <rect key="frame" x="0.0" y="28" width="355" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="etu-Ae-E2p" id="7NX-Ha-YXC" customClass="EntryDetailTableViewCell" customModule="PetJournal" customModuleProvider="target">
@@ -1581,6 +1576,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="x2s-H3-6Lr"/>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>

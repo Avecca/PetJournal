@@ -26,7 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
 
         let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
         let controller = masterNavigationController.topViewController as! MasterViewController
-        controller.managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+       // controller.managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        controller.managedObjectContext = PersistenceManager.shared.persistentContainer.viewContext
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -57,7 +58,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        //UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        (PersistenceManager.shared.saveContext())
     }
 
     // MARK: - Split view

@@ -18,6 +18,11 @@ struct Pets {
     //TODO context var up here
     
     
+    
+    //TODO should not use the appdelegates persistanceocontainer
+    private let manager = PersistenceManager.shared
+    
+    
     func countPets() -> Int {
         return PetList.petList.count
     }
@@ -28,7 +33,7 @@ struct Pets {
             return false
         }
         
-        let context = getContext()
+        let context = manager.context   //getContext()
         
         if let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) {
                 
@@ -51,7 +56,7 @@ struct Pets {
     }
     
     func fetchPets(){
-        let context = getContext()
+        let context = manager.context //getContext()
         
         let fetchRq = NSFetchRequest<NSManagedObject>(entityName: entityName) //<Pet>
         
@@ -64,10 +69,10 @@ struct Pets {
         }
     }
     
-    func getContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
-    }
+//    func getContext() -> NSManagedObjectContext {
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        return appDelegate.persistentContainer.viewContext
+//    }
     
     
     func checkIfNameAlreadyExistsInList(name : String) -> Bool{
@@ -98,7 +103,7 @@ struct Pets {
         let pet = PetList.petList[index]
         let name = pet.value(forKeyPath: "name") as? String
         
-        let context = getContext()
+        let context = manager.context // getContext()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         request.predicate = NSPredicate(format: "name = %@ ", name as! CVarArg)

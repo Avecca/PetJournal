@@ -11,41 +11,54 @@ import  CoreData
 
 class JournalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var journalTV: UITableView!
+  
+    @IBOutlet weak var journalEntryTV: UITableView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var petImgView: UIImageView!
     
     let segueDetail = "segueToJournalDetail"
     
-    private var entry: NSManagedObject?
+    private var entry: Entry?
+    private var entries: [Entry]?
     
+    private var entriestList = EntriesList()
     private var pets = Pets()
-    var pet : NSManagedObject?
+    var pet : Pet?
+    
+    //TODO Send the whole pet with
     var recievingPetId : Int? //In local list
     
     var selectedTitle: String = ""
     var selectedId: Int?
    
-    var entryId: Int?
+    
+    var entryIndex: Int32?
     var newEntry: Bool = false
+    
+    
+    
+    //TODO Check on this
+    private let manager = PersistenceManager.shared
+
         
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
        //todo fetch data
-        self.journalTV.reloadData()
+        self.journalEntryTV.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        journalTV.delegate = self
-        journalTV.dataSource = self
+        journalEntryTV.delegate = self
+        journalEntryTV.dataSource = self
         
         
         if recievingPetId != nil {
             petDetails()
+            fetchEntries()
         } else{
             //todo dismiss back
         }
@@ -54,17 +67,34 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLayoutSubviews() {
           //collectionview filled from bottom
-          journalTV.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
+          journalEntryTV.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
       }
     
     private func petDetails(){
-        pet = pets.entryPet(index: recievingPetId!)
+        pet = pets.entryPet(index: recievingPetId!) as? Pet
 
         if pet != nil {
-            if let name = pet!.value(forKey: "name") as? String {
+            if let name = pet?.name { //pet!.value(forKey: "name") as? String {
                 nameLbl.text = name
             }
         }
+    }
+    
+    private func fetchEntries(){
+        
+        
+        
+        //fill the general entry list
+        let es = manager.fetchAll(Entry.self)
+        entriestList.fillEntriesList(entries: es)
+       // EntriesList.entriesList = manager.fetchAll(Entry.self)
+        entryIndex = nil
+        
+        guard let e =  pet!.entry?.allObjects as? [Entry] else {
+            return  }
+        
+        entries = e
+        
     }
     
     
@@ -80,15 +110,15 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
                 return
             }
             
-            //TODO SAVE DATA, title
+            //SAVE DATA, title
+            self.entryIndex = self.createEntry(title: title)
             
             //GET NEW ENTRY ID entryId =
-            print(title + " saved")
-            //self.entryId = NEW ID
+            print(title + " sending to save")
             self.selectedTitle = title
             self.newEntry = true
             
-            self.journalTV.reloadData()
+            self.journalEntryTV.reloadData()
             
             //Segue to Entry page
             self.performSegue(withIdentifier: self.segueDetail, sender: self)
@@ -110,24 +140,65 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
       
     }
     
+    private func createEntry(title : String) -> Int32 {
+        
+        let e = Entry(context: manager.context)
+        e.subject = title
+        e.timeStamp = Date()
+        
+        //TODO really necessary?
+       // e.index
+        self.entryIndex = 0
+        
+        if entriestList.countEntries() > 0 {
+            for item in entriestList.fetchWholeEntriesList() {
+                let x = item.index
+                if Int32(x) > self.entryIndex! {
+                    self.entryIndex = Int32(x)
+                }
+            }
+        }
+        
+        self.entryIndex! += 1
+        e.index = entryIndex!
+        
+        e.pet = pet
+        
+        print("Sending to contect to save " + String(describing: e.self))
+        manager.saveContext()
+        entriestList.addEntry(entry: e)
+        entries?.append(e)
+        
+        
+        journalEntryTV.reloadData()
+        
+        print(e)
+        return e.index
+    }
+    
     //Tableview Delegate and Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return entries?.count ?? 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = journalTV.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JournalTableViewCell
+        
+        print("Trying to DEQUEUE")
+        let cell = journalEntryTV.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JournalTableViewCell
         
         let cellIndex = indexPath.item
-        
-        
-        //TODO
-        //entry = veterinaryVisits.entryVisit(listIndex: cellIndex)!
+    
+
+        entry = entries![cellIndex]//veterinaryVisits.entryVisit(listIndex: cellIndex)!
             
         cell.configCell(obj: entry)
-        let entryIndex = entry?.value(forKey: "index") as! String
-        cell.entryBtn.tag = Int(entryIndex)!
+        let entryIndex = entry!.index  // entry?.value(forKey: "index") as! String
+        cell.journalEntryButton.tag = Int(entryIndex)
         
         //print("ADDING CELL INDEX: \(visitIndex)")
         
@@ -157,7 +228,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             if (!newEntry){
                 let cell = sender as! UIButton
-                entryId = cell.tag
+                entryIndex = Int32(cell.tag)
                 print("Sender is button")
                 if let txt = cell.titleLabel?.text{
                     selectedTitle = txt
@@ -170,14 +241,15 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
             
            // let entryId = (cell as AnyObject).tag
 
-            print(" journalId:  \(String(describing: entryId))")
+            print(" journalId:  \(String(describing: entryIndex))")
 
             
             destinationVC.recievingEntryTitle = selectedTitle
             //send the whole ITEM
-            destinationVC.recievingEntryId = entryId
-            destinationVC.recieivingPetName = nameLbl.text
+            destinationVC.recievingEntryId = entryIndex
+            //destinationVC.recieivingPetName = nameLbl.text
             //destinationVC.recievingPetImg = petImgView.image
+            destinationVC.recievingPet = self.pet
             destinationVC.recievingPetId = recievingPetId
             destinationVC.recievingOldVC = self
             // i nästa  var recievingOldVC: JournalViewController!
