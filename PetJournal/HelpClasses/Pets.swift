@@ -45,7 +45,7 @@ struct Pets {
                 
             do {
                 try context.save()
-                PetList.petList.append(pet)
+                PetList.petList.append(pet as! Pet)
                 print("Pet saved")
                 return true
             } catch let err as NSError {
@@ -58,7 +58,7 @@ struct Pets {
     func fetchPets(){
         let context = manager.context //getContext()
         
-        let fetchRq = NSFetchRequest<NSManagedObject>(entityName: entityName) //<Pet>
+        let fetchRq = NSFetchRequest<Pet>(entityName: entityName) //<Pet>  //NSManagedObject
         
         
         do {

@@ -11,5 +11,5 @@ import CoreData
 
 struct PetList {
     //static var petList: [Pet] = []
-    static var petList: [NSManagedObject] = []
+    static var petList: [Pet] = []
 }

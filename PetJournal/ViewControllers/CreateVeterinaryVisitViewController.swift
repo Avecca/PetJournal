@@ -13,7 +13,6 @@ import  CoreData
 class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     
-    
     @IBOutlet weak var headerLbl: UILabel!
     @IBOutlet weak var saveBtn: RoundedButton!
     @IBOutlet weak var deleteBtn: UIButton!
@@ -22,6 +21,8 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     @IBOutlet weak var infoTV: UITextView!
     @IBOutlet weak var petView: UIView!
     @IBOutlet weak var verticalPetMSC: MultiSelectSegmentedControl!
+    
+    let segueUnwindToVet = "unwindToHereWithSegue"
 
     
     var visitType: [String] =  ["Checkup", "Vaccination",  "Spaying/Neuturing", "Dental", "Planned Procedure", "Other"]
@@ -29,7 +30,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     var petNames: [String] = [] // Exists[String]()
     var selected : [String] = []  //PetNames
     private var visits = VeterinaryVisits();
-    var visit: NSManagedObject?
+    var visit: Visit?// NSManagedObject?
     var info = ""
     
     var recievingVisitId : Int?
@@ -39,8 +40,8 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     override func viewWillAppear(_ animated: Bool) {
        // fillPicker()
         
-        getPetNames()
-        verticalPetMSC.items = petNames
+//        getPetNames()
+//        verticalPetMSC.items = petNames
     
 
     }
@@ -51,8 +52,11 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         typePicker.dataSource = self
         typePicker.delegate = self
         
+        getPetNames()
+        verticalPetMSC.items = petNames
         
         if !recievingCreate {
+
             fillForEdit()
         }
         
@@ -77,7 +81,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
             saveBtn.setTitle("Save Changes", for: [])
             saveBtn.backgroundColor = #colorLiteral(red: 1, green: 0.05490196078, blue: 0.02352941176, alpha: 1)
             
-            visit = visits.findVisitByDBIndex(index: self.recievingVisitId!)
+            visit = visits.findVisitByDBIndex(index: self.recievingVisitId!) as? Visit
             
             print(visit!)
             
@@ -92,13 +96,16 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
                     addedInfo = info2 as! String
                 }
                 
+                var indexes = IndexSet()
+                for p in visit!.pets! {
+                    let namePet = (p as! Pet).name
+                    if let index = petNames.firstIndex(of: namePet){
+                        indexes.insert(index)//append(index)
+                    }
+                }
                 
-                //TODO
-//                var petsToVisit = [String]
-//                if let petsFound = visit!.value(forKeyPath: <#T##String#>) {
-//                    petsToVisit = petsFound
-//                }
-//
+                verticalPetMSC.selectedSegmentIndexes = indexes
+
                 if let reasonIndex = visitType.firstIndex(of: reason as! String){  //of: reason as! String
                     //[self.view addSubview:self.picker];
                     print("reasonIndex: \(reasonIndex)")
@@ -110,15 +117,13 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
                 if addedInfo != "" {
                     infoTV.text = addedInfo
                 }
- 
             }
             
             print("Visit id IN EDIT: \(String(describing: recievingVisitId))")
             
         } else{
-            //TODO unwindSegue
+            self.performSegue(withIdentifier: segueUnwindToVet, sender: self)
         }
-        
     }
     
     
@@ -174,7 +179,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
             } else{  //TODO let petnames come with
                 //Edit time
                 if recievingVisitId != nil {
-                    if visits.updateVisits(index: recievingVisitId!, reason: reason, time: date, info: info, petNames: []) {
+                    if visits.updateVisits(index: recievingVisitId!, reason: reason, time: date, info: info, petNames: selected) {
                         print("Updated visit with idIndex \(String(describing: recievingVisitId))")
                     }
                 }
@@ -206,17 +211,6 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         
     }
     
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension CreateVeterinaryVisitViewController: MultiSelectSegmentedControlDelegate {

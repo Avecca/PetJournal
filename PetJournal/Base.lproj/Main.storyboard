@@ -1334,9 +1334,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
                                         <connections>
-                                            <action selector="cancelBtnClick:" destination="cZB-fW-Yhb" eventType="touchUpInside" id="GoY-Hu-VcP"/>
-                                            <action selector="deleteBtnClick:" destination="sJE-Bf-sjF" eventType="touchUpInside" id="dyw-Fn-Uhh"/>
-                                            <action selector="deleteVisitClicked:" destination="9NM-el-R0b" eventType="touchUpInside" id="VDh-vY-FGI"/>
+                                            <action selector="deleteVisitClicked:" destination="9NM-el-R0b" eventType="touchUpInside" id="hUs-qi-OAq"/>
                                             <segue destination="8bV-7Y-fHP" kind="unwind" unwindAction="unwindToHereWithSegue:" id="ywn-gv-wqC"/>
                                         </connections>
                                     </button>
