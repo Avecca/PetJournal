@@ -100,6 +100,8 @@ struct Pets {
         
         //TODO Delete mentions in Visits
         
+        
+        
         let pet = PetList.petList[index]
         let name = pet.value(forKeyPath: "name") as? String
         
@@ -113,6 +115,22 @@ struct Pets {
             guard let result = try? context.fetch(request) as? [NSManagedObject] else { return }
             
             if result.count > 0 {
+                
+                let petObj = result[0] as! Pet
+                
+                for pOE in petObj.entry! {
+                    
+                    for pd in ((pOE as! Entry).detail!) {
+                        print("Deleteting details")
+                        context.delete(pd as! NSManagedObject)
+                    }
+                    
+                    print("Deleteting entries")
+                    context.delete(pOE as! NSManagedObject)
+                    
+                }
+                
+                
                 context.delete(result[0])
                 PetList.petList.remove(at: index)
 

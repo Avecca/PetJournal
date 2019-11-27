@@ -10,7 +10,6 @@
 		2D413B8E5882F84CE641A50B /* Pods_PetJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02DBF2A7F012100CFEAB910 /* Pods_PetJournal.framework */; };
 		5738C80F51973AB9F91834B8 /* Pods_PetJournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E568321B812DFAB0EED26267 /* Pods_PetJournalTests.framework */; };
 		707E356E31D707CC1863C310 /* Pods_PetJournal_PetJournalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF80CF9DA6CBD31E568AA7D4 /* Pods_PetJournal_PetJournalUITests.framework */; };
-		931AD7FB237DD59F009CC068 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD7FA237DD59F009CC068 /* Pet.swift */; };
 		931AD7FD237DD5B2009CC068 /* Pets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD7FC237DD5B2009CC068 /* Pets.swift */; };
 		931AD7FF237DE391009CC068 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AD7FE237DE391009CC068 /* PetList.swift */; };
 		934A6260238459AF002791BF /* VeterinaryOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934A625F238459AF002791BF /* VeterinaryOverviewViewController.swift */; };
@@ -70,7 +69,6 @@
 
 /* Begin PBXFileReference section */
 		7B303EF41A0B610B080ED7AC /* Pods-PetJournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetJournal.debug.xcconfig"; path = "Target Support Files/Pods-PetJournal/Pods-PetJournal.debug.xcconfig"; sourceTree = "<group>"; };
-		931AD7FA237DD59F009CC068 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		931AD7FC237DD5B2009CC068 /* Pets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pets.swift; sourceTree = "<group>"; };
 		931AD7FE237DE391009CC068 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		934A625F238459AF002791BF /* VeterinaryOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeterinaryOverviewViewController.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 			children = (
 				9359245F237DBDD10070FA42 /* RoundedButton.swift */,
 				931AD7FC237DD5B2009CC068 /* Pets.swift */,
-				931AD7FA237DD59F009CC068 /* Pet.swift */,
 				931AD7FE237DE391009CC068 /* PetList.swift */,
 				934A626323845BF1002791BF /* VeterinaryVisits.swift */,
 				934A626523845C08002791BF /* VeterinaryVisitsList.swift */,
@@ -550,7 +547,6 @@
 				934A626223845A63002791BF /* VeterinaryTableViewCell.swift in Sources */,
 				935451552387E99300B6DD16 /* JournalTableViewCell.swift in Sources */,
 				935BEAB9238CDE6800717093 /* EntriesList.swift in Sources */,
-				931AD7FB237DD59F009CC068 /* Pet.swift in Sources */,
 				936394FE237CD00800C59912 /* SceneDelegate.swift in Sources */,
 				93579D2F238A1365008E6799 /* EntryDetailViewController.swift in Sources */,
 				935BEAAF238CC7F600717093 /* Visit+CoreDataProperties.swift in Sources */,
