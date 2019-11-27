@@ -164,6 +164,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
                 info = infoTV.text
             }
 
+            selected = []
             if !petView.isHidden {
                 selected = verticalPetMSC.selectedSegmentTitles
                 print("Selected : \(selected)")
