@@ -31,6 +31,18 @@ struct DetailsList {
         DetailsList.detailsList.append(detail)
     }
     
+    func findDetailByDBIndex(index: Int32) -> Detail? {
+        if let Obj = DetailsList.detailsList.first(where:{$0.value(forKeyPath: "index")as! Int32 == index}){
+            
+        
+        //firstIndex(where:{$0.value(forKeyPath: "index")as! String == index}){
+            
+            // print("Trying to remove index \(indexString) from listindex \(listIndex)")
+            return Obj
+        }
+        return nil
+    }
+    
     
     
 }

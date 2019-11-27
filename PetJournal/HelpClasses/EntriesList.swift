@@ -31,7 +31,7 @@ struct EntriesList {
         EntriesList.entriesList.append(entry)
     }
     
-    func findVisitByDBIndex(index: Int32) -> Entry? {
+    func findEntryByDBIndex(index: Int32) -> Entry? {
         if let Obj = EntriesList.entriesList.first(where:{$0.value(forKeyPath: "index")as! Int32 == index}){
             
         

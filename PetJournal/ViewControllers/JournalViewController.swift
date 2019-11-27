@@ -84,61 +84,17 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func fetchEntries(){
         
         
-        
         //fill the general entry list
-        let es = manager.fetchAll(Entry.self)
-        entriestList.fillEntriesList(entries: es)
+        let allEntries = manager.fetchAll(Entry.self)
+        entriestList.fillEntriesList(entries: allEntries)
        // EntriesList.entriesList = manager.fetchAll(Entry.self)
         entryIndex = nil
         
-        guard let e =  pet!.entry?.allObjects as? [Entry] else {
+        guard let entriesOfPet =  pet!.entry?.allObjects as? [Entry] else {
             return  }
         
-        entries = e
+        entries = entriesOfPet
         
-    }
-    
-    
-    
-    @IBAction func newJournalEntry(_ sender: UIButton) {
-        
-        let alert = UIAlertController(title: "New Journal Entry", message: "Add a title for your new Journal Entry", preferredStyle: .alert)
-    
-        let alertSaveAction = UIAlertAction(title: "Save", style: .default){
-            [unowned self] action in
-            
-            guard let txtField = alert.textFields?.first, let title = txtField.text else {
-                return
-            }
-            
-            //SAVE DATA, title
-            self.createEntry(title: title)
-            
-            //GET NEW ENTRY ID entryId =
-            print(title + " sending to save")
-            self.selectedTitle = title
-            self.newEntry = true
-            
-            self.journalEntryTV.reloadData()
-            
-            //Segue to Entry page
-            self.performSegue(withIdentifier: self.segueDetail, sender: self)
-            
-        }
-        
-        let alertCancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alert.addTextField()
-        alert.addAction(alertSaveAction)
-        alert.addAction(alertCancelAction)
-        
-        present(alert, animated: true)
-        
-        
-//        let managedObjectContext = persistentContainer.viewContext
-//        let e = Entry(context: managedObjectContext)
-        
-      
     }
     
     private func createEntry(title : String) {
@@ -165,7 +121,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         e.pet = pet
         
-        print("Sending to contect to save " + String(describing: e.self))
+        print("Sending to context to save " + String(describing: e.self))
         if (manager.saveContext()){
             entriestList.addEntry(entry: e)
             entries?.append(e)
@@ -175,6 +131,52 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
             print(e)
         }
     }
+    
+    
+    
+    @IBAction func newJournalEntry(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "New Journal Entry", message: "Add a title for your new Journal Entry", preferredStyle: .alert)
+    
+        
+        let alertCancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        let alertSaveAction = UIAlertAction(title: "Save Entry", style: .default){
+            [unowned self] action in
+            
+            guard let txtField = alert.textFields?.first, let title = txtField.text else {
+                return
+            }
+            
+            //SAVE DATA, title
+            self.createEntry(title: title)
+            
+            //GET NEW ENTRY ID entryId =
+            print(title + " sending to save")
+            self.selectedTitle = title
+            self.newEntry = true
+            
+            //self.journalEntryTV.reloadData()
+            
+            //Segue to Entry page
+            self.performSegue(withIdentifier: self.segueDetail, sender: self)
+            
+        }
+        
+        alert.addTextField()
+        alert.addAction(alertSaveAction)
+        alert.addAction(alertCancelAction)
+        
+        present(alert, animated: true)
+        
+        
+//        let managedObjectContext = persistentContainer.viewContext
+//        let e = Entry(context: managedObjectContext)
+        
+      
+    }
+    
+
     
     //Tableview Delegate and Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -187,13 +189,9 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        print("Trying to DEQUEUE")
         let cell = journalEntryTV.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JournalTableViewCell
         
         let cellIndex = indexPath.item
-    
-
         entry = entries![cellIndex]//veterinaryVisits.entryVisit(listIndex: cellIndex)!
             
         cell.configCell(obj: entry)
@@ -235,8 +233,8 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
                     selectedTitle = txt
                 }
                 
-                if let obj = entriestList.findVisitByDBIndex(index: entryIndex!){
-                    self.entry = obj
+                if let obj = entriestList.findEntryByDBIndex(index: entryIndex!){
+                    self.selectedEntry = obj
                 }
                 
             } else {
@@ -251,7 +249,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             destinationVC.recievingEntryTitle = selectedTitle
             //send the whole ITEM
-            destinationVC.recievingEntry = self.entry
+            destinationVC.recievingEntry = self.selectedEntry
             destinationVC.recievingEntryId = entryIndex
             destinationVC.recievingPet = self.pet
             destinationVC.recievingPetId = recievingPetId

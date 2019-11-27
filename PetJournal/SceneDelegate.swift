@@ -59,7 +59,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
 
         // Save changes in the application's managed object context when the application transitions to the background.
         //UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-        (PersistenceManager.shared.saveContext())
+        if PersistenceManager.shared.saveContext(){
+            print("Context saved because app entered background")
+        }
     }
 
     // MARK: - Split view

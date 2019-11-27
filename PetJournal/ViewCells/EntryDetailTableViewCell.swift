@@ -12,6 +12,13 @@ import CoreData
 class EntryDetailTableViewCell: UITableViewCell {
 
        // @IBOutlet weak var entryBtn: UIButton!
+    @IBOutlet weak var deleteDetailbtn: UIImageView!
+    @IBOutlet weak var incidentTypeLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var factLbl: UILabel!
+    
+    
+    private  var formatter = DateFormatter()
     
     
         override func awakeFromNib() {
@@ -26,14 +33,28 @@ class EntryDetailTableViewCell: UITableViewCell {
         }
         
         
-        func configCell(obj: NSManagedObject?){  //pet: Pet //Pet
+        func configCell(obj: Detail?){  //pet: Pet //Pet
             
-    //        if obj != nil {
-    //            let name = obj!.value(forKeyPath: "name") as? String
-    //           // nameLbl?.text = name
-    //            nameBtn?.setTitle(name, for: .normal)
-    //
-    //        }
+            if obj != nil {
+                
+                
+                formatter.locale = Locale(identifier: "sv_SE")
+                formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd-HH:mm")
+                let type = obj?.category ?? "Unnamed detail"
+                let date = obj?.timeStamp ?? Date()
+                let fact = obj?.info ?? ""
+                
+                incidentTypeLbl.text = type
+                dateLbl.text = formatter.string(from: date)
+                factLbl.text = fact
+                
+                
+                
+                
+               // nameLbl?.text = name
+               // nameBtn?.setTitle(name, for: .normal)
+    
+            }
             
         }
 

@@ -106,11 +106,11 @@ struct Pets {
         let context = manager.context // getContext()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        request.predicate = NSPredicate(format: "name = %@ ", name as! CVarArg)
+        request.predicate = NSPredicate(format: "name = %@ ", name!)
         
 
         do {
-            guard let result = try? context.fetch(request) as! [NSManagedObject] else { return }
+            guard let result = try? context.fetch(request) as? [NSManagedObject] else { return }
             
             if result.count > 0 {
                 context.delete(result[0])

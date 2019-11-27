@@ -79,7 +79,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
             
             visit = visits.findVisitByDBIndex(index: self.recievingPetId!)
             
-            print(visit)
+            print(visit!)
             
             if visit != nil {
                 
