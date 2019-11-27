@@ -19,7 +19,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     let segueDetail = "segueToJournalDetail"
     
     private var entry: Entry?
-    private var entries: [Entry]?
+    private var entries: [Entry]?//[Entry]()
     private var selectedEntry: Entry?
     
     private var entriestList = EntriesList()
@@ -92,8 +92,9 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         guard let entriesOfPet =  pet!.entry?.allObjects as? [Entry] else {
             return  }
-        
+        //local entries for specific pet
         entries = entriesOfPet
+        entries?.sort(by: {$0.index > $1.index})
         
     }
     
@@ -148,8 +149,9 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
                 return
             }
             
+            let capTitle = title.capitalized(with: NSLocale.current)
             //SAVE DATA, title
-            self.createEntry(title: title)
+            self.createEntry(title: capTitle)
             
             //GET NEW ENTRY ID entryId =
             print(title + " sending to save")
@@ -212,6 +214,9 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         print("unwinded to journal entries w \(String(describing: recievingPetId))")
         self.newEntry = false
+        
+        self.fetchEntries()
+        journalEntryTV.reloadData()
 
       }
     

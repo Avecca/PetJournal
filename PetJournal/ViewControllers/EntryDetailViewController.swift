@@ -36,6 +36,7 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
     private var detailsList = DetailsList()
     
     private var detailIndex: Int32?
+    private var selectedDetail: Detail?
                     
         
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +60,7 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
             
             fetchAllDetails()
             
-            print(recievingEntry.self)
+            //print(recievingEntry.self)
             
             
                 
@@ -93,6 +94,8 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         let d = Detail(context: manager.context)
         d.timeStamp = Date()
+        d.category = incidentType
+        d.info = info
         
         //TODO really necessary?
        // e.index
@@ -116,16 +119,97 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if (manager.saveContext()){
             detailsList.addDetail(detail: d)
             details?.append(d)
+            details?.sort(by: {$0.index > $1.index})
         
             detailTv.reloadData()
             print(d.self)
         }
     }
     
+    //TODO not in use
+    private func updateDetailWithInfo(detailObj: Detail, info : String?){
+        
+        detailObj.info = info
+        
+        if (manager.saveContext()){
+            
+            
+            //TODO DONT NEED THIS
+           /* detailsList.updateDetailInlist(detailObj: detailObj, info: info)
+            
+            if let listIndex = details!.firstIndex(where:{$0.value(forKeyPath: "index") as! Int32 == detailObj.index}){
+ 
+                details![listIndex] = detailObj
+            }*/
+
+        
+            detailTv.reloadData()
+
+        }
+        
+        
+    }
+    
     
     
 
     @IBAction func DeleteAllEntriesClick(_ sender: Any) {
+
+        
+        let alert = UIAlertController(title: "Delete Journal Entry", message: "This DELETES \(recievingEntry?.subject ?? " the Journal Entry") as well as all the Details you have added", preferredStyle: .alert)
+             
+            
+             
+         
+             
+             let alertCancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+         
+             let alertDeleteAction = UIAlertAction(title: "Delete", style: .default){
+                     [unowned self] action in
+                     
+
+                print("DELETEING \(self.recievingEntry?.subject ?? " the Journal Entry")")
+                
+                if self.recievingEntry != nil{
+                    
+                    let obj = self.recievingEntry
+
+
+                    
+                    //Details hhave Deny rule on Entry
+                    //remove details
+                    //self.recievingEntry?.detail = []
+                    
+                    for dt in obj!.detail!
+                    {
+                        self.manager.context.delete(dt as! NSManagedObject)
+                    }
+                    
+                    self.manager.context.delete(obj!)
+
+                    
+                    
+                    if self.manager.saveContext() {
+                        print("deleted Entry")
+
+                        self.performSegue(withIdentifier: self.segueUnwindJournal, sender: self)
+
+                    }
+                        
+                        
+                }
+                    //                    if(self.manager.saveContext()){
+                    //                        print("Deleted entries")
+                    //                        print(self.recievingEntry ?? "NOTFINDING recievingEntry")
+               // }
+                 
+
+             }
+             
+             alert.addAction(alertDeleteAction)
+             alert.addAction(alertCancelAction)
+             
+             present(alert, animated: true)
         
         
         //POPUP TO ASK FIRST
@@ -166,18 +250,76 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
             
             if( incidentType != ""){
                 
-                self.createDetail(incidentType: incidentType, info: info)
+                let capIncidet = incidentType.capitalized(with: NSLocale.current)
+                let capInfo = info.capitalized(with: NSLocale.current)
+                
+                self.createDetail(incidentType: capIncidet, info: capInfo)
                 
             }
-
-
-                
         }
         
         alert.addAction(alertSaveAction)
         alert.addAction(alertCancelAction)
         
         present(alert, animated: true)
+    }
+    
+    
+    
+    @IBAction func deleteSpecificDetailClick(_ sender: Any) {
+        
+        let cell = sender as! UIButton
+        
+        let detailId = Int32(cell.tag)
+        
+        
+        if let obj = detailsList.findDetailByDBIndex(index: detailId){
+            
+             let listIndex = details!.firstIndex(where:{$0.value(forKeyPath: "index") as! Int32 == obj.index})
+            
+                
+
+            //selectedDetail = obj
+            manager.context.delete(obj)
+            
+            print("Object to delete with index : \(detailId)")
+            if manager.saveContext() {
+                
+                if listIndex != nil {
+                    details?.remove(at: listIndex!)
+                }
+                detailTv.reloadData()
+                print("delete saved, printing detailist")
+                details?.forEach({print($0.category ?? "cathergory gone wrong")})
+            }
+            
+            print("Obj to delete : \(obj.self)")
+            
+        } else {
+            return
+        }
+        
+        
+        
+        
+//        do {
+//            self.selectedDetail =
+//                try? detailsList.findDetailByDBIndex(index: detailId) as [ else {return}
+//
+//
+//
+//            print("Obj to delete : \(obj.self)")
+//
+//        } catch let err as NSError {
+//            print(err)
+ //       }
+        
+       
+        
+        
+        detailTv.reloadData()
+        
+        
     }
     
 
@@ -228,3 +370,32 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
 }
+
+
+//details?.firstIndex(where:{$0.index as! Int32 == detailId}){  //.value(forKeyPath: "index"
+
+
+/*                print("DELETEING \(self.recievingEntry?.subject ?? " the Journal Entry")")
+
+if self.recievingEntry != nil{
+    
+    
+    //remove details
+    self.recievingEntry?.detail = []
+    
+    print(self.recievingEntry!)
+    if(self.manager.saveContext()){
+        
+    self.manager.context.delete(self.recievingEntry!)
+        
+        if self.manager.saveContext() {
+            print("deleted Entry")
+             
+            self.performSegue(withIdentifier: self.segueUnwindJournal, sender: self)
+            
+        }
+        
+        
+    }
+    
+}*/

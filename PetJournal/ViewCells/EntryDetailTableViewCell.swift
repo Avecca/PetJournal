@@ -12,10 +12,11 @@ import CoreData
 class EntryDetailTableViewCell: UITableViewCell {
 
        // @IBOutlet weak var entryBtn: UIButton!
-    @IBOutlet weak var deleteDetailbtn: UIImageView!
-    @IBOutlet weak var incidentTypeLbl: UILabel!
+    @IBOutlet weak var deleteDetailbtn: UIButton!
+    @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
-    @IBOutlet weak var factLbl: UILabel!
+    @IBOutlet weak var infoLbl: UILabel!
+
     
     
     private  var formatter = DateFormatter()
@@ -44,9 +45,9 @@ class EntryDetailTableViewCell: UITableViewCell {
                 let date = obj?.timeStamp ?? Date()
                 let fact = obj?.info ?? ""
                 
-                incidentTypeLbl.text = type
+                typeLbl.text = type
                 dateLbl.text = formatter.string(from: date)
-                factLbl.text = fact
+                infoLbl.text = fact
                 
                 
                 

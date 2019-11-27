@@ -11,7 +11,7 @@
         <attribute name="index" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="subject" optional="YES" attributeType="String"/>
         <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="detail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Detail" inverseName="entry" inverseEntity="Detail"/>
+        <relationship name="detail" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Detail" inverseName="entry" inverseEntity="Detail"/>
         <relationship name="pet" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="entry" inverseEntity="Pet"/>
     </entity>
     <entity name="Event" representedClassName="Event" codeGenerationType="class">

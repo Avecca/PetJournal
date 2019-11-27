@@ -200,15 +200,9 @@ struct VeterinaryVisits {
         
         } catch let err as NSError {
             print("Unable to find visit to delete. \(err), \(err.userInfo)")
-            
         }
-        
     }
     
-//    private func getContext() -> NSManagedObjectContext {
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        return appDelegate.persistentContainer.viewContext
-//    }
     
     private func findVisitListIndex(index: String) -> Int? {
         if let listIndex = VeterinaryVisitsList.vetList.firstIndex(where:{$0.value(forKeyPath: "index")as! String == index}){
@@ -246,5 +240,10 @@ struct VeterinaryVisits {
     
     
 }
+
+//    private func getContext() -> NSManagedObjectContext {
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        return appDelegate.persistentContainer.viewContext
+//    }
 
 

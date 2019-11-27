@@ -31,6 +31,15 @@ struct DetailsList {
         DetailsList.detailsList.append(detail)
     }
     
+    func updateDetailInlist(detailObj: Detail, info : String?){
+
+        if let listIndex = DetailsList.detailsList.firstIndex(where:{$0.value(forKeyPath: "index") as! Int32 == detailObj.index}){
+            
+            DetailsList.detailsList[listIndex] = detailObj
+            
+        }
+    }
+    
     func findDetailByDBIndex(index: Int32) -> Detail? {
         if let Obj = DetailsList.detailsList.first(where:{$0.value(forKeyPath: "index")as! Int32 == index}){
             

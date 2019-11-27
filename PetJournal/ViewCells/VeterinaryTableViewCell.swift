@@ -18,13 +18,13 @@ class VeterinaryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        reasonBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .bold)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+
     }
     
     func configCell(obj: NSManagedObject?){  //pet: Pet //Pet
