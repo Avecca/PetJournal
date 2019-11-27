@@ -107,7 +107,7 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
 
             print(" visitId:  \(visitId)")
             
-            dSegue.recievingPetId = visitId
+            dSegue.recievingVisitId = visitId
             dSegue.recievingCreate = false
             
         }

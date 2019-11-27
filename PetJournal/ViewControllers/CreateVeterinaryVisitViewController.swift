@@ -32,7 +32,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     var visit: NSManagedObject?
     var info = ""
     
-    var recievingPetId : Int?
+    var recievingVisitId : Int?
     var recievingCreate = true
     
     
@@ -69,7 +69,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
 
     func fillForEdit(){
         
-        if recievingPetId != nil {
+        if recievingVisitId != nil {
             print("EDIT TIME")
             deleteBtn.isHidden = false
             headerLbl.text = "Edit Visit"
@@ -77,7 +77,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
             saveBtn.setTitle("Save Changes", for: [])
             saveBtn.backgroundColor = #colorLiteral(red: 1, green: 0.05490196078, blue: 0.02352941176, alpha: 1)
             
-            visit = visits.findVisitByDBIndex(index: self.recievingPetId!)
+            visit = visits.findVisitByDBIndex(index: self.recievingVisitId!)
             
             print(visit!)
             
@@ -113,7 +113,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
  
             }
             
-            print("pet id IN EDIT: \(String(describing: recievingPetId))")
+            print("Visit id IN EDIT: \(String(describing: recievingVisitId))")
             
         } else{
             //TODO unwindSegue
@@ -138,9 +138,9 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     }
     
     @IBAction func deleteVisitClicked(_ sender: Any) {
-        if !recievingCreate && recievingPetId != nil {
+        if !recievingCreate && recievingVisitId != nil {
             
-            visits.deleteVisit(index: recievingPetId!)
+            visits.deleteVisit(index: recievingVisitId!)
         }
     }
     
@@ -173,9 +173,9 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
                 
             } else{  //TODO let petnames come with
                 //Edit time
-                if recievingPetId != nil {
-                    if visits.updateVisits(index: recievingPetId!, reason: reason, time: date, info: info, petNames: []) {
-                        print("Updated visit with idIndex \(String(describing: recievingPetId))")
+                if recievingVisitId != nil {
+                    if visits.updateVisits(index: recievingVisitId!, reason: reason, time: date, info: info, petNames: []) {
+                        print("Updated visit with idIndex \(String(describing: recievingVisitId))")
                     }
                 }
             }

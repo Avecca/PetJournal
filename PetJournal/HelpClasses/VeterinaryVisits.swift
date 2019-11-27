@@ -183,10 +183,7 @@ struct VeterinaryVisits {
                 
                 do {
                      try context.save()   //Save the delete try TODO Kom ihåg detta   
-                     //remove from local list
-                     if let foundIndex = findVisitListIndex(index: indexString)  {
-                         VeterinaryVisitsList.vetList.remove(at: Int(foundIndex))
-                     }
+
                      print("DELETEING ITEM FROM DB AND LIST with index : \(indexString)")
                 } catch  {
                     print(error)
@@ -201,10 +198,10 @@ struct VeterinaryVisits {
         } catch let err as NSError {
             print("Unable to find visit to delete. \(err), \(err.userInfo)")
         }
-    }
-    
+    }    
     
     private func findVisitListIndex(index: String) -> Int? {
+        print("print local index \(index)")
         if let listIndex = VeterinaryVisitsList.vetList.firstIndex(where:{$0.value(forKeyPath: "index")as! String == index}){
             
             // print("Trying to remove index \(indexString) from listindex \(listIndex)")
