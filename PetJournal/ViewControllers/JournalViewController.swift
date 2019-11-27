@@ -17,6 +17,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var petImgView: UIImageView!
     
     let segueDetail = "segueToJournalDetail"
+    let segueUnwind = "unwindToPetsWithSegue"
     
     private var entry: Entry?
     private var entries: [Entry]?//[Entry]()
@@ -61,9 +62,8 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
             petDetails()
             fetchEntries()
         } else{
-            //todo dismiss back
+            self.performSegue(withIdentifier: self.segueUnwind, sender: self)
         }
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,19 +83,17 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func fetchEntries(){
         
-        
         //fill the general entry list
         let allEntries = manager.fetchAll(Entry.self)
         entriestList.fillEntriesList(entries: allEntries)
-       // EntriesList.entriesList = manager.fetchAll(Entry.self)
         entryIndex = nil
         
         guard let entriesOfPet =  pet!.entry?.allObjects as? [Entry] else {
             return  }
+        
         //local entries for specific pet
         entries = entriesOfPet
         entries?.sort(by: {$0.index > $1.index})
-        
     }
     
     private func createEntry(title : String) {
@@ -133,8 +131,6 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    
-    
     @IBAction func newJournalEntry(_ sender: UIButton) {
         
         let alert = UIAlertController(title: "New Journal Entry", message: "Add a title for your new Journal Entry", preferredStyle: .alert)
@@ -157,8 +153,7 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
             print(title + " sending to save")
             self.selectedTitle = title
             self.newEntry = true
-            
-            //self.journalEntryTV.reloadData()
+
             
             //Segue to Entry page
             self.performSegue(withIdentifier: self.segueDetail, sender: self)
@@ -170,16 +165,9 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         alert.addAction(alertCancelAction)
         
         present(alert, animated: true)
-        
-        
-//        let managedObjectContext = persistentContainer.viewContext
-//        let e = Entry(context: managedObjectContext)
-        
-      
     }
     
 
-    
     //Tableview Delegate and Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return entries?.count ?? 0
@@ -192,24 +180,20 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = journalEntryTV.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! JournalTableViewCell
-        
         let cellIndex = indexPath.item
-        entry = entries![cellIndex]//veterinaryVisits.entryVisit(listIndex: cellIndex)!
+        entry = entries![cellIndex]
             
         cell.configCell(obj: entry)
-        let entryIndex = entry!.index  // entry?.value(forKey: "index") as! String
+        let entryIndex = entry!.index
         cell.journalEntryButton.tag = Int(entryIndex)
-        
-        //print("ADDING CELL INDEX: \(visitIndex)")
         
         //Make sure the names arnt upside down since we reversed the order of the cv
         cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         
-        
         return cell
     }
     
-
+    //Segues
     @IBAction func unwindToJournal( segue: UIStoryboardSegue) {
         
         print("unwinded to journal entries w \(String(describing: recievingPetId))")
@@ -217,16 +201,11 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.fetchEntries()
         journalEntryTV.reloadData()
-
       }
-    
-
-
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == segueDetail {
-
             
             let destinationVC = segue.destination as! EntryDetailViewController
             
@@ -241,40 +220,24 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if let obj = entriestList.findEntryByDBIndex(index: entryIndex!){
                     self.selectedEntry = obj
                 }
-                
-            } else {
-                
-                  
             }
-            
-           // let entryId = (cell as AnyObject).tag
-
             print(" journalId:  \(String(describing: entryIndex))")
 
-            
-            destinationVC.recievingEntryTitle = selectedTitle
-            //send the whole ITEM
             destinationVC.recievingEntry = self.selectedEntry
-            destinationVC.recievingEntryId = entryIndex
             destinationVC.recievingPet = self.pet
             destinationVC.recievingPetId = recievingPetId
             destinationVC.recievingOldVC = self
-            // i nästa  var recievingOldVC: JournalViewController!
             
+        } else if segue.identifier == segueUnwind{
             
-            //destinationVC.recieivingPetName = nameLbl.text
-            //destinationVC.recievingPetImg = petImgView.image
-            
-
         }
-        
-        
-
+   
     }
     
-    
-    
-    
-   // ADD DETAIL/event
-
 }
+
+// ADD DETAIL/event
+             //destinationVC.recieivingPetName = nameLbl.text
+             //destinationVC.recievingPetImg = petImgView.image
+ //                        destinationVC.recievingEntryTitle = selectedTitle
+ //            destinationVC.recievingEntryId = entryIndex

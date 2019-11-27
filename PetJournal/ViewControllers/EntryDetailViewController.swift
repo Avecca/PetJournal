@@ -11,8 +11,6 @@ import CoreData
 
 class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
-
     @IBOutlet weak var detailTv: UITableView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var petImgView: UIImageView!
@@ -25,12 +23,9 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
     //todo remoce petid
     var recievingPetId : Int? //In local list
-    var recievingEntryId: Int32?
     var recievingEntry: Entry?
     var recievingPet : Pet?
-    var recievingEntryTitle: String?
     var recievingOldVC: JournalViewController?
-    
     
     private let manager = PersistenceManager.shared
     private var detailsList = DetailsList()
@@ -38,7 +33,6 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
     private var detailIndex: Int32?
     private var selectedDetail: Detail?
                     
-        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
             
@@ -52,24 +46,17 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
         detailTv.delegate = self
         detailTv.dataSource = self
             
-            
         if recievingPet != nil  && recievingEntry != nil{
-                
             entryNameLbl.text = recievingEntry?.subject
             nameLbl.text = recievingPet?.name
             
             fetchAllDetails()
-            
             //print(recievingEntry.self)
-            
-            
-                
+    
         } else{
-            
             self.performSegue(withIdentifier: segueUnwindJournal, sender: self)
                
         }
-            
     }
         
     override func viewDidLayoutSubviews() {
@@ -141,26 +128,14 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
  
                 details![listIndex] = detailObj
             }*/
-
-        
             detailTv.reloadData()
-
         }
-        
-        
     }
     
-    
-    
-
     @IBAction func DeleteAllEntriesClick(_ sender: Any) {
 
         
         let alert = UIAlertController(title: "Delete Journal Entry", message: "This DELETES \(recievingEntry?.subject ?? " the Journal Entry") as well as all the Details you have added", preferredStyle: .alert)
-             
-            
-             
-         
              
              let alertCancelAction = UIAlertAction(title: "Cancel", style: .cancel)
          
@@ -174,36 +149,22 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
                     
                     let obj = self.recievingEntry
 
-
-                    
-                    //Details hhave Deny rule on Entry
-                    //remove details
-                    //self.recievingEntry?.detail = []
-                    
+                    //Entry had Deny rule on detail/s so delete details first
                     for dt in obj!.detail!
                     {
                         self.manager.context.delete(dt as! NSManagedObject)
                     }
-                    
+                    //delete the Entry itself
                     self.manager.context.delete(obj!)
 
-                    
-                    
+                    //save changes
                     if self.manager.saveContext() {
                         print("deleted Entry")
-
+                        //unwind since nothing exists here anymore
                         self.performSegue(withIdentifier: self.segueUnwindJournal, sender: self)
 
                     }
-                        
-                        
                 }
-                    //                    if(self.manager.saveContext()){
-                    //                        print("Deleted entries")
-                    //                        print(self.recievingEntry ?? "NOTFINDING recievingEntry")
-               // }
-                 
-
              }
              
              alert.addAction(alertDeleteAction)
@@ -211,26 +172,18 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
              
              present(alert, animated: true)
         
-        
-        //POPUP TO ASK FIRST
-       // TODO DELETE ALL DETAILS AND THE ENTRY
-        //Unwind
     }
     
     @IBAction func AddDetailClick(_ sender: Any) {
 
         let alert = UIAlertController(title: "New Detail for \(recievingEntry?.subject ?? "Journal Entry")", message: "Clarify events/details in your Journal Entry", preferredStyle: .alert)
         
-        
         alert.addTextField{ (textField) in
             textField.placeholder = "Type of Incident"
-            
         }
         alert.addTextField{ (subTxtField) in
             subTxtField.placeholder = "Description/Information"
         }
-        
-    
         
         let alertCancelAction = UIAlertAction(title: "Cancel", style: .cancel)
     
@@ -240,13 +193,10 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
             guard let incidentType = alert.textFields!.first!.text else {
                     return
                 }
-                
             guard let info = alert.textFields?.last?.text else {
                     return
                 }
-
                 print("Saving \(incidentType) and \(info)")
-            
             
             if( incidentType != ""){
                 
@@ -254,7 +204,6 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 let capInfo = info.capitalized(with: NSLocale.current)
                 
                 self.createDetail(incidentType: capIncidet, info: capInfo)
-                
             }
         }
         
@@ -276,8 +225,6 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if let obj = detailsList.findDetailByDBIndex(index: detailId){
             
              let listIndex = details!.firstIndex(where:{$0.value(forKeyPath: "index") as! Int32 == obj.index})
-            
-                
 
             //selectedDetail = obj
             manager.context.delete(obj)
@@ -299,32 +246,9 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
             return
         }
         
-        
-        
-        
-//        do {
-//            self.selectedDetail =
-//                try? detailsList.findDetailByDBIndex(index: detailId) as [ else {return}
-//
-//
-//
-//            print("Obj to delete : \(obj.self)")
-//
-//        } catch let err as NSError {
-//            print(err)
- //       }
-        
-       
-        
-        
         detailTv.reloadData()
         
-        
     }
-    
-
-    
-        
  
         //Tableview Delegate and Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -351,11 +275,8 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
             
         return cell
     }
-        
-
-
- 
-
+    
+    //Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
         if segue.identifier == segueUnwindJournal {
@@ -375,7 +296,13 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
 //details?.firstIndex(where:{$0.index as! Int32 == detailId}){  //.value(forKeyPath: "index"
 
 
-/*                print("DELETEING \(self.recievingEntry?.subject ?? " the Journal Entry")")
+/*
+
+ var recievingEntryId: Int32?
+
+ var recievingEntryTitle: String?
+ 
+ print("DELETEING \(self.recievingEntry?.subject ?? " the Journal Entry")")
 
 if self.recievingEntry != nil{
     
@@ -397,5 +324,18 @@ if self.recievingEntry != nil{
         
         
     }
+ 
+ 
+ //        do {
+ //            self.selectedDetail =
+ //                try? detailsList.findDetailByDBIndex(index: detailId) as [ else {return}
+ //
+ //
+ //
+ //            print("Obj to delete : \(obj.self)")
+ //
+ //        } catch let err as NSError {
+ //            print(err)
+  //       }
     
 }*/
