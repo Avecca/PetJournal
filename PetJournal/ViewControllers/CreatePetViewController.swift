@@ -33,6 +33,7 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
         //alert msg initialized
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
         alertError.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+        alertError.setValue(NSAttributedString(string: "Adding Pet Failed", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17),NSAttributedString.Key.foregroundColor : UIColor.red]), forKey: "attributedTitle")
         
         //nameLbl.becomeFirstResponder()
     }
@@ -41,7 +42,6 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
     @IBAction func savePetBtn(_ sender: Any) {
         
 
-        //TODO alla är inte obligatoriska
         guard let nameField = nameLbl.text else {
             return
         }
@@ -73,8 +73,7 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
         
         //TODO
         print(pets.countPets())
-        
-        //TODO return to homepage
+
         
         // self.present(self.alert,animated: true)
         clearAllFields()
