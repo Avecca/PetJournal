@@ -17,10 +17,16 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     @IBOutlet weak var saveBtn: RoundedButton!
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var typePicker: UIPickerView!
+    @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var visitDP: UIDatePicker!
+    @IBOutlet weak var timelbl: UILabel!
     @IBOutlet weak var infoTV: UITextView!
-    @IBOutlet weak var petView: UIView!
+    @IBOutlet weak var infoLbl: UILabel!
     @IBOutlet weak var verticalPetMSC: MultiSelectSegmentedControl!
+    @IBOutlet weak var namesLbl: UILabel!    
+    @IBOutlet weak var petView: UIView!
+    @IBOutlet weak var editView: UIView!
+    @IBOutlet weak var displayView: UIView!
     
     let segueUnwindToVet = "unwindToHereWithSegue"
 
@@ -32,6 +38,7 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
     private var visits = VeterinaryVisits();
     var visit: Visit?// NSManagedObject?
     var info = ""
+    var formatter = DateFormatter()
     
     var recievingVisitId : Int?
     var recievingCreate = true
@@ -42,7 +49,6 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         
 //        getPetNames()
 //        verticalPetMSC.items = petNames
-    
 
     }
 
@@ -55,9 +61,16 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         getPetNames()
         verticalPetMSC.items = petNames
         
+        
         if !recievingCreate {
+            displayView.isHidden = false
+            editView.isHidden = true
 
             fillForEdit()
+            saveBtn.isHidden = true
+        }else{
+            displayView.isHidden = true
+            editView.isHidden = false
         }
         
     }
@@ -68,8 +81,6 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
 //
 //
 //    }
-    
-    
 
     func fillForEdit(){
         
@@ -97,11 +108,18 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
                 }
                 
                 var indexes = IndexSet()
+                var petString = ""
                 for p in visit!.pets! {
                     let namePet = (p as! Pet).name
+                    petString += (namePet.capitalized + " ")
                     if let index = petNames.firstIndex(of: namePet){
                         indexes.insert(index)//append(index)
                     }
+                }
+                if petString == "" {
+                    namesLbl.text = "No added pets"
+                } else {
+                    namesLbl.text = petString
                 }
                 
                 verticalPetMSC.selectedSegmentIndexes = indexes
@@ -111,11 +129,19 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
                     print("reasonIndex: \(reasonIndex)")
                     typePicker.selectRow(reasonIndex, inComponent: 0, animated: true)
                 }
+                typeLbl.text = reason as? String
                 
                 visitDP.date = time as! Date
+                            formatter.locale = Locale(identifier: "sv_SE")
+                formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd-HH:mm")
+                timelbl.text = formatter.string(from: time as! Date)
                 
                 if addedInfo != "" {
                     infoTV.text = addedInfo
+                    infoLbl.text = addedInfo
+                } else{
+                    infoLbl.text = "No added info"
+                    infoTV.text = "No added info"
                 }
             }
             
@@ -142,6 +168,14 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         }
     }
     
+    @IBAction func editEnableBtn(_ sender: Any) {
+        displayView.isHidden = true
+        editView.isHidden = false
+        
+        saveBtn.isHidden = false
+        
+    }
+    
     @IBAction func deleteVisitClicked(_ sender: Any) {
         if !recievingCreate && recievingVisitId != nil {
             
@@ -149,44 +183,43 @@ class CreateVeterinaryVisitViewController: UIViewController, UIPickerViewDelegat
         }
     }
     
-    
-        @IBAction func SaveClicked(_ sender: Any){
+    @IBAction func SaveClicked(_ sender: Any){
 
-            guard let reason = visitType[typePicker.selectedRow(inComponent: 0)] as String? else {
-                return
-            }
-
-            guard let date = visitDP.date as Date? else {
-                return
-            }
-            
-            if infoTV.text != nil {
-                info = infoTV.text
-            }
-
-            selected = []
-            if !petView.isHidden {
-                selected = verticalPetMSC.selectedSegmentTitles
-                print("Selected : \(selected)")
-                //TODO Make this go with
-            }
-            
-            if recievingCreate {
-                if visits.addVisit(reason: reason, time: date, info: self.info, petNames: selected ) {
-                    print("Visit created")
-                      
-                }
-                
-            } else{  //TODO let petnames come with
-                //Edit time
-                if recievingVisitId != nil {
-                    if visits.updateVisits(index: recievingVisitId!, reason: reason, time: date, info: info, petNames: selected) {
-                        print("Updated visit with idIndex \(String(describing: recievingVisitId))")
-                    }
-                }
-            }
-            //Segue happens
+        guard let reason = visitType[typePicker.selectedRow(inComponent: 0)] as String? else {
+            return
         }
+
+        guard let date = visitDP.date as Date? else {
+            return
+        }
+        
+        if infoTV.text != nil {
+            info = infoTV.text
+        }
+
+        selected = []
+        if !petView.isHidden {
+            selected = verticalPetMSC.selectedSegmentTitles
+            print("Selected : \(selected)")
+            //TODO Make this go with
+        }
+        
+        if recievingCreate {
+            if visits.addVisit(reason: reason, time: date, info: self.info, petNames: selected ) {
+                print("Visit created")
+                  
+            }
+            
+        } else{  //TODO let petnames come with
+            //Edit time
+            if recievingVisitId != nil {
+                if visits.updateVisits(index: recievingVisitId!, reason: reason, time: date, info: info, petNames: selected) {
+                    print("Updated visit with idIndex \(String(describing: recievingVisitId))")
+                }
+            }
+        }
+        //Segue happens
+    }
     
     
     //Pickerview Delegate, Datasource and functions
