@@ -27,7 +27,7 @@ struct Pets {
         return PetList.petList.count
     }
     
-    func addPet(name : String, type : String, race : String, id: String)  -> Bool{  //Pet  //obj: NSManagedObject
+    func addPet(name : String, type : String, race : String, id: String, male : Bool, neutered : Bool, birthDate : Date)  -> Bool{  //Pet  //obj: NSManagedObject
         
         if checkIfNameAlreadyExistsInList(name: name) {
             return false
@@ -42,6 +42,9 @@ struct Pets {
             pet.setValue(type, forKeyPath: "type")
             pet.setValue(race, forKeyPath: "race")
             pet.setValue(id, forKeyPath: "id")
+            pet.setValue(male, forKey: "male")
+            pet.setValue(neutered, forKey: "neutered")
+            pet.setValue(birthDate, forKey: "birthDate")
                 
             do {
                 try context.save()

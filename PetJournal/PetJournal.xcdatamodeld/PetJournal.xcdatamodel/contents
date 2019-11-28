@@ -21,7 +21,9 @@
     <entity name="Pet" representedClassName=".Pet" syncable="YES">
         <attribute name="birthDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="male" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="neutered" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="race" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="entry" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Entry" inverseName="pet" inverseEntity="Entry"/>
@@ -38,7 +40,7 @@
         <element name="Detail" positionX="124.828125" positionY="-199.1796875" width="128" height="118"/>
         <element name="Entry" positionX="-54.98046875" positionY="-205.328125" width="128" height="118"/>
         <element name="Event" positionX="165.1015625" positionY="185.0625" width="128" height="58"/>
-        <element name="Pet" positionX="-69.03125" positionY="-435.375" width="128" height="148"/>
+        <element name="Pet" positionX="-69.03125" positionY="-435.375" width="128" height="178"/>
         <element name="Visit" positionX="90.58203125" positionY="-430.71484375" width="128" height="118"/>
     </elements>
 </model>
