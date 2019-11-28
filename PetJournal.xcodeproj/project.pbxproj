@@ -205,6 +205,13 @@
 			path = ViewCells;
 			sourceTree = "<group>";
 		};
+		935A815C23903236003DF47A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		936394EC237CD00800C59912 = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +238,7 @@
 		936394F7237CD00800C59912 /* PetJournal */ = {
 			isa = PBXGroup;
 			children = (
+				935A815C23903236003DF47A /* New Group */,
 				935BEAA4238CC7F600717093 /* Entry+CoreDataClass.swift */,
 				935BEAA5238CC7F600717093 /* Entry+CoreDataProperties.swift */,
 				935BEAA6238CC7F600717093 /* Visit+CoreDataClass.swift */,

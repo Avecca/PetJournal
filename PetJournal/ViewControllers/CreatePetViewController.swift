@@ -55,14 +55,13 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
         guard let idField = idTxtField.text else {
             return
         }
+        if nameField == ""{
+            alertError.message = "Your pet needs a name"
+            self.present(self.alertError, animated: true)
+            return
+        }
         
-        //pet = Pet(name: nameField)
-        
-       // pets.add(pet: pet!)
-       // pets.addPet(pet: Pet(name: nameField)) //pet: Pet(name: nameField)
-       
-        
-       // pets.addPet(obj: pet(nameField))
+
        
         if (pets.addPet(name: nameField, type: typeField, race: raceField, id : idField)){
             self.present(self.alert,animated: true)
@@ -70,21 +69,14 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
             self.present(self.alertError, animated: true)
         }
         
-        
-        //TODO
         print(pets.countPets())
 
-        
-        // self.present(self.alert,animated: true)
         clearAllFields()
     }
     
     @IBAction func cancelBtnClick(_ sender: Any) {
         clearAllFields()
-        
-        //TODO maybe remove
         goToPetScreen()
-
     }
     
     func goToPetScreen(){
@@ -92,10 +84,11 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
     }
     
     func clearAllFields() {
-        self.nameLbl.text = "Name"
-        self.typeTxtField.text = "Animal Type: Dog/Cat"
-        self.raceTxtField.text = "Breed : Poodle/Manx"
-        self.idTxtField.text = "ID Number"
+        self.nameLbl.text = ""
+        self.typeTxtField.text = ""
+        self.raceTxtField.text = ""
+        self.idTxtField.text = ""
+        
     }
     
     

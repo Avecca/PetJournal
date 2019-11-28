@@ -11,9 +11,6 @@ import CoreData
 
 class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
-    
- 
     @IBOutlet weak var petsTableView: UITableView!
     
     let segueToPetPopUpId = "segueToPetPopUp"
