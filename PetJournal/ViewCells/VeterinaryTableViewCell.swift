@@ -14,18 +14,13 @@ class VeterinaryTableViewCell: UITableViewCell {
     @IBOutlet weak var reasonBtn: UIButton!
     @IBOutlet weak var dateBtn: UIButton!
     
-    var formatter = DateFormatter()
+    private var formatter = DateFormatter()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         reasonBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .bold)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-
-    }
     
     func configCell(obj: NSManagedObject?){  //pet: Pet //Pet
         
@@ -43,14 +38,11 @@ class VeterinaryTableViewCell: UITableViewCell {
                 dateBtn.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 
             }
-            
            
             formatter.locale = Locale(identifier: "sv_SE")
             formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd-HH:mm")
             
             dateBtn?.setTitle(formatter.string(from: date), for: .normal)
-           // nameLbl?.text = name
-           // nameBtn?.setTitle(name, for: .normal)
             
         }
     }
