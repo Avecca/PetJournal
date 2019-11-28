@@ -36,7 +36,6 @@ class VeterinaryTableViewCell: UITableViewCell {
                  dateBtn.backgroundColor = #colorLiteral(red: 0.8558072448, green: 0.9056435227, blue: 0.9374967217, alpha: 0.8470588235)
             } else{
                 dateBtn.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                
             }
            
             formatter.locale = Locale(identifier: "sv_SE")

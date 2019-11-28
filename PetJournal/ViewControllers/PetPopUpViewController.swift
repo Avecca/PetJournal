@@ -43,6 +43,7 @@ class PetPopUpViewController: UIViewController {
     }
     
     func fillLabels() {
+        formatter.locale = Locale(identifier: "sv_SE")
         
         //print("RECIEVING ID \(recievingPetId)")
         pet = pets.entryPet(index: recievingPetId!)
@@ -71,13 +72,24 @@ class PetPopUpViewController: UIViewController {
             }
         }
         if let birthDate = pet!.value(forKeyPath: "birthDate") as? Date {
-            formatter.locale = Locale(identifier: "sv_SE")
             formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd")
             birthDateLbl.text = formatter.string(from: birthDate)
         }
 
         if let id = pet!.value(forKeyPath: "id") as? String {
             idLbl.text = id
+        }
+        
+        let petObjs = pet as! Pet
+        
+        formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd-HH:mm")
+        
+        var nextVisit = ""
+        for visit in petObjs.visits! {
+            if ((visit as! Visit).date)!.compare(NSDate.now) == ComparisonResult.orderedDescending {
+                let d = (visit as! Visit).date!
+                nextVisit = formatter.string(from: d)
+            }
         }
         
         print("PET ON DISPLAY: \(String(describing: pet))")
