@@ -76,6 +76,7 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
         guard let detailsForEntry = self.recievingEntry!.detail?.allObjects as? [Detail] else { return  }
         
         details = detailsForEntry
+        details?.sort(by: {$0.index > $1.index})
         
     }
     
