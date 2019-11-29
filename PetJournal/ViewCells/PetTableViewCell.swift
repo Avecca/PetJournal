@@ -14,6 +14,7 @@ class PetTableViewCell: UITableViewCell {
    // @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var nameBtn: UIButton!
     
+    @IBOutlet weak var petImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,9 +32,23 @@ class PetTableViewCell: UITableViewCell {
             let name = obj!.value(forKeyPath: "name") as? String
            // nameLbl?.text = name
             nameBtn?.setTitle(name, for: .normal)
+            petImageView.imageCircle(anyImage: #imageLiteral(resourceName: "paw_print"))
             
         }
         
     }
 
+}
+
+extension UIImageView {
+    public func imageCircle(anyImage: UIImage){
+
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = self.frame.height / 2
+        self.layer.masksToBounds = false
+        self.clipsToBounds = true
+        
+        self.image = anyImage
+    }
+    
 }

@@ -44,7 +44,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwo-lw-YIR">
-                                                    <rect key="frame" x="276" y="7" width="64" height="30"/>
+                                                    <rect key="frame" x="231" y="7" width="64" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="1CC-9a-cve"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="YBs-Ub-REd"/>
@@ -56,14 +56,26 @@
                                                         <segue destination="sJE-Bf-sjF" kind="presentation" identifier="segueToPetPopUp" id="bJY-lk-Cu2"/>
                                                     </connections>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw_print" translatesAutoresizingMaskIntoConstraints="NO" id="x6H-Nr-kdY">
+                                                    <rect key="frame" x="305" y="4.5" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="Qz4-0g-xKc"/>
+                                                        <constraint firstAttribute="height" constant="35" id="R3u-J7-4El"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="nwo-lw-YIR" secondAttribute="trailing" constant="15" id="B06-u9-qJY"/>
+                                                <constraint firstItem="x6H-Nr-kdY" firstAttribute="leading" secondItem="nwo-lw-YIR" secondAttribute="trailing" constant="10" id="9Z5-1t-rAb"/>
+                                                <constraint firstItem="x6H-Nr-kdY" firstAttribute="centerY" secondItem="nwo-lw-YIR" secondAttribute="centerY" id="LWB-jN-0ip"/>
                                                 <constraint firstItem="nwo-lw-YIR" firstAttribute="centerY" secondItem="qRW-Uv-V1g" secondAttribute="centerY" id="YGU-7Q-baw"/>
+                                                <constraint firstItem="nwo-lw-YIR" firstAttribute="leading" secondItem="qRW-Uv-V1g" secondAttribute="leading" constant="231" id="YwJ-9A-20b"/>
+                                                <constraint firstItem="x6H-Nr-kdY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nwo-lw-YIR" secondAttribute="trailing" constant="8" symbolic="YES" id="cl5-QE-jMZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="x6H-Nr-kdY" secondAttribute="trailing" constant="15" id="qN0-WT-IPc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameBtn" destination="nwo-lw-YIR" id="TPu-Zl-E3A"/>
+                                            <outlet property="petImageView" destination="x6H-Nr-kdY" id="tre-Xt-bGp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -114,7 +126,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8N-wf-9sB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1022" y="-796"/>
+            <point key="canvasLocation" x="-1095" y="-1203"/>
         </scene>
         <!--Add Pet-->
         <scene sceneID="LPG-RK-gYX">
@@ -792,6 +804,7 @@
                         <outlet property="innerView" destination="ANr-7G-btO" id="1GU-19-9LU"/>
                         <outlet property="nameLbl" destination="EF4-qk-0Ob" id="SIM-Iw-CM9"/>
                         <outlet property="neuteredLbl" destination="bHH-0U-QA0" id="ds5-8d-3Gu"/>
+                        <outlet property="petImageView" destination="niI-aK-8JT" id="lgq-Am-Mcf"/>
                         <outlet property="raceLbl" destination="8zZ-Mr-vam" id="Dsx-vS-5rn"/>
                         <outlet property="typeLbl" destination="epE-rR-Dyy" id="mhE-vF-zbO"/>
                         <outlet property="vetDateLbl" destination="jTY-TQ-cpm" id="T91-UO-U9e"/>
@@ -1862,6 +1875,7 @@
         <image name="Pet_Journal_Add_White" width="23" height="23"/>
         <image name="Pet_Journal_White" width="23" height="23"/>
         <image name="delete-button" width="512" height="512"/>
+        <image name="paw_print" width="80" height="80"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>

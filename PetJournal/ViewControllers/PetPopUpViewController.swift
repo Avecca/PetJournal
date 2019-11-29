@@ -22,6 +22,7 @@ class PetPopUpViewController: UIViewController {
     @IBOutlet weak var vetVisitTypeLbl: UILabel!
     @IBOutlet weak var vetDateLbl: UILabel!
     @IBOutlet weak var vetView: UIView!
+    @IBOutlet weak var petImageView: UIImageView!
     
   
     private let pets = Pets();
@@ -109,6 +110,8 @@ class PetPopUpViewController: UIViewController {
         }
         }
         
+        petImageView.imageCircle(anyImage: #imageLiteral(resourceName: "paw_print"))
+        
         print("PET ON DISPLAY: \(String(describing: pet))")
     }
     
@@ -140,3 +143,16 @@ class PetPopUpViewController: UIViewController {
     }
 
 }
+
+//extension UIImageView {
+//    public func imageCircle(anyImage: UIImage){
+//
+//        self.layer.borderWidth = 1
+//        self.layer.cornerRadius = self.frame.height / 2
+//        self.layer.masksToBounds = false
+//        self.clipsToBounds = true
+//
+//        self.image = anyImage
+//    }
+//
+//}
