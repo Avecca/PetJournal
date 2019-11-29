@@ -48,9 +48,6 @@ class CreatePetViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func savePetBtn(_ sender: Any) {
         
-        
-        //TODO
-        //Birthdate, male bool, neutered
 
         guard let nameField = nameLbl.text else {
             return

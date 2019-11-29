@@ -33,10 +33,8 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
         VeterinaryTV.delegate = self
         VeterinaryTV.dataSource = self
         
-        
         self.VeterinaryTV.reloadData()
         
-
     }
     override func viewDidLayoutSubviews() {
           //collectionview filled from bottom
@@ -51,8 +49,6 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
 //    }
     
 
-    
-    
     //TableView Delegate and Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -75,11 +71,8 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
         //Make sure the names arnt upside down since we reversed the order of the cv
         cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         
-        
         //cell.reasonBtn.tag =  Int(visitIndex)!
-
-        
-        
+    
         return cell
     }
     
@@ -92,10 +85,7 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
 
         if segue.identifier == segueCreate  {
             
-
             dSegue.recievingCreate = true
-           
-
         }
         
         if segue.identifier == segueView {
@@ -109,9 +99,7 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
             
             dSegue.recievingVisitId = visitId
             dSegue.recievingCreate = false
-            
         }
-        
     }
     
    @IBAction func unwindToHere( segue: UIStoryboardSegue) {
@@ -120,17 +108,5 @@ class VeterinaryOverviewViewController: UIViewController, UITableViewDelegate, U
         self.VeterinaryTV.reloadData()
     }
     
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -17,16 +17,12 @@ class TabOverView: UITabBarController {  // UITabBarControllerDelegate
             
             //Start on the Pets tab
             self.selectedIndex = 1;
-            
-     
-            
-            
+             
          tBI.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
            // tBI.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.blue], for: .selected)
         tabBar.unselectedItemTintColor = .darkGray
          
-            
-        
+   
           // UIApplication.shared.statusBarView?.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.7607843137, blue: 0, alpha: 1)
 
     }

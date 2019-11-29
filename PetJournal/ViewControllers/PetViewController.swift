@@ -19,9 +19,7 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var pet: NSManagedObject?
     private let pets = Pets()
     
-    
     //TODO make things private
-    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,7 +30,6 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         //to get this to work again, unedit in appdelegate as well
        // self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
         
@@ -48,7 +45,6 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
           //collectionview filled from bottom
           petsTableView.transform = CGAffineTransform.init(rotationAngle: (-(CGFloat)(Double.pi)))
       }
-    
     
     
     //TABLE VIEW FUNCTIONS
@@ -68,54 +64,16 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let cellIndex = indexPath.item
         //nameclick.tag = cellindex
         
-        
         pet = pets.entryPet(index: cellIndex)
         cell.configCell(obj: pet)
        // cell.nameLbl.tag = cellIndex // btn?
         cell.nameBtn.tag = cellIndex
-
         
         //Make sure the names arnt upside down since we reversed the order of the cv
         cell.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print(indexPath.row)
-//
-////
-//        self.performSegue(withIdentifier: self.segueToPetPopUpId, sender: self)
-//
-//        //OR
-////        let sb = UIStoryboard(name: "Main", bundle: nil)
-////        let pop = sb.instantiateViewController(identifier: "PetPopUpViewController")
-////
-////        self.present(pop, animated: true)
-//
-//
-//
-//
-//    }
-    
-//    @IBAction func petNameBtnClick(_ sender: UIButton) {
-//
-//       // let index = sender.tag
-//
-//        //print(index)
-//
-//
-////        self.performSegue(withIdentifier: self.segueToPetPopUpId, sender: self)
-//        //
-//        //        //OR
-//        ////        let sb = UIStoryboard(name: "Main", bundle: nil)
-//        ////        let pop = sb.instantiateViewController(identifier: "PetPopUpViewController")
-//        ////
-//        ////        self.present(pop, animated: true)
-//
-//
-//    }
-    
     
     
     //segues
@@ -141,24 +99,9 @@ class PetViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             destinationVC.recievingPetId = petId
             destinationVC.oldVC = self
 
-            
-
         }
         
     }
-    
-    
-    
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
