@@ -50,6 +50,8 @@ class EntryDetailViewController: UIViewController, UITableViewDelegate, UITableV
             entryNameLbl.text = recievingEntry?.subject
             nameLbl.text = recievingPet?.name
             
+            petImgView.imageCircle(anyImage: #imageLiteral(resourceName: "paw_print"))
+            
             fetchAllDetails()
             //print(recievingEntry.self)
     

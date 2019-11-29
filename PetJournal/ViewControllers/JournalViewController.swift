@@ -78,6 +78,8 @@ class JournalViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let name = pet?.name { //pet!.value(forKey: "name") as? String {
                 nameLbl.text = name
             }
+            
+            petImgView.imageCircle(anyImage: #imageLiteral(resourceName: "paw_print"))
         }
     }
     
