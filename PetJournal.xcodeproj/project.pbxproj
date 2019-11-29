@@ -82,14 +82,14 @@
 		93579D2E238A1365008E6799 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		9359245C237DB48A0070FA42 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		9359245F237DBDD10070FA42 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		935BEAA4238CC7F600717093 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		935BEAA5238CC7F600717093 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		935BEAA6238CC7F600717093 /* Visit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		935BEAA7238CC7F600717093 /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		935BEAA8238CC7F600717093 /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		935BEAA9238CC7F600717093 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		935BEAAA238CC7F600717093 /* Detail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		935BEAAB238CC7F600717093 /* Detail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		935BEAA4238CC7F600717093 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataClass.swift"; path = "PetJournal/CoreDataClasses/Entry+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		935BEAA5238CC7F600717093 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataProperties.swift"; path = "PetJournal/CoreDataClasses/Entry+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		935BEAA6238CC7F600717093 /* Visit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Visit+CoreDataClass.swift"; path = "PetJournal/CoreDataClasses/Visit+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		935BEAA7238CC7F600717093 /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Visit+CoreDataProperties.swift"; path = "PetJournal/CoreDataClasses/Visit+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		935BEAA8238CC7F600717093 /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pet+CoreDataClass.swift"; path = "PetJournal/CoreDataClasses/Pet+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		935BEAA9238CC7F600717093 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pet+CoreDataProperties.swift"; path = "PetJournal/CoreDataClasses/Pet+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		935BEAAA238CC7F600717093 /* Detail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Detail+CoreDataClass.swift"; path = "PetJournal/CoreDataClasses/Detail+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		935BEAAB238CC7F600717093 /* Detail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Detail+CoreDataProperties.swift"; path = "PetJournal/CoreDataClasses/Detail+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		935BEAB4238CCAA600717093 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		935BEAB8238CDE6800717093 /* EntriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesList.swift; sourceTree = "<group>"; };
 		936394F5237CD00800C59912 /* PetJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,11 +205,20 @@
 			path = ViewCells;
 			sourceTree = "<group>";
 		};
-		935A815C23903236003DF47A /* New Group */ = {
+		935A815C23903236003DF47A /* CoreDataClasses */ = {
 			isa = PBXGroup;
 			children = (
+				935BEAA4238CC7F600717093 /* Entry+CoreDataClass.swift */,
+				935BEAA5238CC7F600717093 /* Entry+CoreDataProperties.swift */,
+				935BEAA6238CC7F600717093 /* Visit+CoreDataClass.swift */,
+				935BEAA7238CC7F600717093 /* Visit+CoreDataProperties.swift */,
+				935BEAA8238CC7F600717093 /* Pet+CoreDataClass.swift */,
+				935BEAA9238CC7F600717093 /* Pet+CoreDataProperties.swift */,
+				935BEAAA238CC7F600717093 /* Detail+CoreDataClass.swift */,
+				935BEAAB238CC7F600717093 /* Detail+CoreDataProperties.swift */,
+				935BEAB4238CCAA600717093 /* PersistenceManager.swift */,
 			);
-			path = "New Group";
+			path = CoreDataClasses;
 			sourceTree = "<group>";
 		};
 		936394EC237CD00800C59912 = {
@@ -238,16 +247,7 @@
 		936394F7237CD00800C59912 /* PetJournal */ = {
 			isa = PBXGroup;
 			children = (
-				935A815C23903236003DF47A /* New Group */,
-				935BEAA4238CC7F600717093 /* Entry+CoreDataClass.swift */,
-				935BEAA5238CC7F600717093 /* Entry+CoreDataProperties.swift */,
-				935BEAA6238CC7F600717093 /* Visit+CoreDataClass.swift */,
-				935BEAA7238CC7F600717093 /* Visit+CoreDataProperties.swift */,
-				935BEAA8238CC7F600717093 /* Pet+CoreDataClass.swift */,
-				935BEAA9238CC7F600717093 /* Pet+CoreDataProperties.swift */,
-				935BEAAA238CC7F600717093 /* Detail+CoreDataClass.swift */,
-				935BEAAB238CC7F600717093 /* Detail+CoreDataProperties.swift */,
-				935BEAB4238CCAA600717093 /* PersistenceManager.swift */,
+				935A815C23903236003DF47A /* CoreDataClasses */,
 				931AD7F9237DD22E009CC068 /* HelpClasses */,
 				931AD7F8237DD0FD009CC068 /* ViewControllers */,
 				9359245E237DB4960070FA42 /* ViewCells */,

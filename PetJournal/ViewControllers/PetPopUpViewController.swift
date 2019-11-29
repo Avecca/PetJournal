@@ -98,15 +98,15 @@ class PetPopUpViewController: UIViewController {
             }
         }
         if petComingVisit != nil{
-            if petComingVisit!.reason != nil {
-                vetView.isHidden = false
-                
-                if petComingVisit!.date != nil {
-                    nextVisit = formatter.string(from: petComingVisit!.date!)
-                    vetDateLbl.text = nextVisit
-                }
-                vetVisitTypeLbl.text = petComingVisit!.reason
+        if petComingVisit!.reason != nil {
+            vetView.isHidden = false
+            
+            if petComingVisit!.date != nil {
+                nextVisit = formatter.string(from: petComingVisit!.date!)
+                vetDateLbl.text = nextVisit
             }
+            vetVisitTypeLbl.text = petComingVisit!.reason
+        }
         }
         
         print("PET ON DISPLAY: \(String(describing: pet))")
