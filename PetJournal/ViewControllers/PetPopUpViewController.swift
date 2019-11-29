@@ -19,9 +19,14 @@ class PetPopUpViewController: UIViewController {
     @IBOutlet weak var neuteredLbl: UILabel!
     @IBOutlet weak var birthDateLbl: UILabel!
     @IBOutlet weak var idLbl: UILabel!
+    @IBOutlet weak var vetVisitTypeLbl: UILabel!
+    @IBOutlet weak var vetDateLbl: UILabel!
+    @IBOutlet weak var vetView: UIView!
     
+  
     private let pets = Pets();
     var pet: NSManagedObject?
+    var petComingVisit: Visit?
     var formatter = DateFormatter()
     
     var recievingPetId : Int?
@@ -84,11 +89,23 @@ class PetPopUpViewController: UIViewController {
         
         formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd-HH:mm")
         
+        
         var nextVisit = ""
         for visit in petObjs.visits! {
             if ((visit as! Visit).date)!.compare(NSDate.now) == ComparisonResult.orderedDescending {
-                let d = (visit as! Visit).date!
-                nextVisit = formatter.string(from: d)
+                petComingVisit = (visit as! Visit)
+                break;
+            }
+        }
+        if petComingVisit != nil{
+            if petComingVisit!.reason != nil {
+                vetView.isHidden = false
+                
+                if petComingVisit!.date != nil {
+                    nextVisit = formatter.string(from: petComingVisit!.date!)
+                    vetDateLbl.text = nextVisit
+                }
+                vetVisitTypeLbl.text = petComingVisit!.reason
             }
         }
         
